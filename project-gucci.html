@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gucci Scenario Planning | Ina Yu Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project.css">
+    <style>
+        .project-hero-gucci {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(0,51,41,0.9) 0%, rgba(0,102,51,0.85) 50%, rgba(0,153,76,0.8) 100%), 
+                        url('https://www.genspark.ai/api/files/s/FGsQwH3Q') center center / cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+        }
+        .hero-badge {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 0.5rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .hero-title-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 12vw, 8rem);
+            font-weight: 300;
+            color: #fff;
+            margin: 0 0 1rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .hero-subtitle-main {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            max-width: 800px;
+            line-height: 1.8;
+        }
+        .meta-bar-enhanced {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        .meta-bar-enhanced .meta-item {
+            padding: 2.5rem 2rem;
+            border-right: 1px solid #eee;
+            text-align: center;
+        }
+        .meta-bar-enhanced .meta-item:last-child {
+            border-right: none;
+        }
+        .meta-bar-enhanced .meta-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.5rem;
+        }
+        .meta-bar-enhanced .meta-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        @media (max-width: 968px) {
+            .meta-bar-enhanced { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .meta-bar-enhanced { grid-template-columns: repeat(2, 1fr); }
+        }
+        .methodology-section {
+            padding: 6rem 5%;
+            background: #fafafa;
+        }
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .methodology-left h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        .methodology-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #666;
+            border-left: 3px solid #006633;
+            padding-left: 2rem;
+            margin: 2rem 0;
+            line-height: 1.6;
+        }
+        .method-card {
+            background: #fff;
+            padding: 2rem;
+            border: 1px solid #eee;
+            margin-bottom: 1.5rem;
+        }
+        .method-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #006633;
+            margin-bottom: 0.75rem;
+        }
+        .method-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.7;
+        }
+        @media (max-width: 900px) {
+            .methodology-grid { grid-template-columns: 1fr; }
+        }
+        .driving-forces-section {
+            padding: 6rem 5%;
+            background: #003321;
+        }
+        .forces-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .forces-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+        .forces-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #fff;
+        }
+        .forces-matrix {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .force-quadrant {
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .force-quadrant h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #90EE90;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .force-quadrant h4::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #90EE90;
+        }
+        .force-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .force-list li {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .force-list li:last-child {
+            border-bottom: none;
+        }
+        .force-badge {
+            display: inline-block;
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 2px;
+            margin-left: 0.5rem;
+        }
+        .badge-certain { background: rgba(144,238,144,0.3); color: #90EE90; }
+        .badge-uncertain { background: rgba(255,165,0,0.3); color: #FFD700; }
+        @media (max-width: 768px) {
+            .forces-matrix { grid-template-columns: 1fr; }
+        }
+        .scenario-section {
+            padding: 6rem 5%;
+        }
+        .scenario-section.bg-white { background: #fff; }
+        .scenario-section.bg-light { background: #f9f9f9; }
+        .scenario-section.bg-dark { background: #1a1a1a; color: #fff; }
+        .scenario-header {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        .scenario-header .horizon-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #006633;
+            border: 1px solid #006633;
+            padding: 0.5rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .scenario-header.dark .horizon-badge {
+            color: #90EE90;
+            border-color: #90EE90;
+        }
+        .scenario-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        .scenario-header p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        .scenario-header.dark p {
+            color: rgba(255,255,255,0.7);
+        }
+        .plot-arc {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .plot-arc::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, #ddd 0%, #006633 25%, #006633 50%, #006633 75%, #ddd 100%);
+        }
+        .plot-stage {
+            text-align: center;
+            padding: 0 1rem;
+            position: relative;
+        }
+        .plot-dot {
+            width: 16px;
+            height: 16px;
+            background: #006633;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px #006633;
+        }
+        .plot-stage.highlight .plot-dot {
+            width: 24px;
+            height: 24px;
+            background: #FFD700;
+            box-shadow: 0 0 0 3px #FFD700, 0 0 20px rgba(255,215,0,0.4);
+        }
+        .plot-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.75rem;
+        }
+        .plot-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        .bg-dark .plot-title { color: #fff; }
+        .plot-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        .bg-dark .plot-description { color: rgba(255,255,255,0.7); }
+        .bg-dark .plot-arc::before {
+            background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, #90EE90 25%, #90EE90 50%, #90EE90 75%, rgba(255,255,255,0.2) 100%);
+        }
+        .bg-dark .plot-dot {
+            background: #90EE90;
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 2px #90EE90;
+        }
+        .bg-dark .plot-stage.highlight .plot-dot {
+            background: #FFD700;
+            box-shadow: 0 0 0 3px #FFD700, 0 0 20px rgba(255,215,0,0.4);
+        }
+        .bg-dark .plot-label { color: rgba(255,255,255,0.5); }
+        @media (max-width: 900px) {
+            .plot-arc {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .plot-arc::before {
+                top: 0;
+                bottom: 0;
+                left: 2rem;
+                right: auto;
+                width: 2px;
+                height: auto;
+                background: linear-gradient(180deg, #ddd 0%, #006633 20%, #006633 80%, #ddd 100%);
+            }
+            .plot-stage {
+                text-align: left;
+                padding-left: 4rem;
+            }
+            .plot-dot {
+                position: absolute;
+                left: 1.5rem;
+                top: 0;
+                margin: 0;
+            }
+        }
+        .strategic-implications {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 4rem auto 0;
+        }
+        .implication-card {
+            background: #fff;
+            padding: 2rem;
+            border: 1px solid #eee;
+        }
+        .bg-dark .implication-card {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.1);
+        }
+        .implication-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #006633;
+            margin-bottom: 0.75rem;
+        }
+        .bg-dark .implication-card h4 { color: #90EE90; }
+        .implication-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+        .implication-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        .bg-dark .implication-card p { color: rgba(255,255,255,0.7); }
+        @media (max-width: 768px) {
+            .strategic-implications { grid-template-columns: 1fr; }
+        }
+        .scenario-logic {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 4rem auto 0;
+        }
+        .logic-axis {
+            text-align: center;
+        }
+        .logic-axis h4 {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .axis-spectrum {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+        .bg-dark .axis-spectrum {
+            background: rgba(255,255,255,0.05);
+        }
+        .axis-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .axis-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #006633, #90EE90);
+            margin: 0 1.5rem;
+            position: relative;
+        }
+        .axis-marker {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #FFD700;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        @media (max-width: 768px) {
+            .scenario-logic { grid-template-columns: 1fr; }
+        }
+        .tech-integration {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #003321 0%, #006633 100%);
+        }
+        .tech-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .tech-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+        .tech-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #fff;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .tech-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .tech-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .tech-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+        .tech-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+        .tech-timeline {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #90EE90;
+            margin-top: 1rem;
+        }
+        @media (max-width: 900px) {
+            .tech-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 500px) {
+            .tech-grid { grid-template-columns: 1fr; }
+        }
+        .quote-block {
+            padding: 6rem 5%;
+            background: #1a1a1a;
+            text-align: center;
+        }
+        .quote-block blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 400;
+            font-style: italic;
+            color: #fff;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .quote-block cite {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-style: normal;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-top: 2rem;
+        }
+        .insights-section {
+            padding: 6rem 5%;
+            background: #f9f9f9;
+        }
+        .insights-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .insights-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .insights-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .insight-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #006633;
+            margin-bottom: 1rem;
+        }
+        .insight-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+        .insight-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        @media (max-width: 768px) {
+            .insights-grid { grid-template-columns: 1fr; }
+        }
+        .references-section {
+            padding: 4rem 5%;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+        .references-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .references-header h4 {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+        }
+        .references-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .references-list span {
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">INA YU</a>
+            <div class="nav-links">
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="project-hero-gucci">
+        <span class="hero-badge">Strategic Scenario Planning</span>
+        <h1 class="hero-title-main">Gucci</h1>
+        <p class="hero-subtitle-main">Multi-Horizon Scenario Planning for Luxury Brand Evolution<br>5-Year · 10-Year · 15-Year Strategic Forecasting (2017)</p>
+    </section>
+
+    <!-- Meta Bar -->
+    <div class="meta-bar-enhanced">
+        <div class="meta-item">
+            <div class="meta-label">Role</div>
+            <div class="meta-value">Strategic Analyst</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Context</div>
+            <div class="meta-value">SCAD MFA Research</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Duration</div>
+            <div class="meta-value">Spring 2017</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Framework</div>
+            <div class="meta-value">Scenario Planning</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Horizons</div>
+            <div class="meta-value">5 / 10 / 15 Years</div>
+        </div>
+    </div>
+
+    <!-- Methodology Section -->
+    <section class="methodology-section">
+        <div class="methodology-grid">
+            <div class="methodology-left">
+                <h3>Scenario Planning Methodology:<br>Structured Approach to Strategic Uncertainty</h3>
+                <p class="methodology-quote">"The goal isn't to be right about the future, but to be prepared for whatever future arrives."</p>
+                <p style="font-size: 1rem; color: #666; line-height: 1.8; margin-top: 2rem;">Scenario planning doesn't predict the future—it prepares organizations for multiple possible futures. This analysis employed a rigorous methodology to identify driving forces, map causal relationships, and construct plausible scenarios across three time horizons for Gucci's strategic evolution in an increasingly uncertain global luxury market.</p>
+            </div>
+            <div class="methodology-right">
+                <div class="method-card">
+                    <h4>Driving Forces Analysis</h4>
+                    <p>Impact vs. Uncertainty matrix mapping of Social, Technological, Economic, Environmental, and Political (STEEP) factors across 5, 10, and 15-year horizons.</p>
+                </div>
+                <div class="method-card">
+                    <h4>Cause-Effect Mapping</h4>
+                    <p>Interconnection analysis showing how environmental/political causes cascade into social/economic effects, enabling identification of critical leverage points.</p>
+                </div>
+                <div class="method-card">
+                    <h4>Scenario Plot Structure</h4>
+                    <p>Narrative arc framework: Setup → Rising Action → Turning Point → Falling Action → Resolution for each time horizon.</p>
+                </div>
+                <div class="method-card">
+                    <h4>Scenario Logic Grids</h4>
+                    <p>2×2 matrices plotting key uncertainties: Onlyness vs. Mass Market, Premium vs. Accessible, Stable vs. Unstable environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Driving Forces Section -->
+    <section class="driving-forces-section">
+        <div class="forces-header">
+            <div class="label">STEEP Analysis</div>
+            <h2>Driving Forces Shaping Luxury's Future</h2>
+        </div>
+        <div class="forces-matrix">
+            <div class="force-quadrant">
+                <h4>More Significant Forces</h4>
+                <ul class="force-list">
+                    <li>Rising Asian Market <span class="force-badge badge-certain">High Impact</span></li>
+                    <li>Gen Z Purchase Behavior</li>
+                    <li>Social Media Acceleration</li>
+                    <li>Changing Demographics</li>
+                    <li>Growth of Middle Class</li>
+                    <li>Increasing E-commerce</li>
+                    <li>Sustainability Imperative</li>
+                    <li>Global Tourism Patterns</li>
+                    <li>Climate Change Impact</li>
+                    <li>Monetary Conditions</li>
+                </ul>
+            </div>
+            <div class="force-quadrant">
+                <h4>Certain Technological Forces</h4>
+                <ul class="force-list">
+                    <li>Smartphone Ubiquity <span class="force-badge badge-certain">Certain</span></li>
+                    <li>Nano-materials Technology</li>
+                    <li>Environmental Concern Rise</li>
+                    <li>Smart-home Integration</li>
+                    <li>Google Glass / Wearables</li>
+                </ul>
+            </div>
+            <div class="force-quadrant">
+                <h4>Less Significant Forces</h4>
+                <ul class="force-list">
+                    <li>Fast Fashion & Logo-free Clothing</li>
+                    <li>Raised Labor Wages</li>
+                    <li>Economic Crisis <span class="force-badge badge-uncertain">Uncertain</span></li>
+                    <li>Terrorism Impact</li>
+                    <li>Import & Export Regulation</li>
+                    <li>Legislature Changes</li>
+                </ul>
+            </div>
+            <div class="force-quadrant">
+                <h4>Long-Term Emerging Forces (10-15 Year)</h4>
+                <ul class="force-list">
+                    <li>Drone Delivery Infrastructure</li>
+                    <li>Virtual Reality Commerce</li>
+                    <li>Single Household Growth</li>
+                    <li>Brick-and-mortar Decline</li>
+                    <li>Global Instability</li>
+                    <li>Department Store Suffering</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5-Year Scenario -->
+    <section class="scenario-section bg-white">
+        <div class="scenario-header">
+            <span class="horizon-badge">5-Year Horizon (2017–2022)</span>
+            <h2>Digital-First Luxury Transformation</h2>
+            <p>Near-term strategic imperatives driven by terrorism, economic volatility, and the rise of mass-market alternatives force luxury brands to fundamentally reimagine their value proposition and customer engagement.</p>
+        </div>
+        <div class="plot-arc">
+            <div class="plot-stage">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Setup</div>
+                <div class="plot-title">Market Disruption</div>
+                <div class="plot-description">Fast fashion and logo-free clothing gain momentum. Raised labor wages, economic crisis, terrorism, and changing import/export regulations create market uncertainty.</div>
+            </div>
+            <div class="plot-stage">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Rising Action</div>
+                <div class="plot-title">Economic Pressure</div>
+                <div class="plot-description">Global economic growth slows due to terrorism. Trade barriers increase through tariffs and import duties. Labor demands raise luxury product costs, declining consumer buying behavior.</div>
+            </div>
+            <div class="plot-stage highlight">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Turning Point</div>
+                <div class="plot-title">Mass Market Rise</div>
+                <div class="plot-description">New designers emerge with unique designs at accessible prices. Luxury companies respond by rebranding and shifting focus to E-commerce and M-commerce channels.</div>
+            </div>
+            <div class="plot-stage">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Falling Action</div>
+                <div class="plot-title">Youth Pivot</div>
+                <div class="plot-description">Middle consumers seek street fashion aesthetics. New designers offer high-quality materials with unique design. Luxury brands shift image toward younger demographics.</div>
+            </div>
+            <div class="plot-stage">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Resolution</div>
+                <div class="plot-title">Brand Renewal</div>
+                <div class="plot-description">Gucci successfully attracts younger consumers through renewed brand image and optimized pricing strategy across product categories.</div>
+            </div>
+        </div>
+        <div class="strategic-implications">
+            <div class="implication-card">
+                <h4>Channel Strategy</h4>
+                <h3>E-commerce & M-commerce First</h3>
+                <p>Prioritize digital channels with enhanced online service infrastructure. Many Asian high consumers—especially in China—shop online rather than in-person.</p>
+            </div>
+            <div class="implication-card">
+                <h4>Target Audience</h4>
+                <h3>Gen Z & Millennial Focus</h3>
+                <p>Youth-focused brand communication refresh. Social media-native engagement strategies. Street fashion aesthetic integration while maintaining luxury positioning.</p>
+            </div>
+            <div class="implication-card">
+                <h4>Retail Footprint</h4>
+                <h3>Selective Physical Presence</h3>
+                <p>Close boutiques in smaller cities. Concentrate flagship presence in strategic luxury hubs. Gucci is closing some boutiques to optimize retail portfolio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10-Year Scenario -->
+    <section class="scenario-section bg-dark">
+        <div class="scenario-header dark">
+            <span class="horizon-badge">10-Year Horizon (2017–2027)</span>
+            <h2>Lifestyle Empire Diversification</h2>
+            <p>Mid-term portfolio expansion as consumer expectations evolve toward total lifestyle curation. Continued terrorism and economic instability force luxury houses to diversify beyond fashion into adjacent categories.</p>
+        </div>
+        <div class="plot-arc">
+            <div class="plot-stage">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Setup</div>
+                <div class="plot-title">Persistent Disruption</div>
+                <div class="plot-description">Same market disruptions continue: fast fashion, labor wages, economic crisis, terrorism, and regulatory changes compound over time.</div>
+            </div>
+            <div class="plot-stage">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Rising Action</div>
+                <div class="plot-title">Tourism Collapse</div>
+                <div class="plot-description">Continuing terror attacks cause physical destruction and declining tourism. Financial markets slow. International investments decline. Luxury business becomes increasingly difficult.</div>
+            </div>
+            <div class="plot-stage highlight">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Turning Point</div>
+                <div class="plot-title">Regulatory Barriers</div>
+                <div class="plot-description">Fast fashion and logo-free brands offer diverse price ranges. Luxury expansion stalled by country-specific regulations. Brands cannot provide competitive pricing.</div>
+            </div>
+            <div class="plot-stage">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Falling Action</div>
+                <div class="plot-title">Second Brand Strategy</div>
+                <div class="plot-description">Luxury companies expand into "second brands"—homeware collections, middle-price high street fashion, high-end fast fashion. Heavy E-commerce and M-commerce promotions.</div>
+            </div>
+            <div class="plot-stage">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Resolution</div>
+                <div class="plot-title">Revenue Diversification</div>
+                <div class="plot-description">Business successfully appeals to younger consumers. Revenue generated through second brands and digital platforms creates sustainable growth model.</div>
+            </div>
+        </div>
+        <div class="strategic-implications">
+            <div class="implication-card">
+                <h4>Portfolio Expansion</h4>
+                <h3>Gucci Casa & Beyond</h3>
+                <p>Following LVMH's diversification playbook: luxury homeware, premium athleisure sub-brand, expanded beauty, and hospitality experiences.</p>
+            </div>
+            <div class="implication-card">
+                <h4>Price Architecture</h4>
+                <h3>Multi-Tier Strategy</h3>
+                <p>High-end fast fashion tier, mid-price street fashion line, and premium couture. VIP-exclusive limited editions and experiential events for top clients.</p>
+            </div>
+            <div class="implication-card">
+                <h4>Digital Commerce</h4>
+                <h3>Gamified Engagement</h3>
+                <p>Promotional campaigns leveraging gamification. Enhanced digital experiences. Heavy investment in E-commerce and M-commerce infrastructure globally.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 15-Year Scenario -->
+    <section class="scenario-section bg-light">
+        <div class="scenario-header">
+            <span class="horizon-badge">15-Year Horizon (2017–2032)</span>
+            <h2>Tech-Luxury Convergence</h2>
+            <p>Long-term technology integration as brick-and-mortar decline accelerates and consumers demand customization, logo-free products, and collaborative brand experiences.</p>
+        </div>
+        <div class="plot-arc">
+            <div class="plot-stage">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Setup</div>
+                <div class="plot-title">Structural Collapse</div>
+                <div class="plot-description">Global instability, brick-and-mortar and department stores suffering, economic instability, raised labor wages, and legislature changes define the environment.</div>
+            </div>
+            <div class="plot-stage">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Rising Action</div>
+                <div class="plot-title">Physical Retail Exodus</div>
+                <div class="plot-description">Consumers seek cheaper products and abandon brick-and-mortar stores. Department stores become obsolete as shopping destinations.</div>
+            </div>
+            <div class="plot-stage highlight">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Turning Point</div>
+                <div class="plot-title">Customization Demand</div>
+                <div class="plot-description">Consumers shift to online shopping and demand customized clothing. Rejection of identical designs, bags, and accessories. Logo rejection becomes mainstream. Luxury sales suffer significantly.</div>
+            </div>
+            <div class="plot-stage">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Falling Action</div>
+                <div class="plot-title">Tech Integration</div>
+                <div class="plot-description">Luxury companies implement drone delivery globally with time guarantees. 3D body scan programs for virtual fitting. Deep collaborations with technology companies become essential.</div>
+            </div>
+            <div class="plot-stage">
+                <div class="plot-dot"></div>
+                <div class="plot-label">Resolution</div>
+                <div class="plot-title">Co-Creation Model</div>
+                <div class="plot-description">Next generation emerges. Digital interaction replaces physical. Smart pricing (coupons, discounts, promotions) becomes standard. Consumers become co-creators with brands.</div>
+            </div>
+        </div>
+        <div class="scenario-logic">
+            <div class="logic-axis">
+                <h4>Social Axis</h4>
+                <div class="axis-spectrum">
+                    <span class="axis-label">Onlyness</span>
+                    <div class="axis-line">
+                        <span class="axis-marker" style="left: 70%;"></span>
+                    </div>
+                    <span class="axis-label">Mass Market</span>
+                </div>
+            </div>
+            <div class="logic-axis">
+                <h4>Economic Axis</h4>
+                <div class="axis-spectrum">
+                    <span class="axis-label">Stable</span>
+                    <div class="axis-line">
+                        <span class="axis-marker" style="left: 30%;"></span>
+                    </div>
+                    <span class="axis-label">Unstable</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Integration -->
+    <section class="tech-integration">
+        <div class="tech-header">
+            <div class="label">Wearable Tech & Innovation</div>
+            <h2>Strategic Technology Recommendations</h2>
+        </div>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-icon">📱</div>
+                <h4>M-commerce Priority</h4>
+                <p>Mobile-first commerce strategy. Smartphone accessibility becomes critical for luxury engagement and transactions.</p>
+                <div class="tech-timeline">5-Year Implementation</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🏠</div>
+                <h4>Smart Home Integration</h4>
+                <p>Connected home devices for seamless luxury commerce. Voice-activated shopping and brand interaction.</p>
+                <div class="tech-timeline">10-Year Implementation</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🚁</div>
+                <h4>Drone Delivery</h4>
+                <p>Global drone delivery infrastructure with guaranteed time limits. Meeting consumer expectations for immediate gratification.</p>
+                <div class="tech-timeline">15-Year Implementation</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">👗</div>
+                <h4>3D Body Scanning</h4>
+                <p>Virtual fitting programs allowing consumers to see different dresses on their body digitally before purchase.</p>
+                <div class="tech-timeline">15-Year Implementation</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Block -->
+    <section class="quote-block">
+        <blockquote>"Scenario planning reveals that Gucci's greatest asset isn't its archive—it's the organizational agility to adapt that heritage to futures we can't yet imagine. Brands that master hybrid digital-physical experiences will lead; those that don't will fade."</blockquote>
+        <cite>Strategic Analysis Conclusion</cite>
+    </section>
+
+    <!-- Strategic Insights -->
+    <section class="insights-section">
+        <div class="insights-header">
+            <div class="label">Key Learnings</div>
+            <h2>Strategic Insights</h2>
+        </div>
+        <div class="insights-grid">
+            <div class="insight-card">
+                <h4>On Scenario Planning</h4>
+                <h3>Preparation Over Prediction</h3>
+                <p>The value of scenario planning lies not in prediction accuracy but in organizational preparation. By systematically exploring alternative futures through structured plot analysis, brands develop strategic flexibility and reduce vulnerability to disruption. Each scenario provides a "mental rehearsal" for potential futures.</p>
+            </div>
+            <div class="insight-card">
+                <h4>On Luxury Evolution</h4>
+                <h3>Redefining Value Each Generation</h3>
+                <p>Luxury's definition is not static. Each generation redefines what constitutes value, exclusivity, and desirability. Gen Z consumers prioritize authenticity, sustainability, and digital engagement over traditional luxury signifiers. Brands that anchor strategy in timeless principles while adapting expressions will endure.</p>
+            </div>
+            <div class="insight-card">
+                <h4>On Technology Integration</h4>
+                <h3>Convergence is Inevitable</h3>
+                <p>By 2032, the distinction between digital and physical luxury dissolves. 3D body scanning, drone delivery, and virtual reality shopping transform the luxury experience. Tech company collaborations are not optional but essential for survival in the evolved marketplace.</p>
+            </div>
+            <div class="insight-card">
+                <h4>On Consumer Relationships</h4>
+                <h3>From Transaction to Co-Creation</h3>
+                <p>The brand-consumer relationship fundamentally transforms from transactional to collaborative. Customers become co-creators, with luxury houses providing platforms for personalized expression rather than finished products. Smart consumers demand unique, customized, logo-free luxury.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- References -->
+    <section class="references-section">
+        <div class="references-header">
+            <h4>Research Sources</h4>
+        </div>
+        <div class="references-list">
+            <span>McKinsey — China's Middle Class</span>
+            <span>Forbes — Global Instability</span>
+            <span>Investopedia — Terrorism Economics</span>
+            <span>World Economic Forum — 2030 Predictions</span>
+            <span>WGSN — Luxury Brand Trends</span>
+            <span>Foresight Alliance — Future of Brands 2030</span>
+            <span>Crisis Group — Global Conflicts</span>
+            <span>OECD — Development Reports</span>
+        </div>
+    </section>
+
+    <!-- Project Navigation -->
+    <nav class="project-navigation">
+        <a href="project-balenciaga.html" class="nav-prev">
+            <span class="nav-label">Previous Project</span>
+            <span class="nav-title">Balenciaga Analysis</span>
+        </a>
+        <a href="project-dior.html" class="nav-next">
+            <span class="nav-label">Next Project</span>
+            <span class="nav-title">Dior Marketing Strategy</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">INA YU</span>
+                <span class="footer-copyright">© 2025</span>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:eunice-ina@naver.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/inayu" class="footer-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

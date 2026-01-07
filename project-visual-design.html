@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Design Projects | Environmental Graphics & Spatial Branding | Ina Yu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project.css">
+    <style>
+        /* ==================== REFINED PREMIUM LAYOUT ==================== */
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Hero Section - Elegant Grid */
+        .hero-visual {
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 3px;
+            opacity: 0.6;
+        }
+        .hero-grid-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10,10,10,0.85) 0%, rgba(30,30,30,0.9) 100%);
+        }
+        .hero-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            z-index: 10;
+        }
+        .hero-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            opacity: 0.6;
+            margin-bottom: 1.5rem;
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .hero-desc {
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.7;
+            max-width: 600px;
+        }
+        .scroll-hint {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: white;
+            opacity: 0.4;
+        }
+
+        /* Metrics Bar */
+        .metrics-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+        .metric {
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-right: 1px solid #eee;
+        }
+        .metric:last-child {
+            border-right: none;
+        }
+        .metric-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .metric-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: 0.5rem;
+        }
+
+        /* Project Section */
+        .project-section {
+            padding: 8rem 0 0;
+        }
+
+        /* Project Header */
+        .project-intro {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .project-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            font-weight: 300;
+            line-height: 0.8;
+            color: #f0f0f0;
+        }
+        .project-info h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        .project-info .tagline {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 500px;
+        }
+
+        /* Image Showcase - Full Bleed */
+        .image-full {
+            width: 100%;
+            background: #f5f5f5;
+        }
+        .image-full img {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Content Section */
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .content-section .label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .content-section h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        .content-section p {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+        .content-section p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* Highlight Block */
+        .highlight-block {
+            background: #1a1a1a;
+            color: white;
+            padding: 5rem 2rem;
+        }
+        .highlight-block .inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .highlight-block .label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.5;
+            margin-bottom: 1rem;
+        }
+        .highlight-block h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        .highlight-block p {
+            font-size: 1rem;
+            line-height: 1.9;
+            opacity: 0.85;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Feature Pills */
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+        .feature-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255,255,255,0.08);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+        }
+        .feature-pill span {
+            opacity: 0.9;
+        }
+
+        /* Gallery Mosaic */
+        .gallery-mosaic {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: 200px;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: #fafafa;
+        }
+        .mosaic-item {
+            position: relative;
+            overflow: hidden;
+        }
+        .mosaic-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .mosaic-item:hover img {
+            transform: scale(1.05);
+        }
+        .mosaic-item.span-6 { grid-column: span 6; }
+        .mosaic-item.span-4 { grid-column: span 4; }
+        .mosaic-item.span-8 { grid-column: span 8; grid-row: span 2; }
+        .mosaic-item.span-3 { grid-column: span 3; }
+        .mosaic-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3rem 1rem 1rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            font-size: 0.8rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .mosaic-item:hover .mosaic-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Specs Strip */
+        .specs-strip {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            padding: 3rem 2rem;
+            background: #f5f5f5;
+            flex-wrap: wrap;
+        }
+        .spec {
+            text-align: center;
+        }
+        .spec-val {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #1a1a1a;
+        }
+        .spec-name {
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: 0.25rem;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: #eee;
+        }
+
+        /* Quote */
+        .quote-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: #1a1a1a;
+        }
+        .quote-section blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 300;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Learnings Grid */
+        .learnings-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+        .learnings-section .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .learnings-section .section-title .label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.5rem;
+        }
+        .learnings-section .section-title h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .learnings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .learning-item {
+            padding: 2rem;
+            background: #fafafa;
+            border-left: 3px solid;
+        }
+        .learning-item h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .learning-item p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .mosaic-item.span-8 { grid-column: span 12; grid-row: span 1; }
+            .mosaic-item.span-6 { grid-column: span 6; }
+            .mosaic-item.span-4 { grid-column: span 6; }
+            .mosaic-item.span-3 { grid-column: span 6; }
+        }
+        @media (max-width: 768px) {
+            .hero-grid-bg {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .metrics-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .metric {
+                border-bottom: 1px solid #eee;
+            }
+            .project-intro {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .project-number {
+                font-size: 4rem;
+            }
+            .mosaic-item.span-8,
+            .mosaic-item.span-6,
+            .mosaic-item.span-4,
+            .mosaic-item.span-3 {
+                grid-column: span 12;
+            }
+            .learnings-grid {
+                grid-template-columns: 1fr;
+            }
+            .features-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">INA YU</a>
+            <div class="nav-links">
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero-visual">
+        <div class="hero-grid-bg">
+            <img src="https://www.genspark.ai/api/files/s/qNJBx612" alt="Medical Center">
+            <img src="https://www.genspark.ai/api/files/s/sxLlRMCp" alt="Elevator">
+            <img src="https://www.genspark.ai/api/files/s/1q3WmDuM" alt="Exhibition">
+            <img src="https://www.genspark.ai/api/files/s/UwHcSUhK" alt="Wayfinding">
+            <img src="https://www.genspark.ai/api/files/s/BAc4Clrr" alt="Retail">
+            <img src="https://www.genspark.ai/api/files/s/AlNjQQcD" alt="Signage">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Environmental Graphics • Spatial Branding • Exhibition Design</p>
+            <h1 class="hero-title">Visual Design<br>Projects</h1>
+            <p class="hero-desc">Strategic design thinking applied to physical touchpoints—wayfinding systems, spatial branding, and exhibition design that shape user experience.</p>
+        </div>
+        <div class="scroll-hint">Scroll</div>
+    </section>
+
+    <!-- Metrics -->
+    <div class="metrics-bar">
+        <div class="metric">
+            <div class="metric-value">4</div>
+            <div class="metric-label">Project Categories</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">15+</div>
+            <div class="metric-label">Design Deliverables</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">360°</div>
+            <div class="metric-label">Spatial Experience</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">ADA</div>
+            <div class="metric-label">Compliance Standards</div>
+        </div>
+    </div>
+
+    <!-- ==================== PROJECT 01: MEDICAL CENTER ==================== -->
+    <section class="project-section">
+        <div class="project-intro">
+            <div class="project-number">01</div>
+            <div class="project-info">
+                <h2>Gongju Jaeil Medical Center</h2>
+                <p class="tagline">Comprehensive environmental graphics and wayfinding system for a multi-floor healthcare facility in Gongju, South Korea.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="image-full">
+        <img src="https://www.genspark.ai/api/files/s/qNJBx612" alt="Medical Center Signage System">
+    </div>
+
+    <div class="content-section">
+        <p class="label">Strategic Brand Identity</p>
+        <h3>Establishing Healthcare Authority Through Environmental Design</h3>
+        <p>The exterior signage system was conceived as the primary brand ambassador—a visual declaration of medical excellence visible from arterial roadways. The design challenge: communicate trust, competence, and approachability while differentiating from generic healthcare aesthetics.</p>
+        <p><strong>Design Rationale:</strong> The gold-and-black color palette was strategically selected to evoke premium positioning and professional gravitas. Gold symbolizes excellence and care, while black provides contrast for maximum legibility and sophistication.</p>
+    </div>
+
+    <div class="image-full">
+        <img src="https://www.genspark.ai/api/files/s/UwHcSUhK" alt="Parking Wayfinding">
+    </div>
+
+    <div class="highlight-block">
+        <div class="inner">
+            <p class="label">Wayfinding Architecture</p>
+            <h3>Hierarchical Navigation System</h3>
+            <p>Healthcare wayfinding presents unique challenges: visitors arrive in varying emotional states—anxious, disoriented, or rushed—and must navigate complex multi-floor facilities. The parking signage system serves as the first touchpoint in the patient journey.</p>
+            <p><strong>Information Architecture:</strong> The sign hierarchy follows cognitive load principles—primary information (floor number, department) appears largest, while secondary details use supporting typography. Color-coded zones enable intuitive mental mapping across 8+ floors.</p>
+            <div class="features-list">
+                <div class="feature-pill">
+                    <span>🅿️</span>
+                    <span>Floor-specific color coding</span>
+                </div>
+                <div class="feature-pill">
+                    <span>📍</span>
+                    <span>Department zone mapping</span>
+                </div>
+                <div class="feature-pill">
+                    <span>♿</span>
+                    <span>ADA-compliant design</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery-mosaic">
+        <div class="mosaic-item span-8">
+            <img src="https://www.genspark.ai/api/files/s/qNJBx612" alt="Exterior Signage">
+            <div class="mosaic-caption">Primary Exterior Signage</div>
+        </div>
+        <div class="mosaic-item span-4">
+            <img src="https://www.genspark.ai/api/files/s/UwHcSUhK" alt="Parking">
+            <div class="mosaic-caption">Parking Wayfinding</div>
+        </div>
+        <div class="mosaic-item span-4">
+            <img src="https://www.genspark.ai/api/files/s/WRnr55Uy" alt="Directional">
+            <div class="mosaic-caption">Directional Signage</div>
+        </div>
+        <div class="mosaic-item span-4">
+            <img src="https://www.genspark.ai/api/files/s/AlNjQQcD" alt="Neon">
+            <div class="mosaic-caption">Illuminated Facade</div>
+        </div>
+        <div class="mosaic-item span-4">
+            <img src="https://www.genspark.ai/api/files/s/tTtNxpru" alt="Commercial">
+            <div class="mosaic-caption">Commercial Integration</div>
+        </div>
+        <div class="mosaic-item span-3">
+            <img src="https://www.genspark.ai/api/files/s/UtNvgw9y" alt="Facade">
+            <div class="mosaic-caption">Building Facade</div>
+        </div>
+        <div class="mosaic-item span-3">
+            <img src="https://www.genspark.ai/api/files/s/sxLlRMCp" alt="Elevator">
+            <div class="mosaic-caption">Elevator Interior</div>
+        </div>
+    </div>
+
+    <div class="image-full">
+        <img src="https://www.genspark.ai/api/files/s/sxLlRMCp" alt="Elevator Design">
+    </div>
+
+    <div class="content-section">
+        <p class="label">Interior Touchpoint Design</p>
+        <h3>Elevator Experience Architecture</h3>
+        <p>The elevator interior represents a critical micro-moment in the patient journey—a confined space where anxiety can amplify. The design objective: transform this transitional space into a calming, informative environment that reinforces brand trust.</p>
+        <p><strong>Material Strategy:</strong> Warm golden tones and textured bronze finishes create a sense of luxury and care. High-contrast typography ensures accessibility for visually impaired visitors. Floor directories are positioned at eye level with consistent information hierarchy.</p>
+    </div>
+
+    <div class="specs-strip">
+        <div class="spec">
+            <div class="spec-val">70%</div>
+            <div class="spec-name">Min Contrast</div>
+        </div>
+        <div class="spec">
+            <div class="spec-val">48"</div>
+            <div class="spec-name">Tactile Height</div>
+        </div>
+        <div class="spec">
+            <div class="spec-val">Grade 2</div>
+            <div class="spec-name">Braille Std</div>
+        </div>
+        <div class="spec">
+            <div class="spec-val">1":25'</div>
+            <div class="spec-name">Legibility</div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ==================== PROJECT 02: YOGUR TREE ==================== -->
+    <section class="project-section">
+        <div class="project-intro">
+            <div class="project-number">02</div>
+            <div class="project-info">
+                <h2>Yogur Tree</h2>
+                <p class="tagline">Retail window graphics and visual merchandising design for a frozen yogurt brand, balancing playfulness with natural authenticity.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="image-full">
+        <img src="https://www.genspark.ai/api/files/s/BAc4Clrr" alt="Yogur Tree Window">
+    </div>
+
+    <div class="highlight-block">
+        <div class="inner">
+            <p class="label">Retail Visual Merchandising</p>
+            <h3>Natural Freshness Through Design</h3>
+            <p>The window sticker campaign required communicating brand values—natural ingredients, freshness, playfulness—within a compact retail footprint. The design challenge: attract pedestrian traffic while establishing brand personality distinct from competitive frozen dessert concepts.</p>
+            <p><strong>Visual Strategy:</strong> An earthy color palette of warm browns, natural oranges, and cream tones evokes organic authenticity. The illustrative style combines whimsical character design with botanical motifs, creating visual warmth that counterbalances the "cold" product category.</p>
+            <div class="features-list">
+                <div class="feature-pill">
+                    <span>🌿</span>
+                    <span>Earth tone palette</span>
+                </div>
+                <div class="feature-pill">
+                    <span>🎨</span>
+                    <span>Playful illustration</span>
+                </div>
+                <div class="feature-pill">
+                    <span>👁️</span>
+                    <span>Strategic transparency</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ==================== PROJECT 03: EXHIBITION ==================== -->
+    <section class="project-section">
+        <div class="project-intro">
+            <div class="project-number">03</div>
+            <div class="project-info">
+                <h2>Baekje Dynasty Jewelry Exhibition</h2>
+                <p class="tagline">Cultural heritage exhibition design interpreting Korea's ancient Baekje Kingdom (18 BC – 660 AD) jewelry for contemporary museum audiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="image-full">
+        <img src="https://www.genspark.ai/api/files/s/1q3WmDuM" alt="Baekje Exhibition">
+    </div>
+
+    <div class="content-section">
+        <p class="label">Cultural Heritage Interpretation</p>
+        <h3>Honoring Ancient Craftsmanship Through Spatial Narrative</h3>
+        <p>This exhibition design project required creating immersive spatial narratives that honor historical significance while engaging modern museum visitors. The floor plan was organized around chronological and thematic journeys—from royal regalia to everyday adornment.</p>
+        <p><strong>Material Dialogue:</strong> Contemporary materials—brushed steel, tempered glass, LED illumination—were juxtaposed against historical artifacts to create temporal dialogue. Display cases were engineered for optimal artifact visibility while maintaining conservation-grade environmental controls.</p>
+        <p><strong>Lighting Design:</strong> Color rendering studies explored how lighting temperature affects gold artifact perception. Warm 2700K illumination was specified to enhance gold's inherent warmth, while neutral gallery walls provide non-competitive backdrop.</p>
+    </div>
+
+    <div class="highlight-block">
+        <div class="inner">
+            <p class="label">Design Principles</p>
+            <h3>Balancing Reverence with Engagement</h3>
+            <p>Exhibition design is fundamentally about storytelling through space. Historical artifacts carry inherent narrative weight—the designer's role is to create supportive environments that enhance, never compete with, the objects' intrinsic significance.</p>
+            <div class="features-list">
+                <div class="feature-pill">
+                    <span>👑</span>
+                    <span>Heritage respect</span>
+                </div>
+                <div class="feature-pill">
+                    <span>🔬</span>
+                    <span>Conservation standards</span>
+                </div>
+                <div class="feature-pill">
+                    <span>✨</span>
+                    <span>2700K lighting</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote -->
+    <section class="quote-section">
+        <blockquote>
+            "Environmental graphics exist at the intersection of architecture, communication, and human behavior. The best wayfinding systems are invisible—visitors find their destinations without consciously noticing the design that guided them."
+        </blockquote>
+    </section>
+
+    <!-- Learnings -->
+    <section class="learnings-section">
+        <div class="section-title">
+            <p class="label">Professional Reflection</p>
+            <h3>Key Learnings</h3>
+        </div>
+        <div class="learnings-grid">
+            <div class="learning-item" style="border-color: #d4af37;">
+                <h4 style="color: #d4af37;">On Healthcare Environments</h4>
+                <p>Medical wayfinding demands empathy-driven design. Visitors arrive stressed and disoriented. Every sign must reduce cognitive load while projecting calm competence.</p>
+            </div>
+            <div class="learning-item" style="border-color: #3d5a80;">
+                <h4 style="color: #3d5a80;">On System Thinking</h4>
+                <p>Individual sign design matters less than how components work together as a coherent, predictable system. Consistency builds navigational confidence.</p>
+            </div>
+            <div class="learning-item" style="border-color: #8B4513;">
+                <h4 style="color: #8B4513;">On Retail Merchandising</h4>
+                <p>Window graphics serve dual functions: brand communication and spatial activation. Balance attention-grabbing impact with interior visibility.</p>
+            </div>
+            <div class="learning-item" style="border-color: #8B0000;">
+                <h4 style="color: #8B0000;">On Exhibition Design</h4>
+                <p>Historical artifacts carry inherent narrative weight. Design should create supportive environments that enhance, never compete with, objects' significance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Navigation -->
+    <nav class="project-navigation">
+        <a href="project-shplus.html" class="nav-prev">
+            <span class="nav-label">Previous Project</span>
+            <span class="nav-title">SHPLUS W-Mall</span>
+        </a>
+        <a href="project-university.html" class="nav-next">
+            <span class="nav-label">Next Project</span>
+            <span class="nav-title">Doux & Suave</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">INA YU</span>
+                <span class="footer-copyright">© 2025</span>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:eunice-ina@naver.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/inayu" class="footer-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

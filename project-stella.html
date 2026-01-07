@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stella McCartney x H&M | Fashion Collaboration Analysis | Ina Yu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project.css">
+    <style>
+        /* ==========================================
+           ENHANCED TYPOGRAPHY - HIGH CONTRAST
+           ========================================== */
+        
+        /* Dark section headings - BRIGHT WHITE */
+        .content-section h3,
+        .section-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin: 2.5rem 0 1rem 0;
+        }
+        .content-section h3:first-child {
+            margin-top: 0;
+        }
+        
+        /* Dark background sections - enhanced contrast */
+        .bg-dark-enhanced {
+            background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 6rem 5%;
+        }
+        .bg-dark-enhanced h3 {
+            color: #ffffff !important;
+            font-size: 1.75rem;
+        }
+        .bg-dark-enhanced p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+        }
+        .bg-dark-enhanced .section-label h2 {
+            color: #d4a574;
+        }
+
+        /* Strategic implications - clear typography */
+        .implications-section {
+            background: #0a0a0a;
+            padding: 6rem 5%;
+        }
+        .implications-section .section-label h2 {
+            color: #c9a96e;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+        }
+        .implication-block {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .implication-block:last-child {
+            border-bottom: none;
+        }
+        .implication-block h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: #ffffff !important;
+            margin: 0 0 1rem 0;
+        }
+        .implication-block p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.85;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        /* Hero with gradient overlay */
+        .stella-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #000 100%);
+            overflow: hidden;
+        }
+        .stella-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(201, 169, 110, 0.1) 0%, transparent 50%);
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(201, 169, 110, 0.4);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #c9a96e;
+            margin-bottom: 2rem;
+        }
+        .hero-title-stella {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 300;
+            color: #fff;
+            margin: 0 0 0.5rem 0;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+        .hero-subtitle-stella {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+        }
+
+        /* Key metrics grid */
+        .metrics-hero {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 4rem auto 0;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .metric-hero-item {
+            text-align: center;
+        }
+        .metric-hero-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #c9a96e;
+            display: block;
+        }
+        .metric-hero-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.5rem;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .metrics-hero {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Visual showcase sections */
+        .visual-showcase {
+            padding: 0;
+        }
+        .showcase-image-full {
+            width: 100%;
+            display: block;
+        }
+        .showcase-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+        }
+        .showcase-grid-2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media (max-width: 768px) {
+            .showcase-grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Image caption */
+        .image-caption {
+            text-align: center;
+            padding: 2rem 5%;
+            background: #f8f8f8;
+        }
+        .image-caption-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Financial dashboard */
+        .financial-dashboard {
+            background: #fafafa;
+            padding: 5rem 5%;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .dashboard-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .dashboard-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            display: block;
+        }
+        .dashboard-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+            display: block;
+        }
+        .dashboard-highlight {
+            background: linear-gradient(135deg, #c9a96e, #d4a574);
+            color: #fff;
+        }
+        .dashboard-highlight .dashboard-value {
+            color: #fff;
+        }
+        .dashboard-highlight .dashboard-label {
+            color: rgba(255,255,255,0.8);
+        }
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Persona section */
+        .persona-section {
+            background: #1a1a1a;
+            padding: 6rem 5%;
+        }
+        .persona-card {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .persona-avatar {
+            text-align: center;
+        }
+        .persona-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c9a96e, #d4a574);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .persona-initial {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: #fff;
+        }
+        .persona-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            color: #fff;
+            margin: 0 0 0.5rem 0;
+        }
+        .persona-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #c9a96e;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .persona-details h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 0 0 1rem 0;
+        }
+        .persona-details p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 1.5rem;
+        }
+        .persona-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .persona-stat {
+            text-align: center;
+        }
+        .persona-stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: #c9a96e;
+            display: block;
+        }
+        .persona-stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        @media (max-width: 768px) {
+            .persona-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .persona-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Pricing architecture */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .pricing-item {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .pricing-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .pricing-product {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        .pricing-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #c9a96e;
+        }
+        @media (max-width: 900px) {
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Launch phases */
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .phase-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .phase-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #c9a96e;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+        .phase-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .phase-time {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+        .phase-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.7);
+        }
+        @media (max-width: 900px) {
+            .phases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .phases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Analysis cards enhanced */
+        .analysis-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid #c9a96e;
+        }
+        .analysis-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin: 0 0 0.75rem 0;
+        }
+        .analysis-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #555;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">INA YU</a>
+            <div class="nav-links">
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <!-- Hero Section -->
+        <section class="stella-hero">
+            <div class="hero-content-centered">
+                <span class="hero-badge">Strategic Portfolio 2014</span>
+                <h1 class="hero-title-stella">Stella McCartney × H&M</h1>
+                <p class="hero-subtitle-stella">Luxury Meets Accessibility — A Strategic Analysis of the Designer Collaboration that Redefined Fast Fashion</p>
+                
+                <div class="metrics-hero">
+                    <div class="metric-hero-item">
+                        <span class="metric-hero-value">$17.3M</span>
+                        <span class="metric-hero-label">Gross Sales</span>
+                    </div>
+                    <div class="metric-hero-item">
+                        <span class="metric-hero-value">50%</span>
+                        <span class="metric-hero-label">Gross Profit Margin</span>
+                    </div>
+                    <div class="metric-hero-item">
+                        <span class="metric-hero-value">1.7%</span>
+                        <span class="metric-hero-label">Marketing Spend</span>
+                    </div>
+                    <div class="metric-hero-item">
+                        <span class="metric-hero-value">0.29%</span>
+                        <span class="metric-hero-label">Return Rate</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meta Bar -->
+        <section class="project-meta-bar">
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span class="meta-label">Project Type</span>
+                    <span class="meta-value">Strategic Analysis</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Focus Areas</span>
+                    <span class="meta-value">Brand Collaboration, Marketing Strategy, Consumer Behavior</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Context</span>
+                    <span class="meta-value">Fashion Marketing Research</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Year</span>
+                    <span class="meta-value">2014</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consumer Lifestyle Image -->
+        <section class="visual-showcase">
+            <img src="https://www.genspark.ai/api/files/s/itO2tpn5" alt="H&M x Stella McCartney Consumer Lifestyle" class="showcase-image-full">
+        </section>
+        <div class="image-caption">
+            <span class="image-caption-text">Consumer Lifestyle — Target Persona Visual Identity</span>
+        </div>
+
+        <!-- Executive Summary -->
+        <section class="content-section">
+            <div class="section-grid">
+                <div class="section-label">
+                    <h2>Executive Summary</h2>
+                </div>
+                <div class="section-content">
+                    <p class="large-text">The collaboration successfully bridged the gap between mass market and high fashion, delivering exceptional profitability through a scarcity-driven strategy that generated $17.3M in gross sales while maintaining a 50% profit margin.</p>
+                    <p>This strategic analysis examines how H&M's pioneering designer collaboration with Stella McCartney created the "Accessible Luxury" paradigm—combining high-fashion design aesthetics with sustainable principles and a scarcity-driven launch model that would become the industry template for designer × mass-market partnerships.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Moodboard Image -->
+        <section class="visual-showcase">
+            <img src="https://www.genspark.ai/api/files/s/QfkDb1gL" alt="H&M x Stella McCartney Moodboard" class="showcase-image-full">
+        </section>
+        <div class="image-caption">
+            <span class="image-caption-text">Moodboard — Color Palette & Material Direction</span>
+        </div>
+
+        <!-- Financial Dashboard -->
+        <section class="financial-dashboard">
+            <div class="container">
+                <h2 class="section-title-center">Revenue Performance Dashboard</h2>
+                <p class="section-subtitle-center" style="color: #666; margin-top: -2rem; margin-bottom: 3rem;">Key financial metrics exceeding initial forecasts by 15%</p>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card dashboard-highlight">
+                        <span class="dashboard-value">$17.3M</span>
+                        <span class="dashboard-label">Gross Sales</span>
+                    </div>
+                    <div class="dashboard-card">
+                        <span class="dashboard-value">$8.9M</span>
+                        <span class="dashboard-label">Gross Profit</span>
+                    </div>
+                    <div class="dashboard-card">
+                        <span class="dashboard-value">$294.5K</span>
+                        <span class="dashboard-label">Marketing Investment</span>
+                    </div>
+                    <div class="dashboard-card">
+                        <span class="dashboard-value">$58.67</span>
+                        <span class="dashboard-label">Revenue per $1 Spent</span>
+                    </div>
+                    <div class="dashboard-card">
+                        <span class="dashboard-value">$184.50</span>
+                        <span class="dashboard-label">Average Order Value</span>
+                    </div>
+                    <div class="dashboard-card">
+                        <span class="dashboard-value">+2.5%</span>
+                        <span class="dashboard-label">Above Target AOV</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Rationale -->
+        <section class="content-section">
+            <div class="section-grid">
+                <div class="section-label">
+                    <h2>Strategic Rationale</h2>
+                </div>
+                <div class="section-content">
+                    <h3>Accessible Luxury Positioning</h3>
+                    <p>The partnership addressed a fundamental market gap: style-conscious consumers who aspired to designer aesthetics but couldn't access luxury price points. Stella McCartney's reputation for sustainable, wearable luxury aligned perfectly with H&M's goal to offer "fashion and quality at the best price."</p>
+                    
+                    <h3>Pricing Architecture</h3>
+                    <p>Strategic pricing at $60–$150 positioned the collection 2–3× above typical mass market pricing, yet 90% below mainline luxury—creating the perception of exceptional value without compromising brand elevation.</p>
+                    
+                    <div class="pricing-grid">
+                        <div class="pricing-item">
+                            <div class="pricing-product">Skirt</div>
+                            <div class="pricing-value">$59.99</div>
+                        </div>
+                        <div class="pricing-item">
+                            <div class="pricing-product">Blouse</div>
+                            <div class="pricing-value">$67.99</div>
+                        </div>
+                        <div class="pricing-item">
+                            <div class="pricing-product">Pants</div>
+                            <div class="pricing-value">$69.99</div>
+                        </div>
+                        <div class="pricing-item">
+                            <div class="pricing-product">Jacket</div>
+                            <div class="pricing-value">$99.99</div>
+                        </div>
+                        <div class="pricing-item">
+                            <div class="pricing-product">Dress</div>
+                            <div class="pricing-value">$149.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Persona -->
+        <section class="persona-section">
+            <div class="persona-card">
+                <div class="persona-avatar">
+                    <div class="persona-circle">
+                        <span class="persona-initial">K</span>
+                    </div>
+                    <h3 class="persona-name">Keren</h3>
+                    <p class="persona-title">Target Consumer Persona</p>
+                </div>
+                <div class="persona-details">
+                    <h3>Audience Strategy: The Aspirational Professional</h3>
+                    <p>27-year-old Junior Management Analyst based in Washington D.C. She lives in a 1-bedroom high-rise, enjoys social events, and frequently window shops at Neiman Marcus. Her shopping behavior reflects a desire to mimic management's high-quality style while working within budget constraints—primarily shopping at Zara and H&M.</p>
+                    <p>The collaboration directly addresses her core tension: the aspiration for designer aesthetics constrained by practical financial realities. She values pieces that signal sophistication without requiring luxury-tier investment.</p>
+                    
+                    <div class="persona-stats">
+                        <div class="persona-stat">
+                            <span class="persona-stat-value">$65K</span>
+                            <span class="persona-stat-label">Annual Income</span>
+                        </div>
+                        <div class="persona-stat">
+                            <span class="persona-stat-value">Daily</span>
+                            <span class="persona-stat-label">Instagram Usage</span>
+                        </div>
+                        <div class="persona-stat">
+                            <span class="persona-stat-value">3×/week</span>
+                            <span class="persona-stat-label">Facebook Engagement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Communications Strategy -->
+        <section class="bg-dark-enhanced">
+            <div class="container">
+                <h2 class="section-title-center" style="color: #fff;">Communications Strategy</h2>
+                <p style="text-align: center; color: rgba(255,255,255,0.6); margin-top: -2rem; margin-bottom: 3rem;">Four-phase launch roadmap maximizing viral impact</p>
+                
+                <div class="phases-grid">
+                    <div class="phase-card">
+                        <div class="phase-number">Phase 01</div>
+                        <div class="phase-title">Seeding</div>
+                        <div class="phase-time">June</div>
+                        <div class="phase-desc">Initial influencer outreach and fashion editor previews to build industry anticipation</div>
+                    </div>
+                    <div class="phase-card">
+                        <div class="phase-number">Phase 02</div>
+                        <div class="phase-title">Build-Up</div>
+                        <div class="phase-time">July</div>
+                        <div class="phase-desc">Strategic press releases and celebrity seeding to generate organic media coverage</div>
+                    </div>
+                    <div class="phase-card">
+                        <div class="phase-number">Phase 03</div>
+                        <div class="phase-title">Max Visibility</div>
+                        <div class="phase-time">August</div>
+                        <div class="phase-desc">Vogue/Elle features, VIP fashion show, Times Square billboard takeover</div>
+                    </div>
+                    <div class="phase-card">
+                        <div class="phase-number">Phase 04</div>
+                        <div class="phase-title">Conversion</div>
+                        <div class="phase-time">September 3</div>
+                        <div class="phase-desc">Launch day execution with real-time social amplification of queue lines</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Alignment Analysis -->
+        <section class="content-section">
+            <div class="section-grid">
+                <div class="section-label">
+                    <h2>Brand Alignment</h2>
+                </div>
+                <div class="section-content">
+                    <h3>Shared Value Architecture</h3>
+                    <div class="comparison-table">
+                        <div class="table-row table-header">
+                            <div class="table-cell">Dimension</div>
+                            <div class="table-cell">Stella McCartney</div>
+                            <div class="table-cell">H&M</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Sustainability</div>
+                            <div class="table-cell">Pioneer in ethical luxury, no leather/fur, eco-conscious DNA</div>
+                            <div class="table-cell">Growing conscious collection, recycling programs</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Target Consumer</div>
+                            <div class="table-cell">Fashion-forward, values-driven women</div>
+                            <div class="table-cell">Trend-conscious, price-sensitive shoppers</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Design Philosophy</div>
+                            <div class="table-cell">Effortless, feminine, wearable luxury</div>
+                            <div class="table-cell">Fast fashion interpretation of runway trends</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">Price Position</div>
+                            <div class="table-cell">Accessible luxury ($500–$3,000)</div>
+                            <div class="table-cell">Mass market ($20–$100)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marketing Strategy -->
+        <section class="content-section bg-dark">
+            <div class="container">
+                <h2 class="section-title-center">Marketing Strategy Analysis</h2>
+                <div class="features-grid-pro">
+                    <div class="feature-card-pro">
+                        <div class="feature-number">01</div>
+                        <h3>Scarcity Marketing</h3>
+                        <p>Limited quantities and one-time availability created urgency—the "one-time-only" strategy drove full-price sell-through and eliminated markdown risk.</p>
+                    </div>
+                    <div class="feature-card-pro">
+                        <div class="feature-number">02</div>
+                        <h3>Celebrity Seeding</h3>
+                        <p>Strategic placement on celebrities and influencers before launch amplified desirability, generating $58.67 revenue per marketing dollar spent.</p>
+                    </div>
+                    <div class="feature-card-pro">
+                        <div class="feature-number">03</div>
+                        <h3>Media Integration</h3>
+                        <p>Fashion magazine exclusives and editorial coverage positioned the collaboration as a cultural moment—transforming product launch into fashion event.</p>
+                    </div>
+                    <div class="feature-card-pro">
+                        <div class="feature-number">04</div>
+                        <h3>Event Marketing</h3>
+                        <p>Launch queues became social proof and media content, with Times Square billboards creating mass awareness at minimal incremental cost.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consumer Insights -->
+        <section class="content-section">
+            <div class="section-grid">
+                <div class="section-label">
+                    <h2>Consumer Insights</h2>
+                </div>
+                <div class="section-content">
+                    <h3>Purchase Motivation Analysis</h3>
+                    <ul class="styled-list">
+                        <li><strong>Aspirational Access:</strong> Opportunity to own "designer" at accessible price points—90% below mainline luxury</li>
+                        <li><strong>Social Currency:</strong> Being part of a cultural moment and possessing "in-the-know" status among peers</li>
+                        <li><strong>Design Quality:</strong> Genuine appeal of Stella McCartney's aesthetic sensibility and eco-conscious positioning</li>
+                        <li><strong>Investment Mentality:</strong> Perception that limited pieces would retain or increase value on secondary markets</li>
+                    </ul>
+                    
+                    <h3>Post-Purchase Behavior</h3>
+                    <p>Secondary market analysis revealed significant resale activity at 200–400% markup immediately after sellout—validating the collaboration's cultural cachet and demonstrating superior product-market fit (0.29% return rate).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Implications - ENHANCED VISIBILITY -->
+        <section class="implications-section">
+            <div class="section-grid" style="max-width: 1200px; margin: 0 auto;">
+                <div class="section-label">
+                    <h2>Strategic Implications</h2>
+                </div>
+                <div class="section-content">
+                    <div class="implication-block">
+                        <h3>For Fast Fashion Retailers</h3>
+                        <p>The collaboration demonstrated that brand elevation through designer partnerships could attract new customer segments without alienating the core price-conscious base. It proved that "cheap" and "chic" weren't mutually exclusive—elevating H&M from "fast fashion retailer" to "fashion destination."</p>
+                    </div>
+                    <div class="implication-block">
+                        <h3>For Luxury Brands</h3>
+                        <p>While initially controversial, the partnership showed luxury designers could expand reach without diluting brand equity—if managed with appropriate scarcity and creative integrity. The key was maintaining "halo effect" through limited availability and design authenticity.</p>
+                    </div>
+                    <div class="implication-block">
+                        <h3>For the Fashion Industry</h3>
+                        <p>The success triggered an industry-wide shift toward "democratization of fashion," influencing everything from Target's designer partnerships to Net-a-Porter's more accessible capsule collections. It established the permanent template for designer × mass-market collaboration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Critical Analysis -->
+        <section class="content-section bg-light">
+            <div class="section-grid">
+                <div class="section-label">
+                    <h2>Critical Analysis</h2>
+                </div>
+                <div class="section-content">
+                    <div class="analysis-card">
+                        <h4>Sustainability Paradox</h4>
+                        <p>The irony of a sustainability-focused designer partnering with fast fashion—the antithesis of sustainable consumption—raises questions about authentic values versus commercial opportunity. This tension defines the broader industry challenge of "conscious consumption" marketing.</p>
+                    </div>
+                    <div class="analysis-card">
+                        <h4>Democratization vs. Exclusivity</h4>
+                        <p>While positioned as "democratic fashion," the sellout-driven scarcity actually created new forms of exclusivity—benefiting early buyers and resellers over average consumers. The "accessible luxury" promise remained partially unfulfilled.</p>
+                    </div>
+                    <div class="analysis-card">
+                        <h4>Long-term Brand Equity</h4>
+                        <p>Questions persist about whether mass-market exposure ultimately strengthens or weakens luxury brand perception over repeated collaborations. The 0.29% return rate suggests strong product-market fit, but brand dilution risk requires ongoing monitoring.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Roadmap -->
+        <section class="content-section">
+            <div class="section-grid">
+                <div class="section-label">
+                    <h2>Strategic Roadmap</h2>
+                </div>
+                <div class="section-content">
+                    <h3>Next Steps & Recommendations</h3>
+                    <div class="takeaway-list">
+                        <div class="takeaway-item">
+                            <span class="takeaway-number">1</span>
+                            <div class="takeaway-content">
+                                <h4>0–3 Months: Size Optimization</h4>
+                                <p>Reduce Size 0 production by 60% and increase Sizes 6–8 by 25% based on sell-through velocity data.</p>
+                            </div>
+                        </div>
+                        <div class="takeaway-item">
+                            <span class="takeaway-number">2</span>
+                            <div class="takeaway-content">
+                                <h4>3–6 Months: Bundle Strategy</h4>
+                                <p>Introduce "Power Suit" coordinated bundle at $160 to increase average order value and cross-sell potential.</p>
+                            </div>
+                        </div>
+                        <div class="takeaway-item">
+                            <span class="takeaway-number">3</span>
+                            <div class="takeaway-content">
+                                <h4>6–12 Months: Retail Experience</h4>
+                                <p>Establish permanent "Collaboration Corners" in flagship stores to extend halo effect and create year-round brand elevation touchpoints.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Takeaways -->
+        <section class="content-section bg-light">
+            <div class="section-grid">
+                <div class="section-label">
+                    <h2>Key Takeaways</h2>
+                </div>
+                <div class="section-content">
+                    <div class="learning-grid">
+                        <div class="learning-card">
+                            <h4>Scarcity Amplifies Desire</h4>
+                            <p>Limited availability transforms products into cultural events—generating $58.67 revenue per marketing dollar through organic amplification.</p>
+                        </div>
+                        <div class="learning-card">
+                            <h4>Brand Equity is Transferable</h4>
+                            <p>Strategic partnerships can elevate mass-market perception when executed with creative authenticity and controlled distribution.</p>
+                        </div>
+                        <div class="learning-card">
+                            <h4>Value Perception is Relative</h4>
+                            <p>Context and branding matter more than intrinsic product cost—pricing at 2–3× above typical mass market still represents 90% discount from luxury.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section class="project-navigation">
+            <a href="project-eunice.html" class="nav-prev">
+                <span class="nav-label">Previous Project</span>
+                <span class="nav-title">Eunice-Ina</span>
+            </a>
+            <a href="project-healthcare.html" class="nav-next">
+                <span class="nav-label">Next Project</span>
+                <span class="nav-title">AI Healthcare+</span>
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">INA YU</span>
+                <span class="footer-copyright">© 2025</span>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:eunice-ina@naver.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/inayu" class="footer-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

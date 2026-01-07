@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Say Department Store VMD | Ina Yu Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project.css">
+    <style>
+        /* ==================== MAGAZINE STYLE LAYOUT ==================== */
+        
+        /* Full-bleed Hero */
+        .vmd-hero {
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+        }
+        .vmd-hero-bg {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4px;
+        }
+        .vmd-hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+        .vmd-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+        }
+        .vmd-hero-content {
+            position: relative;
+            z-index: 10;
+            padding: 4rem 5%;
+            color: white;
+            max-width: 800px;
+        }
+        .vmd-hero-tag {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .vmd-hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .vmd-hero-subtitle {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        /* Floating Stats */
+        .stats-bar {
+            background: white;
+            padding: 2.5rem 5%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            box-shadow: 0 -20px 60px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 20;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 500;
+            color: #EC4899;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Season Hero - Full Width */
+        .season-hero-full {
+            height: 80vh;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .season-hero-full img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .season-hero-full .overlay {
+            position: absolute;
+            inset: 0;
+        }
+        .season-hero-full .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+        .season-tag-pill {
+            display: inline-block;
+            padding: 0.6rem 2rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .season-big-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 10vw, 7rem);
+            font-weight: 400;
+            line-height: 1;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+        }
+        .season-desc {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Bento Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: minmax(200px, auto);
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .bento-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+        .bento-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bento-item:hover img {
+            transform: scale(1.05);
+        }
+        .bento-item .bento-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1.5rem 1.5rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+        .bento-item:hover .bento-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .bento-large { grid-column: span 8; grid-row: span 2; }
+        .bento-medium { grid-column: span 4; grid-row: span 2; }
+        .bento-wide { grid-column: span 6; grid-row: span 1; }
+        .bento-square { grid-column: span 4; grid-row: span 1; }
+        .bento-tall { grid-column: span 4; grid-row: span 2; }
+
+        /* Split Section */
+        .split-magazine {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+        .split-magazine.reverse { direction: rtl; }
+        .split-magazine.reverse > * { direction: ltr; }
+        .split-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .split-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .split-content-box {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .split-content-box.dark {
+            background: #1a1a1a;
+            color: white;
+        }
+        .split-content-box.gradient-spring {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            color: #1a1a1a;
+        }
+        .split-content-box.gradient-summer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .split-content-box.gradient-fall {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        .split-content-box.gradient-chuseok {
+            background: linear-gradient(135deg, #d4a574 0%, #8B4513 100%);
+            color: white;
+        }
+
+        /* Design Elements Grid */
+        .elements-showcase {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .element-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .element-card.light {
+            background: rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .element-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .element-card.light .element-icon {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        /* Horizontal Gallery */
+        .gallery-scroll-container {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .gallery-scroll-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .gallery-scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .gallery-scroll-container::-webkit-scrollbar-thumb {
+            background: #EC4899;
+            border-radius: 3px;
+        }
+        .gallery-scroll {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem 5%;
+        }
+        .gallery-scroll-item {
+            flex: 0 0 500px;
+            scroll-snap-align: start;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            position: relative;
+        }
+        .gallery-scroll-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        .gallery-scroll-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+        }
+
+        /* Process Timeline */
+        .process-timeline {
+            position: relative;
+            padding: 3rem 0;
+        }
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: linear-gradient(90deg, #EC4899, #F97316, #FBBF24, #84fab0);
+        }
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5%;
+            position: relative;
+        }
+        .process-step {
+            text-align: center;
+            background: white;
+            padding: 0 1rem;
+        }
+        .step-number {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Masonry Gallery */
+        .masonry-container {
+            columns: 3;
+            column-gap: 1rem;
+            padding: 1rem;
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        .masonry-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .masonry-item:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Quote Section Enhanced */
+        .quote-enhanced {
+            background: linear-gradient(135deg, #EC4899 0%, #F97316 50%, #FBBF24 100%);
+            padding: 6rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .quote-enhanced::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20rem;
+            position: absolute;
+            top: -3rem;
+            left: 5%;
+            opacity: 0.1;
+            color: white;
+        }
+        .quote-enhanced blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 400;
+            color: white;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Learnings Cards */
+        .learnings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .learning-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .learning-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+        .learning-card-header {
+            height: 8px;
+        }
+        .learning-card-content {
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .bento-large, .bento-medium, .bento-wide, .bento-square, .bento-tall {
+                grid-column: span 6;
+                grid-row: span 1;
+            }
+            .split-magazine {
+                grid-template-columns: 1fr;
+            }
+            .elements-showcase {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .masonry-container {
+                columns: 2;
+            }
+        }
+        @media (max-width: 768px) {
+            .vmd-hero-bg {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .bento-large, .bento-medium, .bento-wide, .bento-square, .bento-tall {
+                grid-column: span 12;
+            }
+            .gallery-scroll-item {
+                flex: 0 0 85vw;
+            }
+            .process-steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .process-timeline::before {
+                display: none;
+            }
+            .learnings-grid {
+                grid-template-columns: 1fr;
+            }
+            .masonry-container {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">INA YU</a>
+            <div class="nav-links">
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="vmd-hero">
+        <div class="vmd-hero-bg">
+            <img src="https://www.genspark.ai/api/files/s/VbLFENY7" alt="Spring">
+            <img src="https://www.genspark.ai/api/files/s/nfMIlJ1s" alt="Summer">
+            <img src="https://www.genspark.ai/api/files/s/d1oQCVW1" alt="Fall">
+            <img src="https://www.genspark.ai/api/files/s/Z8xfiZhm" alt="Chuseok">
+        </div>
+        <div class="vmd-hero-overlay"></div>
+        <div class="vmd-hero-content">
+            <span class="vmd-hero-tag">Visual Merchandising Design • 2008–2010</span>
+            <h1 class="vmd-hero-title">Say Department Store</h1>
+            <p class="vmd-hero-subtitle">Transforming retail space into immersive storytelling experiences through seasonal VMD campaigns, cultural narratives, and innovative spatial design in Daejeon, Korea.</p>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Seasonal Campaigns</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Years of Design</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Seasons Covered</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">360°</div>
+            <div class="stat-label">Spatial Experience</div>
+        </div>
+    </div>
+
+    <!-- ==================== OVERVIEW ==================== -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Project Overview</div>
+                <h2 class="section-title">Where Retail Meets Art</h2>
+            </div>
+            <div class="two-column">
+                <div class="column-content">
+                    <p>Visual Merchandising at Say Department Store required balancing brand identity with seasonal narratives. Each campaign needed to attract foot traffic, communicate promotional themes, and create memorable moments—all while maintaining the store's premium positioning.</p>
+                    <p style="margin-top: 1rem;">Over two years, I designed and executed <strong>8+ seasonal campaigns</strong> spanning Spring, Summer, Fall, Winter, and cultural holidays like Chuseok (Korean Thanksgiving), creating cohesive visual experiences across window displays, interior installations, ceiling designs, and promotional graphics.</p>
+                </div>
+                <div class="column-content">
+                    <div class="highlight-box">
+                        <h4>Design Philosophy</h4>
+                        <p>"Every window tells a story. The best VMD doesn't just display products—it invites customers into a world they want to inhabit. Each season brings an opportunity to create cultural dialogue through spatial design."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SPRING 2010: DANCING OF SPRING ==================== -->
+    <section class="season-hero-full">
+        <img src="https://www.genspark.ai/api/files/s/VbLFENY7" alt="Dancing of Spring">
+        <div class="overlay" style="background: linear-gradient(180deg, rgba(132,250,176,0.3) 0%, rgba(143,211,244,0.6) 100%);"></div>
+        <div class="content">
+            <span class="season-tag-pill">Spring 2010</span>
+            <h2 class="season-big-title">Dancing of Spring</h2>
+            <p class="season-desc">A celebration of renewal and feminine elegance through floral motifs, butterflies, and dynamic movement. Light silk fabrics move with the breeze, expressing the lightness of spring.</p>
+        </div>
+    </section>
+
+    <!-- Spring Concept Split -->
+    <section class="split-magazine">
+        <div class="split-image-container">
+            <img src="https://www.genspark.ai/api/files/s/VbLFENY7" alt="Spring Concept Board">
+        </div>
+        <div class="split-content-box gradient-spring">
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.7; margin-bottom: 1rem;">Design Concept</div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 1.5rem;">The Flourishing Atmosphere</h3>
+            <p style="line-height: 1.9; margin-bottom: 1.5rem;">Design motifs express the beginning of a new season—blooming flowers, the transformation of women, and butterflies. The main color scheme consists of bright and vibrant colors: <strong>yellow, orange, pink, and green</strong>.</p>
+            <p style="line-height: 1.9;">For the main installation, <strong>light and delicate silk fabrics</strong> were used to express the lightness of spring as they move to the breeze.</p>
+            <div class="elements-showcase">
+                <div class="element-card light">
+                    <div class="element-icon">🦋</div>
+                    <div style="font-weight: 600;">Butterflies</div>
+                    <div style="font-size: 0.8rem; opacity: 0.7;">Transformation</div>
+                </div>
+                <div class="element-card light">
+                    <div class="element-icon">🌸</div>
+                    <div style="font-weight: 600;">Flowers</div>
+                    <div style="font-size: 0.8rem; opacity: 0.7;">New Beginnings</div>
+                </div>
+                <div class="element-card light">
+                    <div class="element-icon">💃</div>
+                    <div style="font-weight: 600;">Movement</div>
+                    <div style="font-size: 0.8rem; opacity: 0.7;">Dynamic Flow</div>
+                </div>
+                <div class="element-card light">
+                    <div class="element-icon">🎀</div>
+                    <div style="font-weight: 600;">Silk Fabric</div>
+                    <div style="font-size: 0.8rem; opacity: 0.7;">Lightness</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spring 2008 Qubist -->
+    <section class="content-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Spring 2008</div>
+                <h2 class="section-title">Qubist in the Spring</h2>
+                <p class="section-description">Outdoor advertising campaign featuring fashion illustration with modern artistic interpretation</p>
+            </div>
+            <div style="margin-top: 3rem;">
+                <img src="https://www.genspark.ai/api/files/s/GUPnmSiM" alt="Qubist Spring Outdoor Ad" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Spring/Summer Gallery -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Spring/Summer 2010</div>
+                <h2 class="section-title">Complete Installation Gallery</h2>
+                <p class="section-description">Comprehensive view of seasonal installations including exterior banners, interior mobiles, ceiling chandeliers, and storefront displays</p>
+            </div>
+        </div>
+        <div style="margin-top: 2rem;">
+            <img src="https://www.genspark.ai/api/files/s/hYRB4jsr" alt="Spring Summer Gallery" style="width: 100%; display: block;">
+        </div>
+    </section>
+
+    <!-- ==================== SUMMER 2010: COOL FANTASY ==================== -->
+    <section class="season-hero-full">
+        <img src="https://www.genspark.ai/api/files/s/nfMIlJ1s" alt="Cool Fantasy Undersea">
+        <div class="overlay" style="background: linear-gradient(180deg, rgba(102,126,234,0.4) 0%, rgba(118,75,162,0.7) 100%);"></div>
+        <div class="content">
+            <span class="season-tag-pill">Summer 2010</span>
+            <h2 class="season-big-title">Cool Fantasy Undersea</h2>
+            <p class="season-desc">Using blue tones, glass mirrors, and acrylic materials to create a cool underwater atmosphere throughout the entire store.</p>
+        </div>
+    </section>
+
+    <!-- Summer Concept Split -->
+    <section class="split-magazine reverse">
+        <div class="split-image-container">
+            <img src="https://www.genspark.ai/api/files/s/nfMIlJ1s" alt="Summer Concept">
+        </div>
+        <div class="split-content-box gradient-summer">
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.8; margin-bottom: 1rem;">Design Concept</div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 1.5rem;">Underwater Paradise</h3>
+            <p style="line-height: 1.9; margin-bottom: 1.5rem;">The three-story void space in the main atrium was decorated with <strong>patterned mobiles spelling the word "SUMMER"</strong>. Below the mobiles were sand, corals, and seashells depicting the landscape under the sea.</p>
+            <p style="line-height: 1.9;">The minor columns throughout the store were covered with <strong>wave patterns</strong> with occasional water bubbles, corals, and surfers to create visual unity.</p>
+            <div class="elements-showcase">
+                <div class="element-card">
+                    <div class="element-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">🌊</div>
+                    <div style="font-weight: 600;">Wave Patterns</div>
+                    <div style="font-size: 0.8rem; opacity: 0.7;">Column Wraps</div>
+                </div>
+                <div class="element-card">
+                    <div class="element-icon" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">🐚</div>
+                    <div style="font-weight: 600;">Seashells</div>
+                    <div style="font-size: 0.8rem; opacity: 0.7;">Floor Décor</div>
+                </div>
+                <div class="element-card">
+                    <div class="element-icon" style="background: linear-gradient(135deg, #fa709a, #fee140);">🪸</div>
+                    <div style="font-weight: 600;">Corals</div>
+                    <div style="font-size: 0.8rem; opacity: 0.7;">3D Installation</div>
+                </div>
+                <div class="element-card">
+                    <div class="element-icon" style="background: linear-gradient(135deg, #a8edea, #fed6e3);">🏄</div>
+                    <div style="font-weight: 600;">Surfers</div>
+                    <div style="font-size: 0.8rem; opacity: 0.7;">Dynamic Elements</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FALL SEASONS ==================== -->
+    <section class="season-hero-full">
+        <img src="https://www.genspark.ai/api/files/s/d1oQCVW1" alt="Fall Campaign">
+        <div class="overlay" style="background: linear-gradient(180deg, rgba(240,147,251,0.3) 0%, rgba(245,87,108,0.6) 100%);"></div>
+        <div class="content">
+            <span class="season-tag-pill">Fall 2008</span>
+            <h2 class="season-big-title">Peace of Mind</h2>
+            <p class="season-desc">가을 (Autumn) — Reflecting the weather and atmosphere of fall through autumn leaves, sky, wind, and rain using warm golden orange tones.</p>
+        </div>
+    </section>
+
+    <!-- Fall Concept Split -->
+    <section class="split-magazine">
+        <div class="split-image-container">
+            <img src="https://www.genspark.ai/api/files/s/d1oQCVW1" alt="Fall Concept Board">
+        </div>
+        <div class="split-content-box gradient-fall">
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.8; margin-bottom: 1rem;">Design Concept</div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 1.5rem;">Weather & Atmosphere</h3>
+            <p style="line-height: 1.9; margin-bottom: 1.5rem;">The main design components include <strong>autumn leaves, the sky, wind, and rain</strong>. The proposal includes store banners, column decorations, central ceiling piece, and show window.</p>
+            <p style="line-height: 1.9;">For the central ceiling, <strong>golden orange colored strings and fabric</strong> were attached to the ceiling and allowed to move as air flows—representing the falling of autumn leaves. The show window uses strings as backdrop with <strong>oriental paper umbrella shapes</strong> creating the feeling of autumn rain.</p>
+        </div>
+    </section>
+
+    <!-- Fall 2009 Gallery -->
+    <section class="content-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Fall 2009</div>
+                <h2 class="section-title">Retrospective Installation</h2>
+                <p class="section-description">Comprehensive seasonal display featuring romantic autumn imagery across all store touchpoints</p>
+            </div>
+            <div style="margin-top: 3rem;">
+                <img src="https://www.genspark.ai/api/files/s/Zewl8wtW" alt="Fall 2009 Gallery" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WINTER SECTION ==================== -->
+    <section class="season-hero-full">
+        <img src="https://www.genspark.ai/api/files/s/5dNuJB9m" alt="Winter Christmas">
+        <div class="overlay" style="background: linear-gradient(180deg, rgba(0,0,50,0.4) 0%, rgba(100,0,150,0.6) 100%);"></div>
+        <div class="content">
+            <span class="season-tag-pill">Winter 2009</span>
+            <h2 class="season-big-title">Enchanted Forest</h2>
+            <p class="season-desc">Magical winter wonderland featuring illuminated trees, red ornaments, and immersive ceiling installations creating a festive shopping atmosphere.</p>
+        </div>
+    </section>
+
+    <!-- Winter Gallery -->
+    <section class="content-section">
+        <div class="section-container">
+            <div style="margin-top: 2rem;">
+                <img src="https://www.genspark.ai/api/files/s/5dNuJB9m" alt="Winter Installations" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+            </div>
+            <div class="elements-showcase" style="margin-top: 3rem;">
+                <div class="element-card light">
+                    <div class="element-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">🎄</div>
+                    <div style="font-weight: 600; color: #333;">Window Display</div>
+                    <div style="font-size: 0.8rem; color: #666;">Illuminated Trees</div>
+                </div>
+                <div class="element-card light">
+                    <div class="element-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">✨</div>
+                    <div style="font-weight: 600; color: #333;">Ceiling Installation</div>
+                    <div style="font-size: 0.8rem; color: #666;">Hanging Branches</div>
+                </div>
+                <div class="element-card light">
+                    <div class="element-icon" style="background: linear-gradient(135deg, #ff6b6b, #ee5a5a);">🔴</div>
+                    <div style="font-weight: 600; color: #333;">Pillar Installation</div>
+                    <div style="font-size: 0.8rem; color: #666;">Red Ornaments</div>
+                </div>
+                <div class="element-card light">
+                    <div class="element-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">💡</div>
+                    <div style="font-weight: 600; color: #333;">LED Lighting</div>
+                    <div style="font-size: 0.8rem; color: #666;">Blue Accent</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CHUSEOK SECTION ==================== -->
+    <section class="season-hero-full">
+        <img src="https://www.genspark.ai/api/files/s/Z8xfiZhm" alt="Korean Thanksgiving">
+        <div class="overlay" style="background: linear-gradient(180deg, rgba(212,165,116,0.3) 0%, rgba(139,69,19,0.7) 100%);"></div>
+        <div class="content">
+            <span class="season-tag-pill">추석 Chuseok 2009</span>
+            <h2 class="season-big-title">한가위</h2>
+            <p class="season-desc">"미소를 머금은 우리네 전통탈처럼 모두가 행복한 한가위가 되오면 좋겠습니다"<br><span style="font-size: 0.9rem; opacity: 0.85;">Korean Thanksgiving celebration honoring traditional mask heritage</span></p>
+        </div>
+    </section>
+
+    <!-- Chuseok Split -->
+    <section class="split-magazine reverse">
+        <div class="split-image-container">
+            <img src="https://www.genspark.ai/api/files/s/Z8xfiZhm" alt="Chuseok Campaign">
+        </div>
+        <div class="split-content-box gradient-chuseok">
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.8; margin-bottom: 1rem;">Cultural Campaign</div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 1.5rem;">Traditional Korean Masks</h3>
+            <p style="line-height: 1.9; margin-bottom: 1.5rem;">Honoring Korean heritage through traditional mask motifs (탈) and calligraphy. The campaign integrates cultural symbolism—smiling masks representing wishes for happiness—while maintaining contemporary retail appeal.</p>
+            <p style="line-height: 1.9;">Design applications across outdoor banners, street banners, info desk screens, ceiling banners, and floor displays create a cohesive cultural experience throughout the store.</p>
+        </div>
+    </section>
+
+    <!-- ==================== BENTO GALLERY ==================== -->
+    <section class="content-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Campaign Gallery</div>
+                <h2 class="section-title">All Seasons at a Glance</h2>
+            </div>
+        </div>
+        <div class="bento-grid" style="margin-top: 2rem;">
+            <div class="bento-item bento-large">
+                <img src="https://www.genspark.ai/api/files/s/hYRB4jsr" alt="Spring Summer Complete">
+                <div class="bento-caption">
+                    <strong>Spring/Summer 2010</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.9;">Complete installation overview</p>
+                </div>
+            </div>
+            <div class="bento-item bento-medium">
+                <img src="https://www.genspark.ai/api/files/s/VbLFENY7" alt="Dancing of Spring">
+                <div class="bento-caption">
+                    <strong>Dancing of Spring</strong>
+                </div>
+            </div>
+            <div class="bento-item bento-wide">
+                <img src="https://www.genspark.ai/api/files/s/GUPnmSiM" alt="Qubist">
+                <div class="bento-caption">
+                    <strong>Qubist Spring 2008</strong>
+                </div>
+            </div>
+            <div class="bento-item bento-wide">
+                <img src="https://www.genspark.ai/api/files/s/nfMIlJ1s" alt="Cool Fantasy">
+                <div class="bento-caption">
+                    <strong>Cool Fantasy Undersea</strong>
+                </div>
+            </div>
+            <div class="bento-item bento-tall">
+                <img src="https://www.genspark.ai/api/files/s/d1oQCVW1" alt="Fall 2008">
+                <div class="bento-caption">
+                    <strong>Peace of Mind</strong>
+                    <p style="font-size: 0.85rem;">Fall 2008</p>
+                </div>
+            </div>
+            <div class="bento-item bento-square">
+                <img src="https://www.genspark.ai/api/files/s/5dNuJB9m" alt="Winter">
+                <div class="bento-caption">
+                    <strong>Enchanted Forest</strong>
+                </div>
+            </div>
+            <div class="bento-item bento-square">
+                <img src="https://www.genspark.ai/api/files/s/Z8xfiZhm" alt="Chuseok">
+                <div class="bento-caption">
+                    <strong>한가위 Chuseok</strong>
+                </div>
+            </div>
+            <div class="bento-item bento-square">
+                <img src="https://www.genspark.ai/api/files/s/Zewl8wtW" alt="Fall 2009">
+                <div class="bento-caption">
+                    <strong>Fall 2009 Retrospective</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FLOOR PLAN ==================== -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Space Planning</div>
+                <h2 class="section-title">2010 Floor Map Planning</h2>
+                <p class="section-description">Comprehensive floor-by-floor planning for optimal product placement and customer flow</p>
+            </div>
+            <div style="margin-top: 3rem;">
+                <img src="https://www.genspark.ai/api/files/s/5ZXKRo7o" alt="Floor Map Plans" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROCESS ==================== -->
+    <section class="content-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Design Process</div>
+                <h2 class="section-title">From Concept to Installation</h2>
+            </div>
+            <div class="process-timeline">
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number" style="background: linear-gradient(135deg, #f093fb, #f5576c);">01</div>
+                        <h4 style="font-weight: 600; color: #333; margin-bottom: 0.5rem;">Research</h4>
+                        <p style="color: #666; font-size: 0.9rem; max-width: 180px; margin: 0 auto;">Seasonal trends, cultural events, brand calendar analysis</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">02</div>
+                        <h4 style="font-weight: 600; color: #333; margin-bottom: 0.5rem;">Design</h4>
+                        <p style="color: #666; font-size: 0.9rem; max-width: 180px; margin: 0 auto;">Technical drawings, material specification, vendor coordination</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">03</div>
+                        <h4 style="font-weight: 600; color: #333; margin-bottom: 0.5rem;">Production</h4>
+                        <p style="color: #666; font-size: 0.9rem; max-width: 180px; margin: 0 auto;">Custom prop fabrication, overnight installation, quality control</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number" style="background: linear-gradient(135deg, #fa709a, #fee140);">04</div>
+                        <h4 style="font-weight: 600; color: #333; margin-bottom: 0.5rem;">Analysis</h4>
+                        <p style="color: #666; font-size: 0.9rem; max-width: 180px; margin: 0 auto;">Documentation, traffic tracking, feedback collection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote-enhanced">
+        <blockquote>
+            "Great VMD transforms shopping from transaction to experience. When customers pause to photograph your window, you've created more than display—you've created culture."
+        </blockquote>
+    </section>
+
+    <!-- ==================== KEY LEARNINGS ==================== -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Reflection</div>
+                <h2 class="section-title">Key Learnings</h2>
+            </div>
+            <div class="learnings-grid" style="margin-top: 3rem;">
+                <div class="learning-card">
+                    <div class="learning-card-header" style="background: linear-gradient(90deg, #EC4899, #f5576c);"></div>
+                    <div class="learning-card-content">
+                        <h4 style="font-weight: 600; color: #EC4899; margin-bottom: 1rem;">On Retail Storytelling</h4>
+                        <p style="color: #555; line-height: 1.8;">Effective VMD requires understanding both brand narrative and customer psychology. The best installations create emotional resonance that transcends product display—they make customers feel something before they buy anything.</p>
+                    </div>
+                </div>
+                <div class="learning-card">
+                    <div class="learning-card-header" style="background: linear-gradient(90deg, #F97316, #FBBF24);"></div>
+                    <div class="learning-card-content">
+                        <h4 style="font-weight: 600; color: #F97316; margin-bottom: 1rem;">On Cultural Integration</h4>
+                        <p style="color: #555; line-height: 1.8;">Korean holiday campaigns taught me to balance tradition with modernity. Cultural authenticity builds emotional connection, but execution must feel contemporary to avoid appearing dated or tokenistic.</p>
+                    </div>
+                </div>
+                <div class="learning-card">
+                    <div class="learning-card-header" style="background: linear-gradient(90deg, #84fab0, #8fd3f4);"></div>
+                    <div class="learning-card-content">
+                        <h4 style="font-weight: 600; color: #43a047; margin-bottom: 1rem;">On Spatial Design</h4>
+                        <p style="color: #555; line-height: 1.8;">Three-dimensional thinking is essential. From ceiling installations to floor displays, every vertical plane is an opportunity. The most impactful campaigns create immersive environments that surround customers in the seasonal narrative.</p>
+                    </div>
+                </div>
+                <div class="learning-card">
+                    <div class="learning-card-header" style="background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                    <div class="learning-card-content">
+                        <h4 style="font-weight: 600; color: #667eea; margin-bottom: 1rem;">On Material Innovation</h4>
+                        <p style="color: #555; line-height: 1.8;">Material selection defines the experience. Silk for spring's lightness, acrylic for summer's coolness, fabric strings for autumn's movement—each season demands unique material language that customers can feel, not just see.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Navigation -->
+    <nav class="project-navigation">
+        <a href="project-chiara.html" class="nav-prev">
+            <span class="nav-label">Previous Project</span>
+            <span class="nav-title">Chiara Ferragni IMC</span>
+        </a>
+        <a href="project-shplus.html" class="nav-next">
+            <span class="nav-label">Next Project</span>
+            <span class="nav-title">SHPLUS W-Mall</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">INA YU</span>
+                <span class="footer-copyright">© 2025</span>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:eunice-ina@naver.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/inayu" class="footer-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

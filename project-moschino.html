@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moschino Strategic Repositioning | Ina Yu Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project.css">
+    <style>
+        .project-hero-moschino {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%), 
+                        url('https://www.genspark.ai/api/files/s/VIsA2NVq') center center / cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+        }
+        .hero-badge {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 0.5rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .hero-title-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 12vw, 8rem);
+            font-weight: 300;
+            color: #fff;
+            margin: 0 0 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .hero-subtitle-main {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            max-width: 800px;
+            line-height: 1.8;
+        }
+        .meta-bar-enhanced {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        .meta-bar-enhanced .meta-item {
+            padding: 2.5rem 2rem;
+            border-right: 1px solid #eee;
+            text-align: center;
+        }
+        .meta-bar-enhanced .meta-item:last-child {
+            border-right: none;
+        }
+        .meta-bar-enhanced .meta-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.5rem;
+        }
+        .meta-bar-enhanced .meta-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        @media (max-width: 968px) {
+            .meta-bar-enhanced {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .meta-bar-enhanced {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .diagnosis-section {
+            padding: 6rem 5%;
+            background: #fafafa;
+        }
+        .diagnosis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .diagnosis-left h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        .diagnosis-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #666;
+            border-left: 3px solid #1a1a1a;
+            padding-left: 2rem;
+            margin: 2rem 0;
+            line-height: 1.6;
+        }
+        .gap-analysis-card {
+            background: #fff;
+            padding: 2.5rem;
+            border: 1px solid #eee;
+            margin-bottom: 1.5rem;
+        }
+        .gap-analysis-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .gap-analysis-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.7;
+        }
+        .competitive-matrix {
+            padding: 6rem 5%;
+            background: #1a1a1a;
+        }
+        .matrix-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .matrix-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+        .matrix-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #fff;
+        }
+        .matrix-table {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+        .matrix-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .matrix-table th {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+            padding: 1.5rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .matrix-table td {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.85);
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .matrix-table tr.highlight {
+            background: rgba(255,255,255,0.05);
+        }
+        .matrix-table .brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        .tier-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.8rem;
+            border-radius: 2px;
+        }
+        .tier-1 { background: #d4af37; color: #000; }
+        .tier-mid { background: rgba(255,255,255,0.2); color: #fff; }
+        .evolution-section {
+            padding: 6rem 5%;
+            background: #fff;
+        }
+        .evolution-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .evolution-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .evolution-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .era-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .era-card {
+            padding: 3rem;
+            border: 1px solid #eee;
+            border-right: none;
+            position: relative;
+        }
+        .era-card:last-child {
+            border-right: 1px solid #eee;
+        }
+        .era-card.highlight-era {
+            background: #1a1a1a;
+            border-color: #1a1a1a;
+        }
+        .era-card.highlight-era * {
+            color: #fff;
+        }
+        .era-card.highlight-era .era-label {
+            color: rgba(255,255,255,0.6);
+        }
+        .era-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .era-years {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .era-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+        .era-description {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #666;
+        }
+        .era-milestone {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .era-milestone-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 0.5rem;
+        }
+        .era-milestone-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+        }
+        @media (max-width: 900px) {
+            .era-cards {
+                grid-template-columns: 1fr;
+            }
+            .era-card {
+                border-right: 1px solid #eee;
+                border-bottom: none;
+            }
+            .era-card:last-child {
+                border-bottom: 1px solid #eee;
+            }
+        }
+        .strategy-section {
+            padding: 6rem 5%;
+            background: #f5f5f5;
+        }
+        .strategy-header {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        .strategy-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .strategy-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+        .strategy-header p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        .strategy-pillars {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pillar-card {
+            background: #fff;
+            padding: 3rem;
+            position: relative;
+        }
+        .pillar-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: #eee;
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+        }
+        .pillar-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        .pillar-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .pillar-tactics {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .pillar-tactics li {
+            font-size: 0.85rem;
+            color: #444;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .pillar-tactics li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #999;
+        }
+        @media (max-width: 768px) {
+            .strategy-pillars {
+                grid-template-columns: 1fr;
+            }
+        }
+        .results-section {
+            padding: 6rem 5%;
+            background: #fff;
+        }
+        .results-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .results-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .results-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .results-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            border: 1px solid #eee;
+        }
+        .metric-card {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-right: 1px solid #eee;
+        }
+        .metric-card:last-child {
+            border-right: none;
+        }
+        .metric-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        .metric-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+        }
+        .metric-context {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 900px) {
+            .results-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .metric-card:nth-child(2) {
+                border-right: none;
+            }
+            .metric-card:nth-child(1),
+            .metric-card:nth-child(2) {
+                border-bottom: 1px solid #eee;
+            }
+        }
+        .impact-stories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .impact-story {
+            padding: 2rem;
+            background: #fafafa;
+        }
+        .impact-year {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.75rem;
+        }
+        .impact-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+        }
+        .impact-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        @media (max-width: 768px) {
+            .impact-stories {
+                grid-template-columns: 1fr;
+            }
+        }
+        .quote-block {
+            padding: 6rem 5%;
+            background: #1a1a1a;
+            text-align: center;
+        }
+        .quote-block blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 400;
+            font-style: italic;
+            color: #fff;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .quote-block cite {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-style: normal;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-top: 2rem;
+        }
+        .insights-section {
+            padding: 6rem 5%;
+            background: #f9f9f9;
+        }
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .insight-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .insight-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+        .insight-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        @media (max-width: 768px) {
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .milestones-section {
+            padding: 6rem 5%;
+            background: #fff;
+        }
+        .milestones-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .milestones-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .milestones-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .milestones-timeline {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .milestones-timeline::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #ddd;
+        }
+        .milestone-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 1rem;
+        }
+        .milestone-dot {
+            width: 12px;
+            height: 12px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .milestone-year {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        .milestone-event {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .milestones-timeline {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .milestones-timeline::before {
+                top: 0;
+                bottom: 0;
+                left: 2rem;
+                right: auto;
+                width: 1px;
+                height: auto;
+            }
+            .milestone-item {
+                text-align: left;
+                padding-left: 4rem;
+            }
+            .milestone-dot {
+                position: absolute;
+                left: 1.5rem;
+                top: 0;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">INA YU</a>
+            <div class="nav-links">
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="project-hero-moschino">
+        <span class="hero-badge">AEFFE Group Strategy Workshop</span>
+        <h1 class="hero-title-main">Moschino</h1>
+        <p class="hero-subtitle-main">Strategic Repositioning & 30th Anniversary Review<br>Financial Diagnosis · Brand Architecture · Jeremy Scott Recruitment Pivot (2013)</p>
+    </section>
+
+    <!-- Meta Bar -->
+    <div class="meta-bar-enhanced">
+        <div class="meta-item">
+            <div class="meta-label">Role</div>
+            <div class="meta-value">Brand Strategist</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Context</div>
+            <div class="meta-value">SCAD MFA Research</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Duration</div>
+            <div class="meta-value">Fall 2013</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Focus</div>
+            <div class="meta-value">Luxury Brand Repositioning</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Markets</div>
+            <div class="meta-value">91 Countries</div>
+        </div>
+    </div>
+
+    <!-- Strategic Diagnosis -->
+    <section class="diagnosis-section">
+        <div class="diagnosis-grid">
+            <div class="diagnosis-left">
+                <h3>2013 Strategic Diagnosis:<br>The Identity Gap</h3>
+                <p class="diagnosis-quote">"While the brand maintains 'Pop Culture' relevance, the transition from 'Irony' to 'Sustainable Luxury' is required to compete with Tier 1 houses."</p>
+                <p style="font-size: 1rem; color: #666; line-height: 1.8; margin-top: 2rem;">At the 30-year mark, Moschino faced a critical inflection point. The brand's irreverent identity—built on Franco Moschino's anti-fashion statements—had become both its greatest asset and its primary constraint. Market perception positioned Moschino as "enjoyable but not investment-worthy," creating a significant gap between brand equity and pricing power.</p>
+            </div>
+            <div class="diagnosis-right">
+                <div class="gap-analysis-card">
+                    <h4>Heritage Strength</h4>
+                    <p>Franco Moschino's subversive creativity established unique brand DNA. The "Fashion System" critique and sculptural objects created lasting cultural relevance that competitors could not replicate.</p>
+                </div>
+                <div class="gap-analysis-card">
+                    <h4>Perception Gap</h4>
+                    <p>Quality and craftsmanship were undervalued relative to design innovation. The brand maintained "Mid-Level Quality Leverage" while competitors achieved "High Quality" positioning with similar price architecture.</p>
+                </div>
+                <div class="gap-analysis-card">
+                    <h4>Market Position</h4>
+                    <p>Competing with Miu Miu, Marc Jacobs, and Dsquared2 rather than aspirational targets: Gucci, Versace, Dolce & Gabbana. Premium pricing without premium quality perception.</p>
+                </div>
+                <div class="gap-analysis-card">
+                    <h4>Strategic Opportunity</h4>
+                    <p>Rising demand for "sustainable luxury" aligned with brand values. Gen Z and Millennial demographics sought authenticity over traditional luxury signifiers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Matrix -->
+    <section class="competitive-matrix">
+        <div class="matrix-header">
+            <div class="label">Competitive Landscape Analysis</div>
+            <h2>Market Positioning Framework</h2>
+        </div>
+        <div class="matrix-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Positioning</th>
+                        <th>Price Strategy</th>
+                        <th>Quality Leverage</th>
+                        <th>Tier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight">
+                        <td class="brand-name">Moschino (2013)</td>
+                        <td>Pop / Modern</td>
+                        <td>Premium High</td>
+                        <td>Mid-Level</td>
+                        <td><span class="tier-badge tier-mid">Mid-Tier</span></td>
+                    </tr>
+                    <tr>
+                        <td class="brand-name">Miu Miu</td>
+                        <td>Modern Feminine</td>
+                        <td>Premium High</td>
+                        <td>High Quality</td>
+                        <td><span class="tier-badge tier-1">Tier 1</span></td>
+                    </tr>
+                    <tr>
+                        <td class="brand-name">Marc Jacobs</td>
+                        <td>Urban Grunge</td>
+                        <td>Premium</td>
+                        <td>High Quality</td>
+                        <td><span class="tier-badge tier-1">Tier 1</span></td>
+                    </tr>
+                    <tr>
+                        <td class="brand-name">Dsquared2</td>
+                        <td>Sexy Rock</td>
+                        <td>High Price</td>
+                        <td>High Quality</td>
+                        <td><span class="tier-badge tier-1">Tier 1</span></td>
+                    </tr>
+                    <tr class="highlight">
+                        <td class="brand-name">Moschino (Target)</td>
+                        <td>Sexy / Modern / Wearable</td>
+                        <td>Premium High</td>
+                        <td>High Quality</td>
+                        <td><span class="tier-badge tier-1">Tier 1</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Brand Evolution -->
+    <section class="evolution-section">
+        <div class="evolution-header">
+            <div class="label">The 30-Year Heritage Evolution</div>
+            <h2>A Legacy of Irony</h2>
+        </div>
+        <div class="era-cards">
+            <div class="era-card">
+                <div class="era-label">Era I</div>
+                <div class="era-years">1983–1994</div>
+                <div class="era-title">The Franco Era</div>
+                <div class="era-description">Founder Franco Moschino challenged the "Fashion System" with satire and sculptural objects. Established brand DNA centered on wit, irony, and social commentary through "Social Awareness" campaigns. Created enduring cultural relevance that would define the house for three decades.</div>
+            </div>
+            <div class="era-card">
+                <div class="era-label">Era II</div>
+                <div class="era-years">1994–2013</div>
+                <div class="era-title">The Rossella Jardini Era</div>
+                <div class="era-description">Following Franco's passing, Rossella Jardini maintained brand continuity and legacy preservation. Expanded product categories and global distribution. However, innovation stagnated and brand relevance among younger consumers declined. Quality perception remained static.</div>
+            </div>
+            <div class="era-card highlight-era">
+                <div class="era-label">Era III</div>
+                <div class="era-years">Oct 2013–Present</div>
+                <div class="era-title">The Jeremy Scott Era</div>
+                <div class="era-description">Strategic appointment of Jeremy Scott as Creative Director—a calculated move to inject "Street Fashion" familiarity with public appeal. By blending the Moschino Archive with pop-culture virality, the brand captured Millennial and Gen Z demographics effectively.</div>
+                <div class="era-milestone">
+                    <div class="era-milestone-label">Key Appointment</div>
+                    <div class="era-milestone-value">Creative Director Recruitment Pivot</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Pillars -->
+    <section class="strategy-section">
+        <div class="strategy-header">
+            <div class="label">Future Repositioning Direction</div>
+            <h2>Four Pillars of Strategic Transformation</h2>
+            <p>The strategic framework centered on simultaneous movement across creative vision, quality perception, distribution strategy, and cultural conversation to achieve Tier 1 positioning.</p>
+        </div>
+        <div class="strategy-pillars">
+            <div class="pillar-card">
+                <div class="pillar-number">01</div>
+                <div class="pillar-title">From "Costume" to "Couture Quality"</div>
+                <div class="pillar-description">Elevate craftsmanship perception while maintaining accessible price architecture. Emphasize Italian manufacturing heritage and premium materials in all brand communications.</div>
+                <ul class="pillar-tactics">
+                    <li>Introduce "Couture Quality, Wearable Silhouettes" positioning</li>
+                    <li>Highlight Italian atelier craftsmanship in marketing</li>
+                    <li>Develop signature quality markers for authentication</li>
+                </ul>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-number">02</div>
+                <div class="pillar-title">"Pop" to "Sexy, Modern, Wearable"</div>
+                <div class="pillar-description">Evolve aesthetic language from purely ironic to commercially desirable. Maintain brand irreverence while creating actual wardrobe pieces that justify premium pricing.</div>
+                <ul class="pillar-tactics">
+                    <li>Balance statement pieces with everyday luxury</li>
+                    <li>Develop "wear beyond the runway" design philosophy</li>
+                    <li>Create cross-generational appeal through versatility</li>
+                </ul>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-number">03</div>
+                <div class="pillar-title">Tech-Showmanship & "See Now, Buy Now"</div>
+                <div class="pillar-description">Pioneer innovative retail experiences that capture impulse-driven fashion purchases. Leverage digital platforms for immediate post-show availability across 91 countries.</div>
+                <ul class="pillar-tactics">
+                    <li>Implement immediate post-show e-commerce availability</li>
+                    <li>Expand flagship footprint in Paris and luxury hubs</li>
+                    <li>Develop experiential retail concepts</li>
+                </ul>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-number">04</div>
+                <div class="pillar-title">Celebrity Power & Strategic Collaborations</div>
+                <div class="pillar-description">Leverage Scott's existing celebrity relationships and partnership experience to extend brand visibility beyond traditional fashion audiences.</div>
+                <ul class="pillar-tactics">
+                    <li>Activate Katy Perry, Miley Cyrus, Rihanna relationships</li>
+                    <li>Continue Adidas collaboration momentum</li>
+                    <li>Pursue unexpected brand partnerships (Smart Car)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historical Milestones -->
+    <section class="milestones-section">
+        <div class="milestones-header">
+            <div class="label">The Path to the 2013 Strategic Pivot</div>
+            <h2>Key Milestones</h2>
+        </div>
+        <div class="milestones-timeline">
+            <div class="milestone-item">
+                <div class="milestone-dot"></div>
+                <div class="milestone-year">1983</div>
+                <div class="milestone-event">Franco Moschino founds the house in Milan</div>
+            </div>
+            <div class="milestone-item">
+                <div class="milestone-dot"></div>
+                <div class="milestone-year">1989</div>
+                <div class="milestone-event">First Milan boutique opens on Via S.Andrea</div>
+            </div>
+            <div class="milestone-item">
+                <div class="milestone-dot"></div>
+                <div class="milestone-year">1999</div>
+                <div class="milestone-event">Aeffe Group acquires Moschino</div>
+            </div>
+            <div class="milestone-item">
+                <div class="milestone-dot"></div>
+                <div class="milestone-year">2008</div>
+                <div class="milestone-event">Love Moschino re-branding for accessibility segment</div>
+            </div>
+            <div class="milestone-item">
+                <div class="milestone-dot"></div>
+                <div class="milestone-year">2013</div>
+                <div class="milestone-event">30th Anniversary & Jeremy Scott recruitment</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Block -->
+    <section class="quote-block">
+        <blockquote>"The most successful luxury repositioning doesn't abandon heritage—it recontextualizes it for contemporary relevance while elevating quality perception."</blockquote>
+        <cite>Strategic Analysis Framework</cite>
+    </section>
+
+    <!-- Measured Results -->
+    <section class="results-section">
+        <div class="results-header">
+            <div class="label">Validation of Strategic Recommendations</div>
+            <h2>Post-Implementation Results (2013–2021)</h2>
+        </div>
+        <div class="results-metrics">
+            <div class="metric-card">
+                <div class="metric-value">+70%</div>
+                <div class="metric-label">Revenue Growth</div>
+                <div class="metric-context">€151.8M → €258.4M</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">10×</div>
+                <div class="metric-label">Sales Increase</div>
+                <div class="metric-context">Select Categories</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">91</div>
+                <div class="metric-label">Countries</div>
+                <div class="metric-context">E-commerce Distribution</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">10 Yrs</div>
+                <div class="metric-label">Creative Tenure</div>
+                <div class="metric-context">Jeremy Scott (2013–2023)</div>
+            </div>
+        </div>
+        <div class="impact-stories">
+            <div class="impact-story">
+                <div class="impact-year">2014</div>
+                <div class="impact-title">McDonald's Collection</div>
+                <div class="impact-description">Scott's debut collection featuring fast-food iconography went viral, demonstrating the power of pop culture integration. The collection sold out immediately and generated unprecedented media coverage.</div>
+            </div>
+            <div class="impact-story">
+                <div class="impact-year">2015</div>
+                <div class="impact-title">Barbie Collection</div>
+                <div class="impact-description">The ironic take on the Barbie persona captured millennial nostalgia while maintaining brand irreverence. Proved the "wearable statement" strategy could command premium pricing.</div>
+            </div>
+            <div class="impact-story">
+                <div class="impact-year">2016</div>
+                <div class="impact-title">Car Wash Couture</div>
+                <div class="impact-description">Models dressed as traffic agents in car wash-themed collection demonstrated continued ability to generate cultural moments. Validated "Tech-Showmanship" recommendation.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Insights -->
+    <section class="insights-section">
+        <div class="insights-grid">
+            <div class="insight-card">
+                <h4>On Luxury Brand Repositioning</h4>
+                <h3>Heritage as Competitive Advantage</h3>
+                <p>Successful luxury repositioning requires simultaneous movement on multiple fronts: creative vision, quality perception, distribution strategy, and cultural conversation. Isolated changes create dissonance. Legacy brands possess irreplaceable equity in their founding vision—the challenge is translation, not transformation.</p>
+            </div>
+            <div class="insight-card">
+                <h4>On Creative Leadership</h4>
+                <h3>The Strategic Recruitment Pivot</h3>
+                <p>Jeremy Scott's appointment was not merely a creative decision—it was a strategic maneuver to inject "Street Fashion" familiarity with public appeal. His understanding of pop culture, social media dynamics, and celebrity relationships aligned perfectly with millennial and Gen Z engagement strategies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Navigation -->
+    <nav class="project-navigation">
+        <a href="project-carrifree.html" class="nav-prev">
+            <span class="nav-label">Previous Project</span>
+            <span class="nav-title">Carrifree</span>
+        </a>
+        <a href="project-balenciaga.html" class="nav-next">
+            <span class="nav-label">Next Project</span>
+            <span class="nav-title">Balenciaga Analysis</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">INA YU</span>
+                <span class="footer-copyright">© 2025</span>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:eunice-ina@naver.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/inayu" class="footer-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -3,262 +3,500 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work | Ina Yu</title>
+    <title>Ina Yu | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="work.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            font-family: 'Cormorant Garamond', serif;
+            cursor: pointer;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        .intro-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .intro-name {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 300;
+            color: #fff;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeInUp 2s ease 0.5s forwards;
+            text-shadow: 0 0 60px rgba(255, 182, 193, 0.5);
+        }
+
+        .intro-title {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(0.8rem, 2vw, 1.2rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            margin-top: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 2s ease 1s forwards;
+        }
+
+        .intro-cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-top: 4rem;
+            opacity: 0;
+            animation: fadeInUp 2s ease 1.5s forwards, pulse 2s ease-in-out 3s infinite;
+        }
+
+        .intro-cta::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 1rem auto 0;
+            animation: expandLine 2s ease 2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes expandLine {
+            from { width: 0; }
+            to { width: 40px; }
+        }
+
+        /* Transition overlay */
+        .transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 1s ease;
+        }
+
+        .transition-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">INA YU</a>
-            <div class="nav-links">
-                <a href="work.html" class="nav-link active">Work</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <div id="canvas-container"></div>
+    
+    <div class="intro-content">
+        <h1 class="intro-name">Ina Yu</h1>
+        <p class="intro-title">Brand Strategist & Product Designer</p>
+        <p class="intro-cta">Click anywhere to enter</p>
+    </div>
 
-    <header class="page-header">
-        <h1 class="page-title">Selected Works</h1>
-        <p class="page-subtitle">Designing with strategy, data, and purpose</p>
-    </header>
+    <div class="transition-overlay" id="overlay"></div>
 
-    <section class="filter-section">
-        <div class="filter-container">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="product-innovation">Product Innovation</button>
-            <button class="filter-btn" data-filter="brand-strategy">Brand Strategy</button>
-            <button class="filter-btn" data-filter="retail-vmd">Retail & VMD</button>
-            <button class="filter-btn" data-filter="visual-design">Visual Design</button>
-            <button class="filter-btn" data-filter="fashion-ecommerce">Fashion & E-Commerce</button>
-        </div>
-    </section>
-
-    <section class="projects-section">
-        <div class="projects-grid">
-            <!-- Product Innovation -->
-            <a href="project-healthcare.html" class="project-card" data-category="product-innovation">
-                <div class="project-image">
-                    <img src="https://sspark.genspark.ai/cfimages?u1=7U6csehy4MUuFDF24cDC6ZNN0iD4yjY5iMZUQ%2F9iqa8m%2BuO2KNQKcmS52Ggu5Rc%2FxjHxH44e7kl32Po%2FUG7Uzyfc0Ugit3njiq9Sqk%2BbxrQN&u2=joqcH%2FBE6V9Ml74x&width=2560" alt="AI Healthcare+ - Early Cancer Detection">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Product Innovation</span>
-                    <h3 class="project-title">AI Healthcare+</h3>
-                    <p class="project-desc">AI-powered early cancer detection platform</p>
-                </div>
-            </a>
-
-            <a href="project-stylebank.html" class="project-card" data-category="product-innovation">
-                <div class="project-image">
-                    <img src="https://sspark.genspark.ai/cfimages?u1=na1U8V0quwGOhMTJXUMuDZBuZGQK4EoouKQxp%2BP6qE4wrxF0YL3WG4PR92PFoyhEQZd5mbRe5Hrwr8fl5XQzTYIJTipEkxhoHa4bDhlxiPBUVC5lWnhfTzjz%2Fhj9zBjfWCQTSwqu2nmPzD4%2F9Q%3D%3D&u2=OpgGC1qa2a23j54D&width=2560" alt="StyleBank - AI Fashion Styling">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Product Innovation</span>
-                    <h3 class="project-title">StyleBank</h3>
-                    <p class="project-desc">AI-powered virtual wardrobe & styling assistant</p>
-                </div>
-            </a>
-
-            <a href="project-finar.html" class="project-card" data-category="product-innovation">
-                <div class="project-image">
-                    <img src="https://sspark.genspark.ai/cfimages?u1=5E5pNo4GQs7OJ9ZFbGoEHPKgburT3pMrN1a0O4b4QW%2BUUJqOHErrTU0arDRUu1Rk9OIcSYKT24BoQIemgo0ql3263o7VEx%2F4P7pwaI1XQiEt1wzpR9ksw%2Ft%2FweVapCkX6h0l5U%2F0qH6k2IceTAY%3D&u2=7UhGk4pgwNFxTVZk&width=2560" alt="FINA-R - Financial Investment App">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Product Innovation</span>
-                    <h3 class="project-title">FINA-R</h3>
-                    <p class="project-desc">Personal finance & investment portfolio tracker</p>
-                </div>
-            </a>
-
-            <a href="project-carrifree.html" class="project-card" data-category="product-innovation">
-                <div class="project-image">
-                    <img src="https://www.genspark.ai/api/files/s/kmP85Qje" alt="Carrifree - Smart Luggage">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Product Innovation</span>
-                    <h3 class="project-title">Carrifree</h3>
-                    <p class="project-desc">Smart luggage solution for modern travelers</p>
-                </div>
-            </a>
-
-            <!-- Brand Strategy -->
-            <a href="project-moschino.html" class="project-card" data-category="brand-strategy">
-                <div class="project-image">
-                    <img src="https://www.genspark.ai/api/files/s/VIsA2NVq" alt="Moschino Strategic Repositioning - Jeremy Scott">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Brand Strategy</span>
-                    <h3 class="project-title">Moschino Repositioning</h3>
-                    <p class="project-desc">30th anniversary strategic pivot & Jeremy Scott recruitment analysis</p>
-                </div>
-            </a>
-
-            <a href="project-balenciaga.html" class="project-card" data-category="brand-strategy">
-                <div class="project-image">
-                    <img src="https://sspark.genspark.ai/cfimages?u1=KijQLgrOe7FPuiYyiBZxy%2BonH0ONLvJ47CMU48hZ12aKbYTgSTKUK%2FvguUDMmBQUncq8lP4RpE4q%2FhmtPEqdI7Nl6vG9Cd8mCbV2PA%3D%3D&u2=UNiOmVi%2FTzTSGxRQ&width=2560" alt="Balenciaga Financial Analysis">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Brand Strategy</span>
-                    <h3 class="project-title">Balenciaga Analysis</h3>
-                    <p class="project-desc">Financial & strategic competitive analysis</p>
-                </div>
-            </a>
-
-            <a href="project-gucci.html" class="project-card" data-category="brand-strategy">
-                <div class="project-image">
-                    <img src="https://www.genspark.ai/api/files/s/FGsQwH3Q" alt="Gucci Fashion Strategy">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Brand Strategy</span>
-                    <h3 class="project-title">Gucci Scenario Planning</h3>
-                    <p class="project-desc">Wearable tech collection financial projection</p>
-                </div>
-            </a>
-
-            <a href="project-dior.html" class="project-card" data-category="brand-strategy">
-                <div class="project-image">
-                    <img src="https://www.genspark.ai/api/files/s/v45SKp39" alt="Dior Marketing Strategy">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Brand Strategy</span>
-                    <h3 class="project-title">Dior Marketing Strategy</h3>
-                    <p class="project-desc">Leather goods marketing plan & $237M budget allocation</p>
-                </div>
-            </a>
-
-            <a href="project-chiara.html" class="project-card" data-category="brand-strategy">
-                <div class="project-image">
-                    <img src="https://www.genspark.ai/api/files/s/tmK3fUJr" alt="Chiara Ferragni Collection IMC">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Brand Strategy</span>
-                    <h3 class="project-title">Chiara Ferragni IMC</h3>
-                    <p class="project-desc">US market entry IMC strategy & $750K campaign plan</p>
-                </div>
-            </a>
-
-            <!-- Retail & VMD -->
-            <a href="project-say-vmd.html" class="project-card" data-category="retail-vmd">
-                <div class="project-image">
-                    <img src="https://sspark.genspark.ai/cfimages?u1=2GaMDB%2Fq5vH6M85tcFjvyMdgUPhHitmvcQHwUmxb2f9wkRKOF5V2t56L0A2syEGAUJOwXppXChC4k8M2HUFK2YRkxJXFl2hC8E6qV9fpj3rsPOw6tHFIZBHfVaCmEPlig40bEXNcPuhf0tERqvmNd9DU99tY9%2FDEMq5Q8fg4rme2qzur698IB01w00mi13Hc&u2=RJlmMTetTBY7NLw1&width=2560" alt="Say Department Store VMD">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Retail & VMD</span>
-                    <h3 class="project-title">Say Department Store</h3>
-                    <p class="project-desc">Visual merchandising & seasonal campaigns</p>
-                </div>
-            </a>
-
-            <a href="project-shplus.html" class="project-card" data-category="retail-vmd">
-                <div class="project-image">
-                    <img src="https://sspark.genspark.ai/cfimages?u1=7AzhqYXrqsh73zy4GFvLfP7bG5QnAR8LVidlc0%2FmB%2FXICur9GRjEqCfbGIkm3KRVSrnrLYE9VqV847mDV0KoDqpdGzTXmLxM5a9JqCVlVGTaPJJk7JnnPvWxh6OAqFrvBtKwtYStBcaRtxbEaL%2F7WsIEKlJG8UmK%2FXsmX7cazgkcfyCUbzpufa19ceI7zED%2B&u2=LXh3xPtRl4LTmR6r&width=2560" alt="SHPLUS W-Mall Retail Design">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Retail & VMD</span>
-                    <h3 class="project-title">SHPLUS W-Mall</h3>
-                    <p class="project-desc">Retail space design & social media strategy</p>
-                </div>
-            </a>
-
-            <!-- Visual Design -->
-            <a href="project-package-design.html" class="project-card" data-category="visual-design">
-                <div class="project-image">
-                    <img src="https://www.genspark.ai/api/files/s/frYZfsah" alt="Traditional Korean Health Food Package Design">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Visual Design</span>
-                    <h3 class="project-title">Traditional Health Food Packaging</h3>
-                    <p class="project-desc">Red Ginseng Tea, Artisanal Candy & Ganggyeong Jeotgal</p>
-                </div>
-            </a>
-
-            <a href="project-visual-design.html#medical-center" class="project-card" data-category="visual-design">
-                <div class="project-image">
-                    <img src="https://www.genspark.ai/api/files/s/qNJBx612" alt="Medical Center Signage">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Visual Design</span>
-                    <h3 class="project-title">Medical Center Signage</h3>
-                    <p class="project-desc">Wayfinding & environmental graphics system</p>
-                </div>
-            </a>
-
-            <a href="project-university.html" class="project-card" data-category="visual-design">
-                <div class="project-image">
-                    <img src="https://sspark.genspark.ai/cfimages?u1=QRfPwfUmUIkrL3tOkSY5%2FSm8UhnfZuID6BAgR62MEM8NVEfr%2BaG8guuYgO%2BFdKSET%2F3cgDY4q3n2O88avRN6EklOm4tvKfMBt3azbm3Z2vhNq9eAP40Ixy9qa0XzoyX3lhG1hw8AYiQ3f7UAHLszAY%2FiX0gkrn68JTq%2FJAIMbc%2FEwuO6BivcJEI%3D&u2=KbbRTZc1phCxEv1x&width=2560" alt="Doux & Suave Luxury Jewelry Brand">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Visual Design</span>
-                    <h3 class="project-title">Doux & Suave</h3>
-                    <p class="project-desc">Premium jewelry brand identity & web design</p>
-                </div>
-            </a>
-
-            <!-- Fashion & E-Commerce -->
-            <a href="project-eunice.html" class="project-card" data-category="fashion-ecommerce">
-                <div class="project-image">
-                    <img src="https://sspark.genspark.ai/cfimages?u1=8NNKar8%2Fh8RrBK5L8blVVSI%2BWa5RtmXxp%2Fg9NgTCdzBpuEroE0dzVsyOuYynCAY2QAvvT7Sy6dcdjbtBn2A4NJuuX%2F9YOmaB&u2=8EZFVX0Eski258yr&width=2560" alt="Eunice-Ina Fashion E-Commerce">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Fashion & E-Commerce</span>
-                    <h3 class="project-title">Eunice-Ina</h3>
-                    <p class="project-desc">Multi-platform fashion e-commerce business</p>
-                </div>
-            </a>
-
-            <a href="project-stella.html" class="project-card" data-category="fashion-ecommerce">
-                <div class="project-image">
-                    <img src="https://sspark.genspark.ai/cfimages?u1=DRe1I%2Bz5roD0hq701lBi5IJzIeMSFhreKj%2FADwO8RQAqmzoTpE0FxAXnJJZXwOlr52OkqljBdeig0SEAlGXbxVoXUMIbh%2FX3ssUCgubvXfHlTQlYMYccRrXJyx3vyr2GijZtKmQJMVeoArOspwnTL4zx&u2=%2B88X0x4FgxC4X25n&width=2560" alt="Stella McCartney x H&M Collaboration">
-                </div>
-                <div class="project-info">
-                    <span class="project-category">Fashion & E-Commerce</span>
-                    <h3 class="project-title">Stella McCartney x H&M</h3>
-                    <p class="project-desc">Designer collaboration strategic analysis</p>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-left">
-                <span class="footer-logo">INA YU</span>
-                <span class="footer-copyright">© 2025</span>
-            </div>
-            <div class="footer-right">
-                <a href="mailto:dandyaqua@gmail.com" class="footer-link">Email</a>
-                <a href="https://www.linkedin.com/in/inayu" class="footer-link" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // Filter functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
+        // Three.js 3D Blooming Flowers Scene
+        let scene, camera, renderer;
+        let flowers = [];
+        let petals = [];
+        let mouseX = 0, mouseY = 0;
+        let targetRotationX = 0, targetRotationY = 0;
+        let isTransitioning = false;
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                const filter = btn.dataset.filter;
-                
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.style.display = 'block';
-                        card.style.animation = 'fadeInUp 0.5s ease forwards';
-                    } else {
-                        card.style.display = 'none';
-                    }
+        // Color palette - 파스텔 + 비비드 믹스
+        const colors = [
+            // 파스텔 (70%)
+            0xFFB6C1, // Light pink
+            0xFFC0CB, // Pink
+            0xFFE4E1, // Misty rose
+            0xE6E6FA, // Lavender
+            0xDDA0DD, // Plum (soft)
+            0xFFDAB9, // Peach puff
+            0xFAEBD7, // Antique white
+            0xFFF0F5, // Lavender blush
+            0xF0FFF0, // Honeydew (soft green)
+            0xE0FFFF, // Light cyan
+            0xFFE4B5, // Moccasin
+            0xFFFACD, // Lemon chiffon
+            
+            // 비비드 액센트 (30%)
+            0xFF69B4, // Hot pink 💖
+            0xFF1493, // Deep pink 💗
+            0xFF6B6B, // Coral red
+            0x9B59B6, // Amethyst purple
+            0x3498DB, // Bright blue
+            0xE91E63, // Material pink
+        ];
+
+        function init() {
+            // Scene setup
+            scene = new THREE.Scene();
+            scene.fog = new THREE.FogExp2(0x0a0a0a, 0.012);
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 50;
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+            // Lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+
+            const pointLight1 = new THREE.PointLight(0xFFB6C1, 1.2, 100);
+            pointLight1.position.set(20, 20, 20);
+            scene.add(pointLight1);
+
+            const pointLight2 = new THREE.PointLight(0xE6E6FA, 1, 100);
+            pointLight2.position.set(-20, -20, 20);
+            scene.add(pointLight2);
+
+            const pointLight3 = new THREE.PointLight(0xFF69B4, 0.8, 80);
+            pointLight3.position.set(0, 30, 10);
+            scene.add(pointLight3);
+
+            // Create initial flowers
+            createFlowerBurst(0, 0, 0, 20);
+
+            // Event listeners
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('click', handleClick);
+            document.addEventListener('touchend', handleClick);
+            window.addEventListener('resize', onWindowResize);
+
+            // Start animation
+            animate();
+
+            // Continuous flower spawning
+            setInterval(() => {
+                if (!isTransitioning && flowers.length < 80) {
+                    const x = (Math.random() - 0.5) * 100;
+                    const y = (Math.random() - 0.5) * 70;
+                    const z = (Math.random() - 0.5) * 40 - 20;
+                    createFlower(x, y, z);
+                }
+            }, 400);
+
+            // Create floating petals periodically
+            setInterval(() => {
+                if (!isTransitioning) {
+                    createFloatingPetals();
+                }
+            }, 300);
+        }
+
+        function createPetalGeometry() {
+            const shape = new THREE.Shape();
+            shape.moveTo(0, 0);
+            shape.bezierCurveTo(0.5, 0.5, 0.5, 1.5, 0, 2);
+            shape.bezierCurveTo(-0.5, 1.5, -0.5, 0.5, 0, 0);
+
+            const extrudeSettings = {
+                steps: 1,
+                depth: 0.1,
+                bevelEnabled: true,
+                bevelThickness: 0.05,
+                bevelSize: 0.05,
+                bevelSegments: 3
+            };
+
+            return new THREE.ExtrudeGeometry(shape, extrudeSettings);
+        }
+
+        function getRandomColor() {
+            // 80% 파스텔, 20% 비비드
+            const useVivid = Math.random() < 0.2;
+            if (useVivid) {
+                const vividColors = [0xFF69B4, 0xFF1493, 0xFF6B6B, 0x9B59B6, 0x3498DB, 0xE91E63];
+                return vividColors[Math.floor(Math.random() * vividColors.length)];
+            } else {
+                const pastelColors = [0xFFB6C1, 0xFFC0CB, 0xFFE4E1, 0xE6E6FA, 0xDDA0DD, 0xFFDAB9, 0xFAEBD7, 0xFFF0F5, 0xF0FFF0, 0xE0FFFF, 0xFFE4B5, 0xFFFACD];
+                return pastelColors[Math.floor(Math.random() * pastelColors.length)];
+            }
+        }
+
+        function createFlower(x, y, z) {
+            const flowerGroup = new THREE.Group();
+            const petalGeometry = createPetalGeometry();
+            const baseColor = getRandomColor();
+            const petalCount = 5 + Math.floor(Math.random() * 4);
+            
+            // Create petals
+            for (let i = 0; i < petalCount; i++) {
+                const petalMaterial = new THREE.MeshPhongMaterial({
+                    color: baseColor,
+                    transparent: true,
+                    opacity: 0,
+                    side: THREE.DoubleSide,
+                    shininess: 100,
+                    emissive: baseColor,
+                    emissiveIntensity: 0.1
                 });
+
+                const petal = new THREE.Mesh(petalGeometry, petalMaterial);
+                const angle = (i / petalCount) * Math.PI * 2;
+                
+                petal.rotation.z = angle;
+                petal.rotation.x = Math.PI / 6;
+                petal.scale.set(0.01, 0.01, 0.01);
+                
+                petal.userData = {
+                    targetScale: 0.8 + Math.random() * 0.5,
+                    targetOpacity: 0.75 + Math.random() * 0.25,
+                    rotationSpeed: (Math.random() - 0.5) * 0.02,
+                    bloomDelay: i * 80,
+                    bloomStartTime: Date.now()
+                };
+
+                flowerGroup.add(petal);
+                petals.push(petal);
+            }
+
+            // Center (pistil)
+            const centerGeometry = new THREE.SphereGeometry(0.3, 16, 16);
+            const centerMaterial = new THREE.MeshPhongMaterial({
+                color: 0xFFD700,
+                transparent: true,
+                opacity: 0,
+                shininess: 150,
+                emissive: 0xFFD700,
+                emissiveIntensity: 0.2
             });
-        });
+            const center = new THREE.Mesh(centerGeometry, centerMaterial);
+            center.scale.set(0.01, 0.01, 0.01);
+            center.userData = {
+                targetScale: 1,
+                targetOpacity: 0.9,
+                bloomStartTime: Date.now()
+            };
+            flowerGroup.add(center);
+            petals.push(center);
+
+            flowerGroup.position.set(x, y, z);
+            flowerGroup.userData = {
+                floatSpeed: 0.5 + Math.random() * 0.5,
+                floatOffset: Math.random() * Math.PI * 2,
+                driftX: (Math.random() - 0.5) * 0.08,
+                driftY: (Math.random() - 0.5) * 0.08,
+                rotationSpeed: (Math.random() - 0.5) * 0.01
+            };
+
+            scene.add(flowerGroup);
+            flowers.push(flowerGroup);
+
+            return flowerGroup;
+        }
+
+        function createFlowerBurst(x, y, z, count) {
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const offsetX = x + (Math.random() - 0.5) * 40;
+                    const offsetY = y + (Math.random() - 0.5) * 30;
+                    const offsetZ = z + (Math.random() - 0.5) * 25;
+                    createFlower(offsetX, offsetY, offsetZ);
+                }, i * 100);
+            }
+        }
+
+        function createFloatingPetals() {
+            const geometry = createPetalGeometry();
+            const color = getRandomColor();
+            const material = new THREE.MeshPhongMaterial({
+                color: color,
+                transparent: true,
+                opacity: 0.7,
+                side: THREE.DoubleSide,
+                emissive: color,
+                emissiveIntensity: 0.05
+            });
+
+            const petal = new THREE.Mesh(geometry, material);
+            petal.position.set(
+                (Math.random() - 0.5) * 120,
+                60 + Math.random() * 20,
+                (Math.random() - 0.5) * 60
+            );
+            petal.rotation.set(
+                Math.random() * Math.PI,
+                Math.random() * Math.PI,
+                Math.random() * Math.PI
+            );
+            petal.scale.setScalar(0.4 + Math.random() * 0.6);
+
+            petal.userData = {
+                fallSpeed: 0.08 + Math.random() * 0.15,
+                swaySpeed: 1 + Math.random() * 2,
+                swayAmount: 0.5 + Math.random() * 1,
+                rotationSpeed: {
+                    x: (Math.random() - 0.5) * 0.04,
+                    y: (Math.random() - 0.5) * 0.04,
+                    z: (Math.random() - 0.5) * 0.04
+                },
+                isFloating: true
+            };
+
+            scene.add(petal);
+            petals.push(petal);
+        }
+
+        function onMouseMove(event) {
+            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouseY = (event.clientY / window.innerHeight) * 2 - 1;
+        }
+
+        function handleClick(event) {
+            event.preventDefault();
+            
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            console.log('Click detected! Starting transition...');
+
+            // Create explosion of flowers
+            createFlowerBurst(0, 0, 15, 40);
+
+            // Start transition after flowers burst
+            setTimeout(() => {
+                const overlay = document.getElementById('overlay');
+                overlay.classList.add('active');
+                console.log('Overlay activated!');
+                
+                // Navigate to home page
+                setTimeout(() => {
+                    console.log('Navigating to home.html...');
+                    window.location.href = 'home.html';
+                }, 1000);
+            }, 800);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            const time = Date.now() * 0.001;
+
+            // Smooth camera movement following mouse
+            targetRotationY = mouseX * 0.3;
+            targetRotationX = mouseY * 0.2;
+            camera.rotation.y += (targetRotationY - camera.rotation.y) * 0.05;
+            camera.rotation.x += (targetRotationX - camera.rotation.x) * 0.05;
+
+            // Animate flowers
+            flowers.forEach((flower, index) => {
+                const userData = flower.userData;
+                
+                // Float animation
+                flower.position.y += Math.sin(time * userData.floatSpeed + userData.floatOffset) * 0.015;
+                flower.position.x += userData.driftX;
+                flower.position.y += userData.driftY * 0.3;
+                flower.rotation.z += userData.rotationSpeed;
+
+                // Remove flowers that drift too far
+                if (Math.abs(flower.position.x) > 70 || 
+                    Math.abs(flower.position.y) > 60 ||
+                    flower.position.z < -60) {
+                    scene.remove(flower);
+                    flowers.splice(index, 1);
+                }
+            });
+
+            // Animate petals (blooming effect)
+            petals.forEach((petal, index) => {
+                const userData = petal.userData;
+                
+                if (userData.isFloating) {
+                    // Floating petal animation
+                    petal.position.y -= userData.fallSpeed;
+                    petal.position.x += Math.sin(time * userData.swaySpeed) * userData.swayAmount * 0.08;
+                    petal.rotation.x += userData.rotationSpeed.x;
+                    petal.rotation.y += userData.rotationSpeed.y;
+                    petal.rotation.z += userData.rotationSpeed.z;
+
+                    // Remove fallen petals
+                    if (petal.position.y < -50) {
+                        scene.remove(petal);
+                        petals.splice(index, 1);
+                    }
+                } else if (userData.targetScale) {
+                    // Blooming animation
+                    const elapsed = Date.now() - userData.bloomStartTime - (userData.bloomDelay || 0);
+                    
+                    if (elapsed > 0) {
+                        const progress = Math.min(elapsed / 1200, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        
+                        const scale = 0.01 + (userData.targetScale - 0.01) * eased;
+                        petal.scale.set(scale, scale, scale);
+                        petal.material.opacity = userData.targetOpacity * eased;
+
+                        if (userData.rotationSpeed) {
+                            petal.rotation.x += userData.rotationSpeed;
+                        }
+                    }
+                }
+            });
+
+            renderer.render(scene, camera);
+        }
+
+        // Initialize when page loads
+        window.addEventListener('load', init);
     </script>
 </body>
 </html>

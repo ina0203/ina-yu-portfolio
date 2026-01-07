@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINA-R | Ina Yu Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project.css">
+    <style>
+        /* FINA-R Design System */
+        :root {
+            --fr-primary: #11998e;
+            --fr-secondary: #38ef7d;
+            --fr-accent: #0cebeb;
+            --fr-dark: #0a1628;
+            --fr-light: #f8fffe;
+            --fr-success: #10b981;
+            --fr-warning: #f59e0b;
+        }
+
+        /* Hero Enhancement */
+        .hero-finar {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a1628 0%, #11998e 50%, #38ef7d 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-finar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="1" fill="rgba(56,239,125,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(17,153,142,0.08)"/></svg>');
+            background-size: 60px 60px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1000px;
+        }
+
+        .category-badge {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.95);
+            background: rgba(255,255,255,0.12);
+            padding: 0.6rem 1.5rem;
+            border-radius: 100px;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: inline-block;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 10vw, 6.5rem);
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 40px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-kpis {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .hero-kpi {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 1.5rem 2.5rem;
+            text-align: center;
+        }
+
+        .hero-kpi-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .hero-kpi-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
+            margin-top: 0.5rem;
+        }
+
+        /* Term Highlight */
+        .term {
+            background: linear-gradient(135deg, rgba(56,239,125,0.15), rgba(17,153,142,0.15));
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            color: var(--fr-primary);
+        }
+
+        .section-dark .term {
+            background: rgba(56,239,125,0.25);
+            color: var(--fr-secondary);
+        }
+
+        /* Meta Bar */
+        .meta-bar {
+            background: #ffffff;
+            padding: 3rem 5%;
+            border-bottom: 1px solid rgba(17,153,142,0.1);
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .meta-item .label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--fr-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-item .value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 5%;
+        }
+
+        .section-dark {
+            background: var(--fr-dark);
+            color: #ffffff;
+        }
+
+        .section-light {
+            background: var(--fr-light);
+        }
+
+        .section-white {
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-header.center {
+            text-align: center;
+        }
+
+        .section-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--fr-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-label {
+            color: var(--fr-secondary);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 400;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        .section-dark .section-title {
+            color: #ffffff;
+        }
+
+        .section-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            color: #666;
+            margin-top: 1rem;
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .section-dark .section-desc {
+            color: rgba(255,255,255,0.75);
+        }
+
+        .section-header.center .section-desc {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Executive Summary */
+        .exec-summary {
+            background: linear-gradient(135deg, rgba(17,153,142,0.05) 0%, rgba(56,239,125,0.05) 100%);
+            border: 1px solid rgba(17,153,142,0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .exec-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--fr-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .exec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .exec-item h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+        }
+
+        .exec-item p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Market Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(56,239,125,0.1);
+            border-color: rgba(56,239,125,0.3);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            color: var(--fr-secondary);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+        }
+
+        .stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .stat-detail {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.5rem;
+        }
+
+        /* Persona Grid */
+        .persona-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .persona-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .persona-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(17,153,142,0.1);
+        }
+
+        .persona-avatar {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--fr-primary), var(--fr-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .persona-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
+        }
+
+        .persona-role {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--fr-primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .persona-pain {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.6;
+            padding: 1rem;
+            background: var(--fr-light);
+            border-radius: 12px;
+            border-left: 3px solid var(--fr-primary);
+        }
+
+        /* Problem Cards */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: var(--fr-light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border-left: 4px solid var(--fr-primary);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(17,153,142,0.1);
+        }
+
+        .problem-card:nth-child(1) { border-left-color: var(--fr-primary); }
+        .problem-card:nth-child(2) { border-left-color: var(--fr-secondary); }
+        .problem-card:nth-child(3) { border-left-color: var(--fr-accent); }
+        .problem-card:nth-child(4) { border-left-color: var(--fr-warning); }
+
+        .problem-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--fr-primary), var(--fr-secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--fr-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .problem-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+        }
+
+        .problem-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Competitive Analysis */
+        .competitive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .competitive-problem {
+            background: var(--fr-light);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+
+        .competitive-problem h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+
+        .competitive-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .competitive-list li {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #666;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(17,153,142,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .competitive-list li::before {
+            content: '×';
+            color: #e74c3c;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .competitive-solution {
+            background: linear-gradient(135deg, rgba(17,153,142,0.1), rgba(56,239,125,0.1));
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(17,153,142,0.2);
+        }
+
+        .competitive-solution h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--fr-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .competitive-solution .competitive-list li::before {
+            content: '✓';
+            color: var(--fr-success);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--fr-primary), var(--fr-secondary));
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+
+        .comparison-table th:first-child {
+            text-align: left;
+            padding-left: 2rem;
+        }
+
+        .comparison-table td {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #444;
+            padding: 1.25rem 1rem;
+            border-bottom: 1px solid rgba(17,153,142,0.08);
+            text-align: center;
+        }
+
+        .comparison-table td:first-child {
+            text-align: left;
+            padding-left: 2rem;
+            font-weight: 500;
+        }
+
+        .check-yes { color: var(--fr-success); font-size: 1.3rem; }
+        .check-partial { color: var(--fr-warning); font-size: 1.3rem; }
+        .check-no { color: #ddd; font-size: 1.3rem; }
+
+        /* Revenue Model */
+        .revenue-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .revenue-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .revenue-card:hover {
+            background: rgba(56,239,125,0.1);
+            border-color: rgba(56,239,125,0.3);
+            transform: translateY(-8px);
+        }
+
+        .revenue-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--fr-primary), var(--fr-secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .revenue-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .revenue-rate {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--fr-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .revenue-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+        }
+
+        /* 4C Framework */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .framework-card {
+            background: var(--fr-light);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .framework-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(17,153,142,0.15);
+        }
+
+        .framework-letter {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            color: var(--fr-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .framework-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .framework-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--fr-primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .framework-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Financial Projection */
+        .projection-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .projection-chart {
+            background: var(--fr-light);
+            border-radius: 24px;
+            padding: 3rem;
+        }
+
+        .chart-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--fr-primary);
+            margin-bottom: 2rem;
+        }
+
+        .chart-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .chart-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bar-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #666;
+            width: 60px;
+            flex-shrink: 0;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 48px;
+            background: rgba(17,153,142,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--fr-primary), var(--fr-secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+        }
+
+        .bar-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .bar-detail {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            color: #999;
+        }
+
+        .projection-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .metric-card {
+            background: var(--fr-light);
+            border-radius: 16px;
+            padding: 1.75rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(17,153,142,0.1);
+        }
+
+        .metric-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--fr-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        /* Roadmap */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .roadmap-phase {
+            background: var(--fr-light);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roadmap-phase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--fr-primary), var(--fr-secondary));
+        }
+
+        .phase-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--fr-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+
+        .phase-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem;
+        }
+
+        .phase-list li {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #666;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .phase-list li::before {
+            content: '■';
+            position: absolute;
+            left: 0;
+            color: var(--fr-primary);
+            font-size: 0.5rem;
+        }
+
+        .phase-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .phase-metric {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--fr-primary);
+            background: rgba(17,153,142,0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 100px;
+        }
+
+        /* User Value */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .value-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+
+        .value-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--fr-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .value-item:last-child {
+            border-bottom: none;
+        }
+
+        .value-icon {
+            font-size: 1.5rem;
+        }
+
+        .value-content h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .value-content p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* App Images */
+        .app-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .app-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+        }
+
+        .app-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 40px 100px rgba(17,153,142,0.2);
+        }
+
+        .app-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Phone Mockup */
+        .phone-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .phone-mockup {
+            background: linear-gradient(135deg, var(--fr-primary), var(--fr-secondary));
+            border-radius: 40px;
+            padding: 1rem;
+            box-shadow: 0 30px 80px rgba(17,153,142,0.3);
+        }
+
+        .phone-mockup img {
+            width: 280px;
+            border-radius: 32px;
+            display: block;
+        }
+
+        /* Quote */
+        .quote-section {
+            background: linear-gradient(135deg, var(--fr-primary) 0%, var(--fr-secondary) 100%);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Results */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .result-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .result-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--fr-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .meta-grid { grid-template-columns: repeat(3, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .persona-grid { grid-template-columns: 1fr; }
+            .problem-grid { grid-template-columns: repeat(2, 1fr); }
+            .competitive-grid { grid-template-columns: 1fr; }
+            .revenue-grid { grid-template-columns: 1fr; }
+            .framework-grid { grid-template-columns: repeat(2, 1fr); }
+            .projection-grid { grid-template-columns: 1fr; }
+            .roadmap-grid { grid-template-columns: 1fr; }
+            .value-grid { grid-template-columns: 1fr; }
+            .app-showcase { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
+            .exec-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .meta-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: 1fr; }
+            .problem-grid { grid-template-columns: 1fr; }
+            .framework-grid { grid-template-columns: 1fr; }
+            .hero-kpi { padding: 1rem 1.5rem; }
+            .hero-kpi-value { font-size: 2rem; }
+            .results-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">INA YU</a>
+            <div class="nav-links">
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-finar">
+        <div class="hero-content">
+            <span class="category-badge">Product Strategy · Fintech · Business Architecture</span>
+            <h1 class="hero-title">FINA-R</h1>
+            <p class="hero-subtitle">An <span class="term" style="background: rgba(255,255,255,0.15); color: #fff;">AI-Powered Comprehensive Financial Platform</span> transforming a simple receipt management app into a revenue-generating fintech ecosystem — Enabling <span class="term" style="background: rgba(255,255,255,0.15); color: #fff;">Data-Driven Financial Decision Making</span> for freelancers, SMBs, and individuals through intelligent automation and personalized insights</p>
+            
+            <div class="hero-kpis">
+                <div class="hero-kpi">
+                    <div class="hero-kpi-value">200K</div>
+                    <div class="hero-kpi-label">Target MAU (Year 2)</div>
+                </div>
+                <div class="hero-kpi">
+                    <div class="hero-kpi-value">$2.2M</div>
+                    <div class="hero-kpi-label">ARR Target (Year 2)</div>
+                </div>
+                <div class="hero-kpi">
+                    <div class="hero-kpi-value">25%</div>
+                    <div class="hero-kpi-label">Premium Conversion Rate</div>
+                </div>
+            </div>
+            
+            <!-- Live Demo Button -->
+            <div style="margin-top: 3rem;">
+                <a href="https://fina-r.vercel.app/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 1rem 2.5rem; border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; text-decoration: none; backdrop-filter: blur(10px); transition: all 0.3s ease;">
+                    <span>🚀</span>
+                    <span>Try Live Demo</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">Scroll</div>
+    </section>
+
+    <!-- Live Application Banner -->
+    <section style="background: linear-gradient(135deg, var(--fr-primary) 0%, var(--fr-secondary) 100%); padding: 3rem 5%; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #fff; margin-bottom: 0.75rem;">Experience FINA-R Live</h2>
+            <p style="font-family: 'Inter', sans-serif; font-size: 1rem; color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">Explore the fully functional AI-powered financial management platform deployed on Vercel</p>
+            <a href="https://fina-r.vercel.app/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.75rem; background: #fff; color: var(--fr-primary); padding: 1rem 2.5rem; border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600; text-decoration: none; box-shadow: 0 10px 40px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                <span style="font-size: 1.3rem;">🚀</span>
+                <span>Launch Live Application</span>
+                <span style="font-size: 1.1rem;">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Meta Bar -->
+    <div class="meta-bar">
+        <div class="meta-grid">
+            <div class="meta-item">
+                <div class="label">Role</div>
+                <div class="value">Product Designer & Business Strategist</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Timeline</div>
+                <div class="value">2025</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Scope</div>
+                <div class="value">End-to-End Product Strategy & Platform Architecture</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Platform</div>
+                <div class="value">iOS · Android · Web</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Tech Stack</div>
+                <div class="value">React Native · AI/ML · OCR · Financial APIs</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="exec-summary">
+                <div class="exec-title">Executive Summary</div>
+                <div class="exec-grid">
+                    <div class="exec-item">
+                        <h4>Vision Statement</h4>
+                        <p>"An <span class="term">AI-Powered Comprehensive Financial Platform</span> that supports all financial decision-making for individuals and businesses." — Transforming passive record-keeping into active financial intelligence through data-driven automation.</p>
+                    </div>
+                    <div class="exec-item">
+                        <h4>Strategic Pivot</h4>
+                        <p>Leveraging existing receipt/budget management app's <span class="term">Data Collection Infrastructure</span> to pivot from simple recording tool to <span class="term">Revenue-Generating Financial Platform</span> — A paradigm shift from utility to monetizable ecosystem.</p>
+                    </div>
+                    <div class="exec-item">
+                        <h4>Value Proposition</h4>
+                        <p><span class="term">Tax Health Score™</span> proprietary algorithm, 95%+ OCR accuracy, AI-powered tax optimization, and seamless <span class="term">Expert Matching</span> — delivering measurable financial outcomes with transparent ROI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">Market Opportunity Assessment</div>
+                <h2 class="section-title">Fintech Market Landscape & Growth Vectors</h2>
+                <p class="section-desc">Capturing <span class="term">Underserved Market Opportunity</span> in the rapidly expanding Korean fintech ecosystem, targeting the intersection of personal finance management and tax optimization.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$13B</div>
+                    <div class="stat-label">Korean Fintech TAM (2025)</div>
+                    <div class="stat-detail">Total Addressable Market</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">23.5%</div>
+                    <div class="stat-label">Market CAGR</div>
+                    <div class="stat-detail">Annual Growth Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">7M+</div>
+                    <div class="stat-label">Freelancers & Gig Workers</div>
+                    <div class="stat-detail">Primary Target Segment (2025)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">78%</div>
+                    <div class="stat-label">Mobile Finance Adoption</div>
+                    <div class="stat-detail">Among 20-50 Age Group</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Persona -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Target User Segmentation</div>
+                <h2 class="section-title">Primary User Personas & Pain Point Mapping</h2>
+                <p class="section-desc">Defining core user archetypes through <span class="term">Behavioral & Psychographic Segmentation</span> — understanding the unique financial management challenges of each segment.</p>
+            </div>
+
+            <div class="persona-grid">
+                <div class="persona-card">
+                    <div class="persona-avatar">💼</div>
+                    <div class="persona-name">Minsu Kim</div>
+                    <div class="persona-role">Freelance Developer · Age 32</div>
+                    <div class="persona-pain">"I make decent income but always feel like I'm overpaying taxes. I don't know what I can deduct and managing receipts is a nightmare."</div>
+                </div>
+                <div class="persona-card">
+                    <div class="persona-avatar">🏪</div>
+                    <div class="persona-name">Jiyoung Park</div>
+                    <div class="persona-role">Café Owner · Age 45</div>
+                    <div class="persona-pain">"Cash flow is my biggest worry. I can never predict if I'll have enough for rent, inventory, and taxes next month."</div>
+                </div>
+                <div class="persona-card">
+                    <div class="persona-avatar">👩‍💻</div>
+                    <div class="persona-name">Sujin Lee</div>
+                    <div class="persona-role">Office Worker · Age 28</div>
+                    <div class="persona-pain">"I want to save more but I have no idea where my money goes. Checking my spending after the fact doesn't help me change behavior."</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Definition -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Problem Definition Framework</div>
+                <h2 class="section-title">Market Gap Analysis & Friction Points</h2>
+                <p class="section-desc">Quantitative analysis of <span class="term">Critical Market Gaps</span> across the current financial management landscape, with solution-oriented design interventions for each problem cluster.</p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🔍</div>
+                    <div class="problem-number">Gap 01</div>
+                    <h4 class="problem-title">Fragmented Solutions</h4>
+                    <p class="problem-desc">No integrated platform serving both individuals and businesses. Users juggle 4-5 apps for accounting, taxes, budgeting, and investments.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🎯</div>
+                    <div class="problem-number">Gap 02</div>
+                    <h4 class="problem-title">Generic Recommendations</h4>
+                    <p class="problem-desc">Existing apps offer one-size-fits-all advice. No receipt-data-based personalized financial product recommendations exist.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🤖</div>
+                    <div class="problem-number">Gap 03</div>
+                    <h4 class="problem-title">Expert Accessibility</h4>
+                    <p class="problem-desc">AI-powered analysis combined with seamless tax expert connection is virtually non-existent. Users are left to interpret complex data alone.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <div class="problem-number">Gap 04</div>
+                    <h4 class="problem-title">Passive Record-Keeping</h4>
+                    <p class="problem-desc">Current apps only track spending history. No proactive predictions, simulations, or actionable optimization recommendations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Analysis -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Competitive Landscape Analysis</div>
+                <h2 class="section-title">FINA-R vs. Market Incumbents</h2>
+                <p class="section-desc">Defining <span class="term">Differentiated Value Proposition</span> and establishing <span class="term">Sustainable Competitive Moat</span> — "Professional yet easy, data-driven yet engaging."</p>
+            </div>
+
+            <div class="competitive-grid">
+                <div class="competitive-problem">
+                    <h4>Current Market Limitations</h4>
+                    <ul class="competitive-list">
+                        <li>BankSalad/Toss: Strong account linking, but no tax/deduction features</li>
+                        <li>CashNote/3.3%: Professional tax tools, but complex UX targeting only businesses</li>
+                        <li>MoneyBook: Simple input, but lacks advanced analytics and AI insights</li>
+                        <li>No platform bridges personal finance and business accounting</li>
+                        <li>Gamification and engagement features completely absent</li>
+                    </ul>
+                </div>
+                <div class="competitive-solution">
+                    <h4>FINA-R Solution Architecture</h4>
+                    <ul class="competitive-list">
+                        <li>Unified platform for both individuals and SMBs</li>
+                        <li>AI-powered Tax Health Score™ with optimization recommendations</li>
+                        <li>95%+ OCR accuracy with automated expense categorization</li>
+                        <li>Cash flow prediction and simulation engine</li>
+                        <li>Gamified engagement with achievement system</li>
+                        <li>Seamless tax expert matching with transparent pricing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature Capability</th>
+                        <th>FINA-R</th>
+                        <th>BankSalad</th>
+                        <th>CashNote</th>
+                        <th>MoneyBook</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AI Receipt OCR (95%+ Accuracy)</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-partial">◐</span></td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-partial">◐</span></td>
+                    </tr>
+                    <tr>
+                        <td>Tax Optimization & Deduction Finder</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-no">○</span></td>
+                    </tr>
+                    <tr>
+                        <td>Personal + Business Unified Platform</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-no">○</span></td>
+                    </tr>
+                    <tr>
+                        <td>Cash Flow Prediction Engine</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-partial">◐</span></td>
+                        <td><span class="check-partial">◐</span></td>
+                        <td><span class="check-no">○</span></td>
+                    </tr>
+                    <tr>
+                        <td>Gamification & Engagement</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-no">○</span></td>
+                    </tr>
+                    <tr>
+                        <td>Tax Expert Matching</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-partial">◐</span></td>
+                        <td><span class="check-no">○</span></td>
+                    </tr>
+                    <tr>
+                        <td>Financial Product Recommendations</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-no">○</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- App Preview -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">Product Showcase</div>
+                <h2 class="section-title">Intelligence Designed for Action</h2>
+                <p class="section-desc">Every screen, every interaction designed with <span class="term">Progressive Disclosure Principles</span> — surfacing essential insights immediately while providing depth on demand.</p>
+            </div>
+            
+            <div class="app-showcase">
+                <div class="app-image">
+                    <img src="https://www.genspark.ai/api/files/s/lQ3bSIxf" alt="FINA-R Dashboard Overview">
+                </div>
+                <div class="app-image">
+                    <img src="https://www.genspark.ai/api/files/s/VXw7C0tQ" alt="FINA-R Stock Analysis">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4C Differentiation Framework -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">Differentiation Strategy</div>
+                <h2 class="section-title">The 4C Framework: Core Competitive Moats</h2>
+                <p class="section-desc">Establishing <span class="term">Sustainable Competitive Advantages</span> through four interconnected pillars that collectively create a defensible market position.</p>
+            </div>
+
+            <div class="framework-grid">
+                <div class="framework-card">
+                    <div class="framework-letter">C</div>
+                    <div class="framework-title">Comprehensive</div>
+                    <div class="framework-subtitle">All-in-One Solution</div>
+                    <p class="framework-desc">Single platform spanning receipt management, tax optimization, cash flow prediction, and financial product recommendations — eliminating app fragmentation.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-letter">C</div>
+                    <div class="framework-title">Customized</div>
+                    <div class="framework-subtitle">Personalized Intelligence</div>
+                    <p class="framework-desc">AI-powered recommendations tailored to individual spending patterns. Tax Health Score™ proprietary algorithm provides personalized optimization paths.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-letter">C</div>
+                    <div class="framework-title">Connected</div>
+                    <div class="framework-subtitle">Seamless Ecosystem</div>
+                    <p class="framework-desc">Integrated expert matching network connecting users with verified tax professionals. API-connected financial product marketplace with transparent pricing.</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-letter">C</div>
+                    <div class="framework-title">Captivating</div>
+                    <div class="framework-subtitle">Gamified Engagement</div>
+                    <p class="framework-desc">Achievement system, streak rewards, and progress visualizations transform mundane financial tracking into engaging experience with high retention.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Experience -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">Mobile Experience</div>
+                <h2 class="section-title">Financial Intelligence On The Go</h2>
+            </div>
+            
+            <div class="phone-container">
+                <div class="phone-mockup">
+                    <img src="https://www.genspark.ai/api/files/s/9Y3lKkOl" alt="Mobile Dashboard">
+                </div>
+                <div class="phone-mockup">
+                    <img src="https://www.genspark.ai/api/files/s/PQFb4kSW" alt="Stock Detail">
+                </div>
+                <div class="phone-mockup">
+                    <img src="https://www.genspark.ai/api/files/s/TfXMjnZ8" alt="Alerts">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Architecture -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">Revenue Architecture</div>
+                <h2 class="section-title">Multi-Stream Monetization Model</h2>
+                <p class="section-desc">Diversified revenue structure based on <span class="term">Platform Economics</span> principles — creating a <span class="term">Win-Win Ecosystem</span> where user value directly correlates with platform revenue.</p>
+            </div>
+
+            <div class="revenue-grid">
+                <div class="revenue-card">
+                    <div class="revenue-icon">👑</div>
+                    <h4 class="revenue-title">Premium Subscription (MRR)</h4>
+                    <div class="revenue-rate">$7.50/month · $75/year</div>
+                    <p class="revenue-desc">Unlimited receipt scans, advanced AI analytics, cash flow predictions, tax simulation, and priority support. Target: 25% conversion rate from free users.</p>
+                </div>
+                <div class="revenue-card">
+                    <div class="revenue-icon">🤝</div>
+                    <h4 class="revenue-title">Expert Matching Commission</h4>
+                    <div class="revenue-rate">20% of Consultation Fee (~$5/transaction)</div>
+                    <p class="revenue-desc">Revenue share from tax expert consultations booked through platform. Verified professional network with transparent ratings and pricing.</p>
+                </div>
+                <div class="revenue-card">
+                    <div class="revenue-icon">💳</div>
+                    <h4 class="revenue-title">Financial Product Affiliate</h4>
+                    <div class="revenue-rate">$25 Card Issue / 0.5% Loan / 20% Insurance</div>
+                    <p class="revenue-desc">CPA/CPS revenue from personalized financial product recommendations based on user spending patterns and credit profile.</p>
+                </div>
+            </div>
+
+            <!-- B2B Revenue Streams -->
+            <div style="margin-top: 5rem;">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fr-secondary); margin-bottom: 2rem; text-align: center;">Additional Revenue Streams</h3>
+                <div class="value-grid">
+                    <div class="value-card">
+                        <h4>📊 Data Analytics Revenue</h4>
+                        <div class="value-item">
+                            <div class="value-icon">📈</div>
+                            <div class="value-content">
+                                <h5>Anonymized Consumer Insights</h5>
+                                <p>Aggregated spending pattern data sold to financial institutions and market researchers — fully GDPR compliant with user consent.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🎯</div>
+                            <div class="value-content">
+                                <h5>In-App Advertising</h5>
+                                <p>Non-intrusive, contextually relevant financial product ads for free-tier users with clear value proposition.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="value-card">
+                        <h4>🏢 B2B Enterprise Solutions</h4>
+                        <div class="value-item">
+                            <div class="value-icon">🏦</div>
+                            <div class="value-content">
+                                <h5>White-Label Platform</h5>
+                                <p>Licensed solution for banks and financial institutions seeking embedded receipt management for their customers.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">📋</div>
+                            <div class="value-content">
+                                <h5>SMB Accounting Integration</h5>
+                                <p>API access for accounting firms managing multiple small business clients with bulk data processing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Value Proposition -->
+    <section class="section section-dark" style="background: linear-gradient(180deg, var(--fr-dark) 0%, #0d2137 100%);">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">User Value Proposition</div>
+                <h2 class="section-title">Measurable Benefits & Outcomes</h2>
+                <p class="section-desc">Clearly articulated value delivery for each user segment — transforming abstract features into <span class="term">Quantifiable Financial Outcomes</span>.</p>
+            </div>
+
+            <div class="value-grid">
+                <div class="value-card">
+                    <h4>💰 For Freelancers & Gig Workers</h4>
+                    <div class="value-item">
+                        <div class="value-icon">🎯</div>
+                        <div class="value-content">
+                            <h5>Tax Optimization (Avg. $400/year Savings)</h5>
+                            <p>AI-powered deduction finder identifies overlooked tax deductions. Automatic expense categorization ensures no deduction is missed.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">⏱️</div>
+                        <div class="value-content">
+                            <h5>Time Savings (8+ hours/month)</h5>
+                            <p>Automated receipt scanning and categorization eliminates manual data entry. One-click tax report generation.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🔮</div>
+                        <div class="value-content">
+                            <h5>Cash Flow Predictability</h5>
+                            <p>AI-powered income and expense forecasting enables confident financial planning and reduces surprise shortfalls.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="value-card">
+                    <h4>🏪 For Small Business Owners</h4>
+                    <div class="value-item">
+                        <div class="value-icon">📊</div>
+                        <div class="value-content">
+                            <h5>Real-Time Business Intelligence</h5>
+                            <p>Live dashboard showing revenue, expenses, and margin trends. Automated alerts for unusual patterns or cash flow concerns.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🤝</div>
+                        <div class="value-content">
+                            <h5>Expert Access On-Demand</h5>
+                            <p>Verified tax professional matching with transparent pricing. No more searching for and vetting accountants.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">💳</div>
+                        <div class="value-content">
+                            <h5>Optimized Financial Products</h5>
+                            <p>Personalized credit card, loan, and insurance recommendations based on actual business spending patterns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Projection -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Financial Projections</div>
+                <h2 class="section-title">3-Year Revenue Forecast & Unit Economics</h2>
+                <p class="section-desc">Conservative growth model based on <span class="term">Bottom-Up TAM Analysis</span>. Break-even projected at Month 8 with strong path to profitability by Year 2.</p>
+            </div>
+
+            <div class="projection-grid">
+                <div class="projection-chart">
+                    <div class="chart-title">Annual Revenue Projection (USD)</div>
+                    <div class="chart-bars">
+                        <div class="chart-bar">
+                            <span class="bar-label">Year 1</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 15%;">
+                                    <span class="bar-value">$550K</span>
+                                </div>
+                                <span class="bar-detail">Net Margin -40%</span>
+                            </div>
+                        </div>
+                        <div class="chart-bar">
+                            <span class="bar-label">Year 2</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 45%;">
+                                    <span class="bar-value">$2.2M</span>
+                                </div>
+                                <span class="bar-detail">Net Margin 40%</span>
+                            </div>
+                        </div>
+                        <div class="chart-bar">
+                            <span class="bar-label">Year 3</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 100%;">
+                                    <span class="bar-value">$5.5M</span>
+                                </div>
+                                <span class="bar-detail">Net Margin 55%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(17,153,142,0.1);">
+                        <div class="chart-title">Revenue Mix Breakdown (Year 2)</div>
+                        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                            <div style="flex: 1; text-align: center; min-width: 120px;">
+                                <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--fr-primary);">45%</div>
+                                <div style="font-family: 'Inter', sans-serif; font-size: 0.7rem; color: #666; margin-top: 0.25rem;">Premium Subscription</div>
+                            </div>
+                            <div style="flex: 1; text-align: center; min-width: 120px;">
+                                <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--fr-secondary);">30%</div>
+                                <div style="font-family: 'Inter', sans-serif; font-size: 0.7rem; color: #666; margin-top: 0.25rem;">Financial Affiliate</div>
+                            </div>
+                            <div style="flex: 1; text-align: center; min-width: 120px;">
+                                <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--fr-accent);">25%</div>
+                                <div style="font-family: 'Inter', sans-serif; font-size: 0.7rem; color: #666; margin-top: 0.25rem;">Expert Matching + Data</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projection-metrics">
+                    <div class="metric-card">
+                        <div class="metric-value">200K</div>
+                        <div class="metric-label">Target MAU (Year 2)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">25%</div>
+                        <div class="metric-label">Premium Conversion</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">8 mo</div>
+                        <div class="metric-label">Break-Even Point</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">40%</div>
+                        <div class="metric-label">Y2 Net Margin</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$11</div>
+                        <div class="metric-label">Monthly ARPU (Premium)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">500K</div>
+                        <div class="metric-label">Monthly Receipts (Y1)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Roadmap -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">Development Roadmap</div>
+                <h2 class="section-title">24-Month Go-to-Market Execution Plan</h2>
+                <p class="section-desc">Risk mitigation through <span class="term">Phased Rollout Strategy</span>, with clearly defined <span class="term">North Star Metrics</span> and success criteria for each development phase.</p>
+            </div>
+
+            <div class="roadmap-grid">
+                <div class="roadmap-phase">
+                    <div class="phase-label">Phase 1: MVP</div>
+                    <div class="phase-title">0-6 Months</div>
+                    <ul class="phase-list">
+                        <li>Core Receipt OCR Engine (95%+ accuracy)</li>
+                        <li>Basic Expense Categorization</li>
+                        <li>Simple Tax Report Generation</li>
+                        <li>User Authentication & Onboarding</li>
+                        <li>Freemium Tier Launch</li>
+                    </ul>
+                    <div class="phase-metrics">
+                        <span class="phase-metric">10K DAU</span>
+                        <span class="phase-metric">50K Sign-ups</span>
+                        <span class="phase-metric">5min Session</span>
+                    </div>
+                </div>
+                <div class="roadmap-phase">
+                    <div class="phase-label">Phase 2: Platform Pivot</div>
+                    <div class="phase-title">6-12 Months</div>
+                    <ul class="phase-list">
+                        <li>AI Tax Health Score™ Algorithm</li>
+                        <li>Cash Flow Prediction Engine</li>
+                        <li>Tax Expert Matching Network</li>
+                        <li>Premium Subscription Launch</li>
+                        <li>Financial Product Integration</li>
+                    </ul>
+                    <div class="phase-metrics">
+                        <span class="phase-metric">50K MAU</span>
+                        <span class="phase-metric">10% Premium</span>
+                        <span class="phase-metric">Break-Even</span>
+                    </div>
+                </div>
+                <div class="roadmap-phase">
+                    <div class="phase-label">Phase 3: Ecosystem Expansion</div>
+                    <div class="phase-title">12-24 Months</div>
+                    <ul class="phase-list">
+                        <li>B2B White-Label Solution</li>
+                        <li>API Platform for Accounting Firms</li>
+                        <li>Advanced AI Recommendations</li>
+                        <li>Gamification 2.0 & Community</li>
+                        <li>International Expansion Prep</li>
+                    </ul>
+                    <div class="phase-metrics">
+                        <span class="phase-metric">200K MAU</span>
+                        <span class="phase-metric">25% Premium</span>
+                        <span class="phase-metric">$2.2M ARR</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Showcase Section -->
+    <section class="section section-dark" style="background: linear-gradient(180deg, var(--fr-dark) 0%, #0d2137 100%);">
+        <div class="container-wide" style="max-width: 1400px; margin: 0 auto;">
+            <div class="section-header center">
+                <div class="section-label">Live Application Preview</div>
+                <h2 class="section-title">Experience the Complete User Journey</h2>
+                <p class="section-desc">A comprehensive walkthrough of the <span class="term">FINA-R Platform Interface</span> — demonstrating intuitive navigation, AI-powered insights, and gamified engagement that makes financial management effortless and rewarding.</p>
+            </div>
+
+            <!-- App Flow Overview -->
+            <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 4rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 100px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                <span style="background: linear-gradient(135deg, var(--fr-primary), var(--fr-secondary)); color: #fff; padding: 0.6rem 1.2rem; border-radius: 100px; font-size: 0.75rem; font-weight: 500;">Dashboard</span>
+                <span style="color: var(--fr-secondary); font-size: 1.2rem;">→</span>
+                <span style="background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.9); padding: 0.6rem 1.2rem; border-radius: 100px; font-size: 0.75rem; font-weight: 500;">Transactions</span>
+                <span style="color: var(--fr-secondary); font-size: 1.2rem;">→</span>
+                <span style="background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.9); padding: 0.6rem 1.2rem; border-radius: 100px; font-size: 0.75rem; font-weight: 500;">Budget</span>
+                <span style="color: var(--fr-secondary); font-size: 1.2rem;">→</span>
+                <span style="background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.9); padding: 0.6rem 1.2rem; border-radius: 100px; font-size: 0.75rem; font-weight: 500;">Tax Forecast</span>
+                <span style="color: var(--fr-secondary); font-size: 1.2rem;">→</span>
+                <span style="background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.9); padding: 0.6rem 1.2rem; border-radius: 100px; font-size: 0.75rem; font-weight: 500;">Benefits</span>
+                <span style="color: var(--fr-secondary); font-size: 1.2rem;">→</span>
+                <span style="background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.9); padding: 0.6rem 1.2rem; border-radius: 100px; font-size: 0.75rem; font-weight: 500;">Challenges</span>
+            </div>
+
+            <!-- Screen 1: Dashboard -->
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; margin-bottom: 6rem; padding-bottom: 6rem; border-bottom: 1px solid rgba(56,239,125,0.1);">
+                <div>
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(135deg, var(--fr-primary), var(--fr-secondary)); border-radius: 14px; font-size: 1.8rem; font-weight: 600; color: #fff; margin-bottom: 1.5rem;">01</div>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: #fff; margin-bottom: 1rem; line-height: 1.2;">Intelligent Dashboard</h3>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--fr-secondary); letter-spacing: 0.05em; margin-bottom: 1rem;">AI-Powered Financial Command Center</p>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 2rem;">The dashboard provides a <span class="term">Single Source of Truth</span> for your financial health. At a glance, users see their <span class="term">Tax Health Score™</span> (50), personalized AI alerts for tax savings, year-end settlement predictions (₩567,188 expected refund), and smart deduction recommendations.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Tax Health Score™:</strong> Real-time financial health indicator with trend analysis</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">AI Tax Alerts:</strong> Proactive notifications for pension contributions, check card usage</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Smart Recommendations:</strong> Up to ₩1,195,000 additional savings through AI suggestions</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Gamification Integration:</strong> Level 12 user with 2,580 points and 7-day streak bonus</li>
+                    </ul>
+                </div>
+                <div style="background: linear-gradient(135deg, var(--fr-primary) 0%, var(--fr-secondary) 50%, var(--fr-accent) 100%); border-radius: 24px; padding: 1.5rem; box-shadow: 0 40px 100px rgba(17,153,142,0.4);">
+                    <img src="https://www.genspark.ai/api/files/s/qYIo2u5s" alt="FINA-R Dashboard" style="width: 100%; border-radius: 16px; display: block;">
+                </div>
+            </div>
+
+            <!-- Screen 2: Transaction Management -->
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem; padding-bottom: 6rem; border-bottom: 1px solid rgba(56,239,125,0.1);">
+                <div style="background: linear-gradient(135deg, var(--fr-secondary) 0%, var(--fr-primary) 50%, var(--fr-accent) 100%); border-radius: 24px; padding: 1.5rem; box-shadow: 0 40px 100px rgba(56,239,125,0.3);">
+                    <img src="https://www.genspark.ai/api/files/s/JfY8Fwed" alt="Transaction Management" style="width: 100%; border-radius: 16px; display: block;">
+                </div>
+                <div>
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(135deg, var(--fr-primary), var(--fr-secondary)); border-radius: 14px; font-size: 1.8rem; font-weight: 600; color: #fff; margin-bottom: 1.5rem;">02</div>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: #fff; margin-bottom: 1rem; line-height: 1.2;">Transaction Intelligence</h3>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--fr-secondary); letter-spacing: 0.05em; margin-bottom: 1rem;">Multi-Bank Aggregation & Auto-Categorization</p>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 2rem;">Connect 5+ financial institutions in one view with <span class="term">Open Banking Integration</span>. The system displays 62 total transactions with automatic categorization — 33 manual entries (53%) and 29 auto-imported (47%), saving users 58 minutes monthly on data entry.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Multi-Bank Sync:</strong> Shinhan, KB Kookmin, Toss Bank integrated with real-time sync</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Smart Filtering:</strong> Date range, input method, institution, category filters</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">VAT Tracking:</strong> Automatic VAT calculation and separation for business users</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Screen 3: Budget Management -->
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; margin-bottom: 6rem; padding-bottom: 6rem; border-bottom: 1px solid rgba(56,239,125,0.1);">
+                <div>
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(135deg, var(--fr-primary), var(--fr-secondary)); border-radius: 14px; font-size: 1.8rem; font-weight: 600; color: #fff; margin-bottom: 1.5rem;">03</div>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: #fff; margin-bottom: 1rem; line-height: 1.2;">Budget Analytics</h3>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--fr-secondary); letter-spacing: 0.05em; margin-bottom: 1rem;">Predictive Spending & Variance Analysis</p>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 2rem;">Visual comparison of <span class="term">Budget vs. Actual Spending</span> with 6-month trend analysis. The clean interface shows monthly expenditure patterns, category achievement rates, and identifies savings opportunities through behavioral insights.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Trend Visualization:</strong> 6-month spending vs. budget comparison charts</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Achievement Tracking:</strong> Category-wise budget achievement rates</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Over/Under Analysis:</strong> Real-time alerts for budget variance detection</li>
+                    </ul>
+                </div>
+                <div style="background: linear-gradient(135deg, var(--fr-accent) 0%, var(--fr-primary) 50%, var(--fr-secondary) 100%); border-radius: 24px; padding: 1.5rem; box-shadow: 0 40px 100px rgba(12,235,235,0.3);">
+                    <img src="https://www.genspark.ai/api/files/s/NWI4HuOV" alt="Budget Management" style="width: 100%; border-radius: 16px; display: block;">
+                </div>
+            </div>
+
+            <!-- Screen 4: Tax Prediction -->
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem; padding-bottom: 6rem; border-bottom: 1px solid rgba(56,239,125,0.1);">
+                <div style="background: linear-gradient(135deg, var(--fr-primary) 0%, var(--fr-accent) 50%, var(--fr-secondary) 100%); border-radius: 24px; padding: 1.5rem; box-shadow: 0 40px 100px rgba(17,153,142,0.4);">
+                    <img src="https://www.genspark.ai/api/files/s/Ci1rkn9a" alt="Tax Prediction Calculator" style="width: 100%; border-radius: 16px; display: block;">
+                </div>
+                <div>
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(135deg, var(--fr-primary), var(--fr-secondary)); border-radius: 14px; font-size: 1.8rem; font-weight: 600; color: #fff; margin-bottom: 1.5rem;">04</div>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: #fff; margin-bottom: 1rem; line-height: 1.2;">Tax Prediction Engine</h3>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--fr-secondary); letter-spacing: 0.05em; margin-bottom: 1rem;">AI-Powered Year-End Settlement Calculator</p>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 2rem;">Comprehensive tax forecast based on ₩50M salary, ₩15M credit card usage (30%), and category-specific deductions. The <span class="term">Monthly Tax Analysis</span> shows ₩327,518 paid, ₩3,218,218 projected, with total expected tax of ₩3,545,736 and potential savings of ₩235,505.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Deduction Breakdown:</strong> Credit card (₩2.25M), cash receipts (₩900K), medical (₩300K), education (₩150K)</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Visual Timeline:</strong> 12-month tax projection with cumulative analysis</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">User Type Toggle:</strong> Individual vs. Business owner calculation modes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Screen 5: Benefits Discovery -->
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; margin-bottom: 6rem; padding-bottom: 6rem; border-bottom: 1px solid rgba(56,239,125,0.1);">
+                <div>
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(135deg, var(--fr-primary), var(--fr-secondary)); border-radius: 14px; font-size: 1.8rem; font-weight: 600; color: #fff; margin-bottom: 1.5rem;">05</div>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: #fff; margin-bottom: 1rem; line-height: 1.2;">Benefits Discovery</h3>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--fr-secondary); letter-spacing: 0.05em; margin-bottom: 1rem;">Personalized Tax Benefit Recommendation Engine</p>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 2rem;">AI identifies <span class="term">10 Applicable Benefits</span> with 5 ready for application, totaling approximately ₩8.5M in potential value. From credit card deductions (up to ₩3M) to rent deductions (up to ₩7.5M) and pension savings (up to ₩66M), users never miss eligible benefits.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Categorized Benefits:</strong> Tax deductions, housing, business, grants, financial products</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Eligibility Check:</strong> One-click qualification verification for each benefit</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Expert Connection:</strong> Direct link to tax professionals for complex applications</li>
+                    </ul>
+                </div>
+                <div style="background: linear-gradient(135deg, var(--fr-secondary) 0%, var(--fr-accent) 50%, var(--fr-primary) 100%); border-radius: 24px; padding: 1.5rem; box-shadow: 0 40px 100px rgba(56,239,125,0.3);">
+                    <img src="https://www.genspark.ai/api/files/s/ZVuouTNF" alt="Benefits Discovery" style="width: 100%; border-radius: 16px; display: block;">
+                </div>
+            </div>
+
+            <!-- Screen 6: Gamification & Challenges -->
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center;">
+                <div style="background: linear-gradient(135deg, var(--fr-accent) 0%, var(--fr-secondary) 50%, var(--fr-primary) 100%); border-radius: 24px; padding: 1.5rem; box-shadow: 0 40px 100px rgba(12,235,235,0.3);">
+                    <img src="https://www.genspark.ai/api/files/s/P8ruDu9U" alt="Challenges & Gamification" style="width: 100%; border-radius: 16px; display: block;">
+                </div>
+                <div>
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(135deg, var(--fr-primary), var(--fr-secondary)); border-radius: 14px; font-size: 1.8rem; font-weight: 600; color: #fff; margin-bottom: 1.5rem;">06</div>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: #fff; margin-bottom: 1rem; line-height: 1.2;">Gamification Engine</h3>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--fr-secondary); letter-spacing: 0.05em; margin-bottom: 1rem;">Behavioral Incentive Architecture</p>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 2rem;">Transform financial management from obligation to engagement through <span class="term">Variable Ratio Reinforcement</span>. Level 12 users earn 2,580 points with 2 badges earned, 400P total rewards, and weekly missions worth +300P to +500P each. The leaderboard creates healthy competition.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Badge Collection:</strong> 7-day streak, savings bronze, and 10+ unlockable achievements</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; border-bottom: 1px solid rgba(56,239,125,0.1); display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Weekly Missions:</strong> Receipt logging (20), budget adherence (7 days), community engagement (3)</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.75rem 0; display: flex; gap: 0.75rem;"><span style="color: var(--fr-secondary);">✦</span> <strong style="color: var(--fr-secondary);">Leaderboard:</strong> Monthly savings rankings with point-based competition</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- UX Analysis Summary -->
+            <div style="margin-top: 6rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(56,239,125,0.15); border-radius: 24px; padding: 3rem;">
+                <h4 style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fr-secondary); margin-bottom: 2rem; text-align: center;">UX Design Analysis & Key Insights</h4>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: var(--fr-secondary); line-height: 1;">3</div>
+                        <div style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 0.5rem;">Tap Maximum to Any Feature</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: var(--fr-secondary); line-height: 1;">95%</div>
+                        <div style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 0.5rem;">OCR Recognition Accuracy</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: var(--fr-secondary); line-height: 1;">58min</div>
+                        <div style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 0.5rem;">Monthly Time Saved</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: var(--fr-secondary); line-height: 1;">₩235K</div>
+                        <div style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 0.5rem;">Average Tax Savings</div>
+                    </div>
+                </div>
+                <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.8; text-align: center; max-width: 800px; margin: 2rem auto 0;">The interface follows <span class="term">Progressive Disclosure Principles</span> — complex financial data is presented through intuitive visualizations, allowing users to drill down only when needed. Consistent navigation patterns, clear visual hierarchy, and strategic use of color ensure a <span class="term">Cognitive Load Optimized</span> experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote-section">
+        <p class="quote-text">"FINA-R transforms passive financial record-keeping into <span style="font-weight: 500;">active wealth optimization</span>. We're not building another expense tracker — we're building the <span style="font-weight: 500;">financial co-pilot</span> that helps every freelancer, small business owner, and individual make smarter money decisions with <span style="font-weight: 500;">AI-powered intelligence</span>."</p>
+    </section>
+
+    <!-- Validation Results -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">Validation Results</div>
+                <h2 class="section-title">User Testing & Market Validation</h2>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value">89%</div>
+                    <div class="result-label">Task Completion Rate</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">62%</div>
+                    <div class="result-label">Faster Tax Prep Time</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">4.6/5</div>
+                    <div class="result-label">User Satisfaction</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">91%</div>
+                    <div class="result-label">Would Recommend</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Learnings -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Strategic Insights</div>
+                <h2 class="section-title">Key Learnings from Product Discovery</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem;">
+                <div style="padding: 2rem; background: var(--fr-light); border-radius: 16px;">
+                    <h4 style="font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--fr-primary); margin-bottom: 1rem;">On Platform Economics</h4>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #666; line-height: 1.8;">The key insight is that <span class="term">data is the moat</span>. Receipt data isn't just records — it's the foundation for personalized recommendations, tax optimization, and financial product matching. Every receipt uploaded increases platform value exponentially.</p>
+                </div>
+                <div style="padding: 2rem; background: var(--fr-light); border-radius: 16px;">
+                    <h4 style="font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--fr-primary); margin-bottom: 1rem;">On User Engagement</h4>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #666; line-height: 1.8;">Financial apps traditionally have poor retention because they're <span class="term">reactive, not proactive</span>. Gamification and predictive insights transform obligation into engagement. Users who see their "Tax Health Score" improve stay 3× longer.</p>
+                </div>
+                <div style="padding: 2rem; background: var(--fr-light); border-radius: 16px;">
+                    <h4 style="font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--fr-primary); margin-bottom: 1rem;">On Monetization Timing</h4>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #666; line-height: 1.8;"><span class="term">Value before revenue</span> is critical in fintech. Users must experience tangible tax savings or time savings before premium conversion. The "Aha moment" is seeing their first deduction they would have missed.</p>
+                </div>
+                <div style="padding: 2rem; background: var(--fr-light); border-radius: 16px;">
+                    <h4 style="font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--fr-primary); margin-bottom: 1rem;">On Trust Architecture</h4>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #666; line-height: 1.8;">Financial data is sensitive. <span class="term">Transparency builds trust</span> — clear explanation of how AI reaches conclusions, explicit data usage policies, and visible security certifications are non-negotiable for premium conversion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Navigation -->
+    <nav class="project-navigation">
+        <a href="project-stylebank.html" class="nav-prev">
+            <span class="nav-label">Previous Project</span>
+            <span class="nav-title">StyleBank</span>
+        </a>
+        <a href="project-carrifree.html" class="nav-next">
+            <span class="nav-label">Next Project</span>
+            <span class="nav-title">Carrifree</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">INA YU</span>
+                <span class="footer-copyright">© 2025</span>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:eunice-ina@naver.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/inayu" class="footer-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

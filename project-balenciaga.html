@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balenciaga Financial & Strategic Analysis | Ina Yu Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project.css">
+    <style>
+        .project-hero-balenciaga {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(26,26,26,0.9) 50%, rgba(45,45,45,0.85) 100%), 
+                        url('https://sspark.genspark.ai/cfimages?u1=KijQLgrOe7FPuiYyiBZxy%2BonH0ONLvJ47CMU48hZ12aKbYTgSTKUK%2FvguUDMmBQUncq8lP4RpE4q%2FhmtPEqdI7Nl6vG9Cd8mCbV2PA%3D%3D&u2=UNiOmVi%2FTzTSGxRQ&width=2560') center center / cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+        }
+        .hero-badge {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 0.5rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .hero-title-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 12vw, 8rem);
+            font-weight: 300;
+            color: #fff;
+            margin: 0 0 1rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .hero-subtitle-main {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            max-width: 800px;
+            line-height: 1.8;
+        }
+        .hero-credit {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 2rem;
+            letter-spacing: 0.1em;
+        }
+        .meta-bar-enhanced {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        .meta-bar-enhanced .meta-item {
+            padding: 2.5rem 2rem;
+            border-right: 1px solid #eee;
+            text-align: center;
+        }
+        .meta-bar-enhanced .meta-item:last-child {
+            border-right: none;
+        }
+        .meta-bar-enhanced .meta-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.5rem;
+        }
+        .meta-bar-enhanced .meta-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        @media (max-width: 968px) {
+            .meta-bar-enhanced { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .meta-bar-enhanced { grid-template-columns: repeat(2, 1fr); }
+        }
+        .heritage-section {
+            padding: 6rem 5%;
+            background: #fafafa;
+        }
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .heritage-left h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        .heritage-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #666;
+            border-left: 3px solid #1a1a1a;
+            padding-left: 2rem;
+            margin: 2rem 0;
+            line-height: 1.6;
+        }
+        .heritage-card {
+            background: #fff;
+            padding: 2rem;
+            border: 1px solid #eee;
+            margin-bottom: 1.5rem;
+        }
+        .heritage-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.75rem;
+        }
+        .heritage-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.7;
+        }
+        @media (max-width: 900px) {
+            .heritage-grid { grid-template-columns: 1fr; }
+        }
+        .milestones-section {
+            padding: 6rem 5%;
+            background: #1a1a1a;
+        }
+        .milestones-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .milestones-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+        .milestones-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #fff;
+        }
+        .milestones-timeline {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .milestones-timeline::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.1) 100%);
+        }
+        .milestone-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 0.5rem;
+        }
+        .milestone-dot {
+            width: 14px;
+            height: 14px;
+            background: #fff;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .milestone-item.highlight .milestone-dot {
+            width: 20px;
+            height: 20px;
+            background: #d4af37;
+            box-shadow: 0 0 20px rgba(212,175,55,0.4);
+        }
+        .milestone-year {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .milestone-event {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .milestones-timeline {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .milestones-timeline::before {
+                top: 0;
+                bottom: 0;
+                left: 2rem;
+                right: auto;
+                width: 2px;
+                height: auto;
+            }
+            .milestone-item {
+                text-align: left;
+                padding-left: 4rem;
+            }
+            .milestone-dot {
+                position: absolute;
+                left: 1.5rem;
+                top: 0;
+                margin: 0;
+            }
+        }
+        .creative-section {
+            padding: 6rem 5%;
+            background: #fff;
+        }
+        .creative-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .creative-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .creative-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .creative-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .creative-card {
+            padding: 3rem;
+            border: 1px solid #eee;
+            position: relative;
+        }
+        .creative-card.featured {
+            background: #1a1a1a;
+            border-color: #1a1a1a;
+        }
+        .creative-card.featured * {
+            color: #fff;
+        }
+        .creative-card.featured .creative-label {
+            color: rgba(255,255,255,0.5);
+        }
+        .creative-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .creative-years {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .creative-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+        .creative-description {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #666;
+        }
+        .creative-highlights {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        .creative-card.featured .creative-highlights {
+            border-color: rgba(255,255,255,0.1);
+        }
+        .creative-highlights h5 {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.75rem;
+        }
+        .creative-card.featured .creative-highlights h5 {
+            color: rgba(255,255,255,0.5);
+        }
+        .creative-highlights ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .creative-highlights li {
+            font-size: 0.85rem;
+            color: #666;
+            padding: 0.3rem 0;
+        }
+        .creative-card.featured .creative-highlights li {
+            color: rgba(255,255,255,0.7);
+        }
+        @media (max-width: 768px) {
+            .creative-cards { grid-template-columns: 1fr; }
+        }
+        .financial-section {
+            padding: 6rem 5%;
+            background: #f5f5f5;
+        }
+        .financial-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .financial-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .financial-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .financial-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 1rem auto 0;
+        }
+        .financial-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            border: 1px solid #ddd;
+            background: #fff;
+        }
+        .metric-card {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-right: 1px solid #ddd;
+        }
+        .metric-card:last-child {
+            border-right: none;
+        }
+        .metric-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        .metric-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+        }
+        .metric-context {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 900px) {
+            .financial-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .metric-card:nth-child(2) {
+                border-right: none;
+            }
+            .metric-card:nth-child(1),
+            .metric-card:nth-child(2) {
+                border-bottom: 1px solid #ddd;
+            }
+        }
+        .ceo-quote {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 3rem;
+            background: #fff;
+            border: 1px solid #ddd;
+        }
+        .ceo-quote blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #333;
+            line-height: 1.6;
+            margin: 0 0 1.5rem;
+        }
+        .ceo-quote cite {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-style: normal;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+        }
+        .kering-section {
+            padding: 6rem 5%;
+            background: #1a1a1a;
+        }
+        .kering-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .kering-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+        .kering-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #fff;
+        }
+        .kering-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .kering-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .kering-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+        .kering-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .kering-card p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+        }
+        .kering-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+        .kering-card li {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .kering-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: rgba(255,255,255,0.4);
+        }
+        @media (max-width: 768px) {
+            .kering-grid { grid-template-columns: 1fr; }
+        }
+        .brand-assets {
+            padding: 6rem 5%;
+            background: #fff;
+        }
+        .assets-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .assets-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .assets-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .assets-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .asset-card {
+            background: #fafafa;
+            overflow: hidden;
+        }
+        .asset-card-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+        .asset-card-content {
+            padding: 2rem;
+            text-align: center;
+        }
+        .asset-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+        }
+        .asset-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        .asset-era {
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: 1rem;
+        }
+        .asset-citation {
+            font-size: 0.7rem;
+            color: #999;
+            margin-top: 0.75rem;
+        }
+        .asset-citation a {
+            color: #666;
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .assets-grid { grid-template-columns: 1fr; }
+        }
+        .fragrance-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #f8f4f0 0%, #fff 100%);
+        }
+        .fragrance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        .fragrance-content h4 {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .fragrance-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+        .fragrance-content p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .fragrance-campaigns {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .campaign-tag {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .fragrance-grid { grid-template-columns: 1fr; }
+        }
+        .visual-identity {
+            padding: 6rem 5%;
+            background: #1a1a1a;
+        }
+        .visual-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .visual-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+        .visual-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #fff;
+        }
+        .visual-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .visual-card {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .visual-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1.5rem;
+        }
+        .visual-card .wordmark {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .visual-card .b-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+        .visual-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+        @media (max-width: 600px) {
+            .visual-grid { grid-template-columns: 1fr; }
+        }
+        .quote-block {
+            padding: 6rem 5%;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        .quote-block blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 400;
+            font-style: italic;
+            color: #1a1a1a;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .quote-block cite {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-style: normal;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: 2rem;
+        }
+        .insights-section {
+            padding: 6rem 5%;
+            background: #fff;
+        }
+        .insights-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .insights-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .insights-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .insight-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .insight-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+        .insight-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        @media (max-width: 768px) {
+            .insights-grid { grid-template-columns: 1fr; }
+        }
+        .results-section {
+            padding: 6rem 5%;
+            background: #fafafa;
+        }
+        .results-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .results-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .results-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .result-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: #fff;
+            border: 1px solid #eee;
+        }
+        .result-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        .result-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #999;
+        }
+        @media (max-width: 900px) {
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">INA YU</a>
+            <div class="nav-links">
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="project-hero-balenciaga">
+        <span class="hero-badge">Management Strategy Review</span>
+        <h1 class="hero-title-main">Balenciaga</h1>
+        <p class="hero-subtitle-main">Financial & Brand Performance Analysis<br>Heritage Evolution · Creative Leadership · Kering Portfolio Strategy</p>
+        <p class="hero-credit">Prepared by: Ina Yu, Nagwa · Luxury Strategy & Financial Planning · 2014</p>
+    </section>
+
+    <!-- Meta Bar -->
+    <div class="meta-bar-enhanced">
+        <div class="meta-item">
+            <div class="meta-label">Role</div>
+            <div class="meta-value">Strategic Analyst</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Context</div>
+            <div class="meta-value">SCAD MFA Research</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Focus</div>
+            <div class="meta-value">Financial Analysis</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Parent Company</div>
+            <div class="meta-value">Kering Group</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Division</div>
+            <div class="meta-value">Other Luxury Brands</div>
+        </div>
+    </div>
+
+    <!-- Brand Heritage Section -->
+    <section class="heritage-section">
+        <div class="heritage-grid">
+            <div class="heritage-left">
+                <h3>The Visionary Founder:<br>Cristóbal Balenciaga</h3>
+                <p class="heritage-quote">"The Master of Us All" — Born in 1895 in Spain, Cristóbal Balenciaga established himself as one of the most influential forces in fashion history.</p>
+                <p style="font-size: 1rem; color: #666; line-height: 1.8; margin-top: 2rem;">Established in Paris in 1937, his fashion house defined major movements from the 1930s to the 1960s. His architectural approach to silhouette and refusal to follow industry norms earned him the reverence of peers like Christian Dior and Coco Chanel. The house's legacy of sculptural innovation—from the Oversized Coat to the Barrel Suit—continues to inform contemporary collections.</p>
+            </div>
+            <div class="heritage-right">
+                <div class="heritage-card">
+                    <h4>Architectural Heritage</h4>
+                    <p>Defined by revolutionary silhouettes including the High-waist Baby Doll dress (1947-1958), the Infanta-inspired evening wear, and sculptural tailoring that treated fabric as architecture rather than decoration.</p>
+                </div>
+                <div class="heritage-card">
+                    <h4>Industry Reverence</h4>
+                    <p>Christian Dior called him "the master of us all." Coco Chanel declared him "the only true couturier." His peers understood that Balenciaga operated on a plane of technical mastery few could reach.</p>
+                </div>
+                <div class="heritage-card">
+                    <h4>Modern Transformation</h4>
+                    <p>Acquired by the Gucci Group (now Kering) in 2001, the brand has transitioned from a niche couture house to a dominant commercial power, contributing significantly to Kering's "Other Brands" division.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Milestones -->
+    <section class="milestones-section">
+        <div class="milestones-header">
+            <div class="label">Foundation and Evolutionary Roots</div>
+            <h2>Strategic Milestones</h2>
+        </div>
+        <div class="milestones-timeline">
+            <div class="milestone-item">
+                <div class="milestone-dot"></div>
+                <div class="milestone-year">1895</div>
+                <div class="milestone-event">Birth of Cristóbal Balenciaga in Getaria, Spain</div>
+            </div>
+            <div class="milestone-item">
+                <div class="milestone-dot"></div>
+                <div class="milestone-year">1937</div>
+                <div class="milestone-event">Opening of the first Fashion House in Paris</div>
+            </div>
+            <div class="milestone-item">
+                <div class="milestone-dot"></div>
+                <div class="milestone-year">1947–1958</div>
+                <div class="milestone-event">Era of the High-waist Baby Doll dress & architectural innovation</div>
+            </div>
+            <div class="milestone-item highlight">
+                <div class="milestone-dot"></div>
+                <div class="milestone-year">2001</div>
+                <div class="milestone-event">Acquisition by the Gucci Group (now Kering)</div>
+            </div>
+            <div class="milestone-item">
+                <div class="milestone-dot"></div>
+                <div class="milestone-year">2012</div>
+                <div class="milestone-event">Alexander Wang appointed as Creative Director</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Leadership -->
+    <section class="creative-section">
+        <div class="creative-header">
+            <div class="label">Creative Leadership Analysis</div>
+            <h2>The Impact of Design Direction on Brand Value</h2>
+        </div>
+        <div class="creative-cards">
+            <div class="creative-card featured">
+                <div class="creative-label">Era I</div>
+                <div class="creative-years">1997–2012</div>
+                <div class="creative-name">Nicolas Ghesquière</div>
+                <div class="creative-description">Injected a "biker chic" signature and metallic looks that redefined Balenciaga for the modern era. Balanced archive reverence with contemporary innovation, establishing the house as a forward-looking force in fashion.</div>
+                <div class="creative-highlights">
+                    <h5>Key Contributions</h5>
+                    <ul>
+                        <li>Introduced technical fabrics to haute couture</li>
+                        <li>Created the iconic City Bag (Motorcycle Bag)</li>
+                        <li>Established "biker chic" as brand signature</li>
+                        <li>Metallic and futuristic aesthetic integration</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="creative-card">
+                <div class="creative-label">Era II (Current)</div>
+                <div class="creative-years">2012–Present</div>
+                <div class="creative-name">Alexander Wang</div>
+                <div class="creative-description">Introduced architectural simplicity combined with archive-inspired designs. Brought streetwear sensibility and American commercial pragmatism while receiving strong critical reception for balancing heritage with modernity.</div>
+                <div class="creative-highlights">
+                    <h5>Key Contributions</h5>
+                    <ul>
+                        <li>Archive-inspired design approach</li>
+                        <li>Architectural simplicity emphasis</li>
+                        <li>Younger consumer demographic expansion</li>
+                        <li>Commercial accessibility increase</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Performance -->
+    <section class="financial-section">
+        <div class="financial-header">
+            <div class="label">Financial Performance Analysis</div>
+            <h2>Kering "Other Brands" Segment</h2>
+            <p>As part of the Kering portfolio, Balenciaga leverages world-class infrastructure, logistics, and supply chain management for accelerated growth.</p>
+        </div>
+        <div class="financial-metrics">
+            <div class="metric-card">
+                <div class="metric-value">€200M+</div>
+                <div class="metric-label">Revenue Potential</div>
+                <div class="metric-context">Independent baseline projection</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">80</div>
+                <div class="metric-label">Global Stores</div>
+                <div class="metric-context">High-traffic luxury districts</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">91</div>
+                <div class="metric-label">E-commerce Countries</div>
+                <div class="metric-context">Omnichannel coverage</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">5,000+</div>
+                <div class="metric-label">Target Points of Sale</div>
+                <div class="metric-context">Long-term strategic goal</div>
+            </div>
+        </div>
+        <div class="ceo-quote">
+            <blockquote>"Former CEO James McArthur projected a baseline potential exceeding €200 million for the brand independently. Continuous double-digit growth in emerging markets validates this strategic trajectory."</blockquote>
+            <cite>Financial Performance Assessment</cite>
+        </div>
+    </section>
+
+    <!-- Kering Synergies -->
+    <section class="kering-section">
+        <div class="kering-header">
+            <div class="label">Corporate Strategy</div>
+            <h2>Kering Group Synergies & Growth Vectors</h2>
+        </div>
+        <div class="kering-grid">
+            <div class="kering-card">
+                <h4>Infrastructure Benefits</h4>
+                <h3>World-Class Operational Excellence</h3>
+                <p>As part of Kering, Balenciaga leverages shared services that would be prohibitively expensive independently:</p>
+                <ul>
+                    <li>Global logistics and supply chain optimization</li>
+                    <li>Centralized digital and e-commerce platform</li>
+                    <li>Shared real estate and retail expertise</li>
+                    <li>Group-level sustainability initiatives</li>
+                </ul>
+            </div>
+            <div class="kering-card">
+                <h4>Growth Opportunities</h4>
+                <h3>Strategic Expansion Vectors</h3>
+                <p>Analysis identified key areas for accelerated growth within the Kering portfolio:</p>
+                <ul>
+                    <li>Leather Goods: High performance category with expansion potential</li>
+                    <li>Footwear: Proven success indicates further category development</li>
+                    <li>Emerging Markets: Continuous double-digit growth opportunity</li>
+                    <li>Direct Retail: Margin improvement through channel optimization</li>
+                </ul>
+            </div>
+            <div class="kering-card">
+                <h4>Retail Excellence</h4>
+                <h3>Global Distribution Network</h3>
+                <p>Strategic retail footprint focused on high-traffic luxury districts including New York City and Paris, with omnichannel integration across 91 countries for seamless customer experience.</p>
+            </div>
+            <div class="kering-card">
+                <h4>Market Positioning</h4>
+                <h3>Heritage Meets Modernity</h3>
+                <p>Balancing archive heritage with contemporary street-style codes to attract younger luxury consumers while maintaining the prestige and craftsmanship legacy established by Cristóbal Balenciaga.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Assets -->
+    <section class="brand-assets">
+        <div class="assets-header">
+            <div class="label">Brand Asset Analysis</div>
+            <h2>Iconic Products Driving Brand Equity</h2>
+        </div>
+        <div class="assets-grid">
+            <div class="asset-card">
+                <img src="https://www.genspark.ai/api/files/s/n7ZCYQVG" alt="City Bag (Motorcycle Bag)" class="asset-card-image">
+                <div class="asset-card-content">
+                    <h4>City Bag (Motorcycle Bag)</h4>
+                    <p>The 2000s icon that established Balenciaga's dominance in "it-bag" culture. Distinctive hardware and slouchy silhouette created instant brand recognition.</p>
+                    <div class="asset-era">Ghesquière Era Icon</div>
+                </div>
+            </div>
+            <div class="asset-card">
+                <img src="https://www.genspark.ai/api/files/s/EDfzR3Q8" alt="Sculptural Tailoring" class="asset-card-image">
+                <div class="asset-card-content">
+                    <h4>Sculptural Tailoring</h4>
+                    <p>Direct references to Cristóbal's architectural innovations—Oversized Coat, Barrel Suit, and Infanta-inspired evening silhouettes translated for modern wardrobes.</p>
+                    <div class="asset-era">Heritage Asset</div>
+                </div>
+            </div>
+            <div class="asset-card">
+                <img src="https://www.genspark.ai/api/files/s/5ccZyK7r" alt="Couture Heritage" class="asset-card-image">
+                <div class="asset-card-content">
+                    <h4>Couture Heritage</h4>
+                    <p>The master craftsmanship that earned Cristóbal Balenciaga the title "Master of Us All" from Christian Dior. Sculptural garments that continue to influence contemporary fashion.</p>
+                    <div class="asset-era">Archival Foundation</div>
+                    <div class="asset-citation">
+                        Image Source: <a href="https://www.theguardian.com/fashion/gallery/2019/aug/19/balenciaga-the-master-of-coutures-sculptural-garments-in-pictures" target="_blank">The Guardian Fashion Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fragrance Success -->
+    <section class="fragrance-section">
+        <div class="fragrance-grid">
+            <div class="fragrance-content">
+                <h4>Fragrance Portfolio</h4>
+                <h3>Bridging Couture with Accessible Luxury</h3>
+                <p>Balenciaga's fragrance division has established globally recognized advertising campaigns that extend brand reach beyond fashion consumers. Strategic celebrity partnerships have amplified brand visibility across demographics.</p>
+                <p>Campaigns featuring actress Kristen Stewart for Florabotanica and Rosabotanica established a distinctive brand voice in the competitive fragrance market, demonstrating successful translation of house codes into accessible luxury categories.</p>
+                <div class="fragrance-campaigns">
+                    <span class="campaign-tag">Florabotanica</span>
+                    <span class="campaign-tag">Rosabotanica</span>
+                    <span class="campaign-tag">Kristen Stewart</span>
+                </div>
+            </div>
+            <div class="fragrance-visual" style="background: #f0ebe6; padding: 4rem; display: flex; align-items: center; justify-content: center;">
+                <div style="text-align: center;">
+                    <div style="font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 600; letter-spacing: 0.2em; color: #1a1a1a;">BALENCIAGA</div>
+                    <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: #666; margin-top: 1rem;">Fragrance Collection</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Identity -->
+    <section class="visual-identity">
+        <div class="visual-header">
+            <div class="label">Brand Identity (2014)</div>
+            <h2>Visual Identity System</h2>
+        </div>
+        <div class="visual-grid">
+            <div class="visual-card">
+                <h4>Wordmark</h4>
+                <div class="wordmark">BALENCIAGA</div>
+                <p>The established Balenciaga logo font represents the brand's heritage and luxury positioning. Clean typography that communicates elegance and craftsmanship.</p>
+            </div>
+            <div class="visual-card">
+                <h4>Secondary Mark</h4>
+                <div class="b-logo">B</div>
+                <p>The B logo appears on select accessories including sunglasses, providing brand recognition in smaller applications and accessory categories.</p>
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-top: 2rem;">Note: The double-B monogram was historically used during the Hoescht AG licensing period after the founder's death, prior to the current wordmark system.</p>
+    </section>
+
+    <!-- Quote Block -->
+    <section class="quote-block">
+        <blockquote>"Balenciaga proves that heritage brands can lead cultural conversation—but only when creative vision is backed by corporate infrastructure and strategic patience. The Kering acquisition transformed a sleeping archive into a commercial powerhouse."</blockquote>
+        <cite>Strategic Analysis Conclusion</cite>
+    </section>
+
+    <!-- Strategic Results -->
+    <section class="results-section">
+        <div class="results-header">
+            <div class="label">Analysis Conclusions</div>
+            <h2>Strategic Findings</h2>
+        </div>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-value">5,000+</div>
+                <div class="result-label">Potential Distribution Points</div>
+            </div>
+            <div class="result-card">
+                <div class="result-value">Heritage</div>
+                <div class="result-label">Key Differentiator</div>
+            </div>
+            <div class="result-card">
+                <div class="result-value">Digital</div>
+                <div class="result-label">Primary Growth Channel</div>
+            </div>
+            <div class="result-card">
+                <div class="result-value">Asia</div>
+                <div class="result-label">Priority Emerging Market</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Insights -->
+    <section class="insights-section">
+        <div class="insights-header">
+            <div class="label">Key Learnings</div>
+            <h2>Strategic Insights</h2>
+        </div>
+        <div class="insights-grid">
+            <div class="insight-card">
+                <h4>On Conglomerate Value</h4>
+                <h3>Portfolio Approach to Creative Risk</h3>
+                <p>Kering's portfolio approach allows individual brands to take creative risks while benefiting from shared operational excellence. The conglomerate absorbs volatility that would threaten independent houses, enabling bolder creative direction and longer-term strategic investments.</p>
+            </div>
+            <div class="insight-card">
+                <h4>On Archive Activation</h4>
+                <h3>Heritage as Competitive Advantage</h3>
+                <p>Balenciaga's most successful products—sculptural tailoring, Infanta references, architectural silhouettes—directly reference Cristóbal's innovations. Heritage isn't constraint; it's competitive advantage when properly leveraged for contemporary expression.</p>
+            </div>
+            <div class="insight-card">
+                <h4>On Creative Leadership</h4>
+                <h3>Design Direction Drives Value</h3>
+                <p>The transition from Ghesquière to Wang demonstrates how creative leadership directly impacts brand trajectory. Each director brought distinct vision while maintaining house codes, proving that heritage brands require continuous creative evolution.</p>
+            </div>
+            <div class="insight-card">
+                <h4>On Market Expansion</h4>
+                <h3>Double-Digit Emerging Market Growth</h3>
+                <p>Continuous double-digit growth in emerging markets validates Balenciaga's strategic positioning. The combination of heritage prestige and contemporary relevance resonates particularly strongly with new luxury consumers in Asia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Navigation -->
+    <nav class="project-navigation">
+        <a href="project-moschino.html" class="nav-prev">
+            <span class="nav-label">Previous Project</span>
+            <span class="nav-title">Moschino Repositioning</span>
+        </a>
+        <a href="project-gucci.html" class="nav-next">
+            <span class="nav-label">Next Project</span>
+            <span class="nav-title">Gucci Scenario Planning</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">INA YU</span>
+                <span class="footer-copyright">© 2025</span>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:eunice-ina@naver.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/inayu" class="footer-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

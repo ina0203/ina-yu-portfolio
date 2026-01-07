@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doux & Suave | Luxury Jewelry Brand | Ina Yu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project.css">
+    <style>
+        /* Custom styles for Doux & Suave page - Enhanced readability */
+        
+        /* ==========================================
+           WEBSITE FEATURES SECTION - HIGH CONTRAST
+           ========================================== */
+        .features-section {
+            background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 6rem 5%;
+        }
+        .features-section .section-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .features-section .section-label h2 {
+            color: #d4a574;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+        }
+        
+        /* Feature rows with excellent contrast */
+        .feature-row-enhanced {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .feature-row-enhanced:last-child {
+            border-bottom: none;
+        }
+        .feature-row-enhanced:hover {
+            background: rgba(255, 255, 255, 0.02);
+            margin: 0 -1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        /* Feature number */
+        .feature-num-enhanced {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #d4a574;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Feature title - BRIGHT WHITE for maximum contrast */
+        .feature-title-enhanced {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: #ffffff !important;
+            margin: 0 0 0.75rem 0;
+            letter-spacing: 0.01em;
+        }
+        
+        /* Feature description */
+        .feature-desc-enhanced {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        /* ==========================================
+           LIGHT SECTIONS
+           ========================================== */
+        .light-section {
+            background: #fafafa;
+            padding: 5rem 5%;
+        }
+
+        /* ==========================================
+           WEB DESIGN SHOWCASE
+           ========================================== */
+        .web-section {
+            background: #0a0a0a;
+            padding: 6rem 5%;
+        }
+        .web-section .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.75rem;
+            font-weight: 400;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .web-section .section-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .web-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .web-grid img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+        .web-grid img:hover {
+            transform: translateY(-5px);
+        }
+        @media (max-width: 768px) {
+            .web-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==========================================
+           BRAND PILLARS
+           ========================================== */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .pillar-item {
+            background: linear-gradient(135deg, #fff, #f8f8f8);
+            border: 1px solid #eee;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pillar-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .pillar-item h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #c9a96e;
+            margin: 0 0 0.75rem 0;
+        }
+        .pillar-item p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #666;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==========================================
+           STATS ROW
+           ========================================== */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .stat-box {
+            text-align: center;
+        }
+        .stat-val {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #c9a96e;
+        }
+        .stat-text {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+        @media (max-width: 600px) {
+            .stats-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==========================================
+           DEVICES SECTION
+           ========================================== */
+        .devices-section {
+            padding: 5rem 5%;
+            background: #f5f5f5;
+        }
+        .devices-section .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .devices-flex {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+        .device-box {
+            text-align: center;
+        }
+        .device-box img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .device-box span {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #999;
+        }
+
+        /* ==========================================
+           COLORS GRID
+           ========================================== */
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .color-box {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1rem;
+            color: #fff;
+            font-size: 0.75rem;
+        }
+        .color-box .name {
+            font-weight: 500;
+        }
+        .color-box .code {
+            opacity: 0.7;
+            font-size: 0.7rem;
+            margin-top: 0.25rem;
+        }
+        @media (max-width: 600px) {
+            .colors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ==========================================
+           LEARNINGS GRID
+           ========================================== */
+        .learnings-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .learn-card {
+            background: #f8f8f8;
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 3px solid #c9a96e;
+            transition: transform 0.3s ease;
+        }
+        .learn-card:hover {
+            transform: translateY(-3px);
+        }
+        .learn-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            margin: 0 0 0.75rem 0;
+        }
+        .learn-card p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #555;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .learnings-grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">INA YU</a>
+            <div class="nav-links">
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="project-hero-fullscreen" style="background: linear-gradient(135deg, #d4a574 0%, #c9a96e 50%, #b8956a 100%);">
+        <div class="hero-content-centered">
+            <span class="hero-category">Visual Design</span>
+            <h1 class="hero-title-large">Doux & Suave</h1>
+            <p class="hero-subtitle-large">Premium Jewelry Brand Identity & Digital Experience</p>
+        </div>
+    </section>
+
+    <!-- Meta Bar -->
+    <section class="project-meta-bar">
+        <div class="meta-grid">
+            <div class="meta-item">
+                <span class="meta-label">Project Type</span>
+                <span class="meta-value">University Project</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">Brand & UX Designer</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Deliverables</span>
+                <span class="meta-value">Logo, Website, Mobile App, Print</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Skills</span>
+                <span class="meta-value">Branding, Web Design, UI/UX</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Concept -->
+    <section class="content-section">
+        <div class="section-grid">
+            <div class="section-label">
+                <h2>Brand Concept</h2>
+            </div>
+            <div class="section-content">
+                <p class="large-text">DOUX + SUAVE = DOUXSUAVE — A luxury jewelry brand inspired by the sweetness of Parisian romance, designed for couples who believe in the power of meaningful adornment.</p>
+                <p>The brand name combines "Doux" (French for sweet/gentle) and "Suave" (smooth/elegant), embodying the delicate balance between tenderness and sophistication that defines modern luxury jewelry.</p>
+                
+                <div class="pillars-grid">
+                    <div class="pillar-item">
+                        <h4>Promise</h4>
+                        <p>Jewelry that captures the essence of commitment and enduring love</p>
+                    </div>
+                    <div class="pillar-item">
+                        <h4>Confidence</h4>
+                        <p>Pieces that empower wearers to express their unique style</p>
+                    </div>
+                    <div class="pillar-item">
+                        <h4>Believe</h4>
+                        <p>Craftsmanship that honors the stories behind each piece</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Analysis -->
+    <section class="light-section">
+        <div class="section-grid" style="max-width: 1200px; margin: 0 auto;">
+            <div class="section-label">
+                <h2>Market Context</h2>
+            </div>
+            <div class="section-content">
+                <h3>Industry Positioning</h3>
+                <p>The branded jewelry market represents approximately 20% of the total jewelry market, with significant growth driven by millennial and Gen Z consumers seeking meaningful, personalized pieces over traditional investment jewelry.</p>
+                
+                <h3>Target Audience</h3>
+                <p>Modern couples aged 25-40 who value craftsmanship, sustainability, and unique design. They seek jewelry that tells a story and reflects their personal journey together.</p>
+                
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-val">20%</div>
+                        <div class="stat-text">Branded jewelry market share</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-val">$340B</div>
+                        <div class="stat-text">Global jewelry market value</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-val">5.8%</div>
+                        <div class="stat-text">Annual growth rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Design -->
+    <section class="content-section">
+        <div class="section-grid">
+            <div class="section-label">
+                <h2>Logo Design</h2>
+            </div>
+            <div class="section-content">
+                <p>The logomark elegantly intertwines the initials "D" and "S" in a continuous flow, symbolizing the eternal bond between partners. The typography balances classic serif elegance with contemporary minimalism.</p>
+                
+                <div class="image-showcase">
+                    <img src="https://www.genspark.ai/api/files/s/MmOGnF1F" alt="Doux & Suave Logo Design" class="showcase-image">
+                </div>
+                
+                <div class="design-details">
+                    <div class="detail-item">
+                        <h4>Typography</h4>
+                        <p>Custom letterforms inspired by French Art Nouveau, with modern refinements for digital clarity</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Color Palette</h4>
+                        <p>Warm gold (#C9A96E) as primary, complemented by deep charcoal and cream for sophistication</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web Design -->
+    <section class="web-section">
+        <h2 class="section-title">Web Design</h2>
+        <p class="section-subtitle">A digital experience that mirrors the elegance of the jewelry itself</p>
+        <div class="web-grid">
+            <img src="https://www.genspark.ai/api/files/s/zRdEbqsl" alt="Desktop Website Design">
+            <img src="https://www.genspark.ai/api/files/s/EkSKGqbP" alt="Website Detail View">
+        </div>
+    </section>
+
+    <!-- Website Features - ENHANCED HIGH CONTRAST -->
+    <section class="features-section">
+        <div class="section-grid">
+            <div class="section-label">
+                <h2>Website Features</h2>
+            </div>
+            <div class="section-content">
+                <div class="feature-row-enhanced">
+                    <div class="feature-num-enhanced">01</div>
+                    <div>
+                        <h3 class="feature-title-enhanced">Collections</h3>
+                        <p class="feature-desc-enhanced">Curated galleries showcasing each collection with immersive storytelling and detailed product views</p>
+                    </div>
+                </div>
+                <div class="feature-row-enhanced">
+                    <div class="feature-num-enhanced">02</div>
+                    <div>
+                        <h3 class="feature-title-enhanced">Heritage</h3>
+                        <p class="feature-desc-enhanced">Brand story and craftsmanship journey, highlighting the artisanal process behind each piece</p>
+                    </div>
+                </div>
+                <div class="feature-row-enhanced">
+                    <div class="feature-num-enhanced">03</div>
+                    <div>
+                        <h3 class="feature-title-enhanced">Made-To-Order</h3>
+                        <p class="feature-desc-enhanced">Bespoke service portal for custom designs with consultation booking and progress tracking</p>
+                    </div>
+                </div>
+                <div class="feature-row-enhanced">
+                    <div class="feature-num-enhanced">04</div>
+                    <div>
+                        <h3 class="feature-title-enhanced">Responsive Design</h3>
+                        <p class="feature-desc-enhanced">Seamless experience across desktop, tablet, and mobile with touch-optimized interactions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile & Tablet -->
+    <section class="devices-section">
+        <h2 class="section-title">Responsive Experience</h2>
+        <div class="devices-flex">
+            <div class="device-box">
+                <img src="https://www.genspark.ai/api/files/s/ggcheI8P" alt="Tablet View">
+                <span>Tablet</span>
+            </div>
+            <div class="device-box">
+                <img src="https://www.genspark.ai/api/files/s/yyqXAoPE" alt="Mobile View">
+                <span>Mobile</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Print Design -->
+    <section class="content-section">
+        <div class="section-grid">
+            <div class="section-label">
+                <h2>Print Design</h2>
+            </div>
+            <div class="section-content">
+                <p>The print collateral extends the brand's digital elegance into tactile experiences, from business cards with gold foil accents to packaging that transforms unboxing into a ceremonial moment.</p>
+                
+                <h3>Collateral Suite</h3>
+                <ul class="styled-list">
+                    <li>Business cards with embossed logo and gold foil details</li>
+                    <li>Letterhead and envelope system for formal correspondence</li>
+                    <li>Product packaging with magnetic closure and ribbon pull</li>
+                    <li>Care instruction cards with maintenance guidelines</li>
+                    <li>Gift wrapping options for special occasions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design System -->
+    <section class="light-section">
+        <div class="section-grid" style="max-width: 1200px; margin: 0 auto;">
+            <div class="section-label">
+                <h2>Design System</h2>
+            </div>
+            <div class="section-content">
+                <h3>Color Palette</h3>
+                <div class="colors-grid">
+                    <div class="color-box" style="background: #c9a96e;">
+                        <span class="name">Warm Gold</span>
+                        <span class="code">#C9A96E</span>
+                    </div>
+                    <div class="color-box" style="background: #2d2d2d;">
+                        <span class="name">Deep Charcoal</span>
+                        <span class="code">#2D2D2D</span>
+                    </div>
+                    <div class="color-box" style="background: #f8f5f0; color: #333;">
+                        <span class="name">Cream</span>
+                        <span class="code">#F8F5F0</span>
+                    </div>
+                    <div class="color-box" style="background: #d4a574;">
+                        <span class="name">Rose Gold</span>
+                        <span class="code">#D4A574</span>
+                    </div>
+                </div>
+                
+                <h3>Typography</h3>
+                <p>Primary: Cormorant Garamond for headlines and brand moments. Secondary: Inter for body text and UI elements, ensuring digital readability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Learnings -->
+    <section class="content-section">
+        <div class="section-grid">
+            <div class="section-label">
+                <h2>Key Learnings</h2>
+            </div>
+            <div class="section-content">
+                <div class="learnings-grid-3">
+                    <div class="learn-card">
+                        <h4>Brand Storytelling</h4>
+                        <p>Luxury branding requires more than aesthetic polish—it demands a compelling narrative that connects emotionally with the target audience.</p>
+                    </div>
+                    <div class="learn-card">
+                        <h4>Cross-Platform Consistency</h4>
+                        <p>Maintaining brand integrity across digital and print requires a robust design system with clear guidelines and flexible applications.</p>
+                    </div>
+                    <div class="learn-card">
+                        <h4>User-Centered Luxury</h4>
+                        <p>Even in luxury markets, user experience principles apply—intuitive navigation and seamless interactions enhance perceived value.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="project-navigation">
+        <a href="project-visual-design.html" class="nav-prev">
+            <span class="nav-label">Previous Project</span>
+            <span class="nav-title">Visual Design Projects</span>
+        </a>
+        <a href="project-eunice.html" class="nav-next">
+            <span class="nav-label">Next Project</span>
+            <span class="nav-title">Eunice-Ina</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">INA YU</span>
+                <span class="footer-copyright">© 2025</span>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:eunice-ina@naver.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/inayu" class="footer-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+/* ============================================
+   ABOUT PAGE STYLES - Professional Portfolio
+   ============================================ */
+
+/* Hero Section */
+.about-hero {
+    padding: 8rem 5% 5rem;
+    background: #fff;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.4;
+    color: #1a1a1a;
+    margin: 0 0 1.5rem 0;
+}
+
+.hero-title .highlight {
+    color: #c9a96e;
+    font-style: italic;
+}
+
+.hero-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.hero-text strong {
+    color: #1a1a1a;
+}
+
+/* Hero Stats */
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #c9a96e;
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-image img {
+        margin: 0 auto;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+}
+
+/* What Sets Me Apart */
+.about-value {
+    padding: 5rem 5%;
+    background: #f8f8f8;
+}
+
+.value-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.value-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.value-icon {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #c9a96e;
+    margin-bottom: 1rem;
+}
+
+.value-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0 0 1rem 0;
+}
+
+.value-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Story / Timeline */
+.about-story {
+    padding: 5rem 5%;
+    background: #fff;
+}
+
+.story-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin: 0 0 3rem 0;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #c9a96e, #e8d4b8);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0.5rem;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 3px solid #c9a96e;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item.highlight-item .timeline-marker {
+    background: #c9a96e;
+    box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.2);
+}
+
+.timeline-content {
+    padding-left: 1.5rem;
+}
+
+.timeline-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0 0 0.75rem 0;
+}
+
+.timeline-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+}
+
+.timeline-content p strong {
+    color: #1a1a1a;
+}
+
+.timeline-item.highlight-item .timeline-content {
+    background: linear-gradient(135deg, #f8f5f0, #fff);
+    padding: 1.5rem;
+    border-radius: 4px;
+    border-left: 3px solid #c9a96e;
+    margin-left: 0.5rem;
+}
+
+/* Skills */
+.about-skills {
+    padding: 5rem 5%;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.skills-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-content .section-title {
+    color: #fff;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.skill-category h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #c9a96e;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-category li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.skill-category li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Education */
+.about-education {
+    padding: 5rem 5%;
+    background: #fff;
+}
+
+.education-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.education-item {
+    padding: 2rem;
+    background: #f8f8f8;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.education-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0 0 0.75rem 0;
+}
+
+.education-degree {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #c9a96e;
+    font-weight: 500;
+    margin: 0 0 0.5rem 0;
+}
+
+.education-location {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0;
+}
+
+.education-honors {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #999;
+    font-style: italic;
+    margin: 0.5rem 0 0 0;
+}
+
+@media (max-width: 768px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Certifications */
+.certifications {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #f8f8f8;
+    border-radius: 4px;
+}
+
+.certifications h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+.certifications ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.certifications li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #666;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #eee;
+}
+
+/* Philosophy */
+.about-philosophy {
+    padding: 5rem 5%;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+}
+
+.philosophy-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.philosophy-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: relative;
+}
+
+.philosophy-quote::before {
+    content: '"';
+    font-size: 4rem;
+    color: #c9a96e;
+    position: absolute;
+    top: -1.5rem;
+    left: -1rem;
+    opacity: 0.5;
+}
+
+/* Resume Download */
+.about-resume {
+    padding: 4rem 5%;
+    background: #fff;
+    text-align: center;
+}
+
+.resume-button {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #1a1a1a;
+    padding: 1rem 3rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.resume-button:hover {
+    background: #c9a96e;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 5%;
+    background: #1a1a1a;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.footer-copyright {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+}
+
+.footer-right {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #c9a96e;
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}

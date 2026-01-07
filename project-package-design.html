@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traditional Korean Health Food Package Design | Ina Yu Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project.css">
+    <style>
+        /* Package Design Page Specific Styles */
+        .hero-package {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #8B2635 0%, #C41E3A 30%, #D4AF37 70%, #B8860B 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+        }
+        
+        .hero-package::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: 30px 30px;
+        }
+        
+        .hero-package-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+        }
+        
+        .hero-package .category-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-package h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+        
+        .hero-package h1 .chinese-char {
+            font-family: 'Noto Serif SC', 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: #D4AF37;
+        }
+        
+        .hero-package .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Meta Bar - Enhanced */
+        .meta-bar-package {
+            background: #FDFBF7;
+            padding: 3rem 5%;
+            border-bottom: 1px solid rgba(139,38,53,0.1);
+        }
+        
+        .meta-grid-package {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .meta-item-package .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #8B2635;
+            margin-bottom: 0.5rem;
+        }
+        
+        .meta-item-package .meta-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        
+        /* Stats Section */
+        .stats-package {
+            background: linear-gradient(135deg, #8B2635 0%, #6B1C28 100%);
+            padding: 5rem 5%;
+        }
+        
+        .stats-grid-package {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .stat-item-package .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: #D4AF37;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item-package .stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        /* Product Showcase Section */
+        .product-showcase {
+            padding: 6rem 5%;
+            background: #ffffff;
+        }
+        
+        .product-showcase .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .showcase-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .showcase-header .section-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #8B2635;
+            margin-bottom: 1rem;
+        }
+        
+        .showcase-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        
+        .showcase-header .description {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .product-card {
+            background: #FDFBF7;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 80px rgba(139,38,53,0.15);
+        }
+        
+        .product-card .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+        
+        .product-card .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .product-card:hover .image-wrapper img {
+            transform: scale(1.08);
+        }
+        
+        .product-card .content {
+            padding: 2rem;
+        }
+        
+        .product-card .category {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #8B2635;
+            margin-bottom: 0.75rem;
+        }
+        
+        .product-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+        }
+        
+        .product-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Feature Section - Dark */
+        .feature-dark {
+            background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 6rem 5%;
+            color: #ffffff;
+        }
+        
+        .feature-dark .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .feature-content .section-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 400;
+            color: #ffffff !important;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .feature-content p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0 0;
+        }
+        
+        .feature-list li {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.9);
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .feature-list li::before {
+            content: '✦';
+            color: #D4AF37;
+            font-size: 0.8rem;
+        }
+        
+        .feature-list li strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        .feature-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+        }
+        
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+            cursor: pointer;
+        }
+        
+        .feature-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Heritage Section */
+        .heritage-section {
+            background: #FDFBF7;
+            padding: 6rem 5%;
+        }
+        
+        .heritage-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .heritage-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid rgba(139,38,53,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .heritage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(139,38,53,0.1);
+            border-color: rgba(212,175,55,0.3);
+        }
+        
+        .heritage-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .heritage-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+        }
+        
+        .heritage-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Full Width Image Gallery */
+        .gallery-full {
+            padding: 6rem 5%;
+            background: #ffffff;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Design System Section */
+        .design-system {
+            background: linear-gradient(135deg, #8B2635 0%, #6B1C28 100%);
+            padding: 6rem 5%;
+            color: #ffffff;
+        }
+        
+        .design-system .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .design-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #D4AF37;
+            margin-bottom: 1.5rem;
+        }
+        
+        .color-swatches {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .swatch {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .typography-sample {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .typography-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Term Highlight */
+        .term-highlight {
+            background: linear-gradient(135deg, rgba(212,175,55,0.2) 0%, rgba(139,38,53,0.2) 100%);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            color: #D4AF37;
+        }
+        
+        /* Full Width Hero Image */
+        .hero-image-full {
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero-image-full img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.6s ease;
+        }
+        
+        .hero-image-full:hover img {
+            transform: scale(1.02);
+        }
+        
+        /* Image Zoom Modal */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            cursor: zoom-out;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-modal.active {
+            display: flex;
+        }
+        
+        .image-modal img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2rem;
+            color: #ffffff;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            opacity: 1;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .meta-grid-package {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .stats-grid-package {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .heritage-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .design-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .meta-grid-package {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-grid-package {
+                grid-template-columns: 1fr;
+            }
+            .heritage-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">INA YU</a>
+            <div class="nav-links">
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-package">
+        <div class="hero-package-content">
+            <span class="category-tag">Brand & Package Design</span>
+            <h1>Traditional Korean<br>Health Food <span class="chinese-char">養生</span></h1>
+            <p class="subtitle">A comprehensive brand identity and packaging system for premium Korean health food products — Red Ginseng Tea, Artisanal Candy, and Ganggyeong Jeotgal — harmonizing 200 years of heritage with contemporary design aesthetics.</p>
+        </div>
+        <div class="scroll-indicator">Scroll</div>
+    </section>
+
+    <!-- Main Card Image -->
+    <div class="hero-image-full">
+        <img src="https://www.genspark.ai/api/files/s/frYZfsah" alt="Traditional Korean Health Food Package Design - Main Visual" class="zoomable-image">
+    </div>
+
+    <!-- Project Meta Bar -->
+    <div class="meta-bar-package">
+        <div class="meta-grid-package">
+            <div class="meta-item-package">
+                <div class="meta-label">Role</div>
+                <div class="meta-value">In-House Package Designer</div>
+            </div>
+            <div class="meta-item-package">
+                <div class="meta-label">Timeline</div>
+                <div class="meta-value">2008</div>
+            </div>
+            <div class="meta-item-package">
+                <div class="meta-label">Scope</div>
+                <div class="meta-value">Client Product Package Design, Label System</div>
+            </div>
+            <div class="meta-item-package">
+                <div class="meta-label">Products</div>
+                <div class="meta-value">Red Ginseng Tea, Candy, Jeotgal</div>
+            </div>
+            <div class="meta-item-package">
+                <div class="meta-label">Client</div>
+                <div class="meta-value">Corporate Client Commission</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="stats-package">
+        <div class="stats-grid-package">
+            <div class="stat-item-package">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Product Categories</div>
+            </div>
+            <div class="stat-item-package">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Years of Heritage</div>
+            </div>
+            <div class="stat-item-package">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Package Variants</div>
+            </div>
+            <div class="stat-item-package">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Traditional Ingredients</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section class="product-showcase">
+        <div class="container">
+            <div class="showcase-header">
+                <div class="section-label">Executive Summary</div>
+                <h2>Bridging Heritage and Modernity</h2>
+                <p class="description">This project reimagines traditional Korean health food packaging through a <span class="term-highlight">Contemporary Heritage Design</span> approach. By preserving authentic elements — Chinese calligraphy, traditional color symbolism, and artisanal craftsmanship cues — while introducing modern typography, clean layouts, and premium material textures, we create packaging that speaks to both tradition-conscious consumers and contemporary design sensibilities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 1: Red Ginseng Tea -->
+    <section class="feature-dark">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <div class="section-label">Product Line 01</div>
+                    <h2>Red Ginseng Tea Collection<br><span style="font-family: 'Noto Serif SC', serif; color: #D4AF37;">紅蔘茶</span></h2>
+                    <p>The flagship product line featuring premium Korean red ginseng (홍삼) — known for its <span class="term-highlight">Adaptogenic Properties</span> and centuries-old wellness tradition. The packaging employs a <span class="term-highlight">Chromatic Hierarchy</span> system using crimson red and gold to signify vitality and premium positioning.</p>
+                    
+                    <ul class="feature-list">
+                        <li><strong>Visual Language:</strong> Crimson-gold palette with traditional motifs</li>
+                        <li><strong>Typography:</strong> Bold Chinese script for cultural authenticity</li>
+                        <li><strong>Material Strategy:</strong> Matte finish with foil stamping accents</li>
+                        <li><strong>Information Architecture:</strong> Clear hierarchy of product benefits</li>
+                        <li><strong>Shelf Differentiation:</strong> Premium tier positioning through scale</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <img src="https://www.genspark.ai/api/files/s/5GIE9jss" alt="Red Ginseng Tea Package Design" class="zoomable-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 2: Red Ginseng Products Extended -->
+    <section class="product-showcase">
+        <div class="container">
+            <div class="feature-grid" style="grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="feature-image" style="box-shadow: 0 30px 80px rgba(139,38,53,0.15);">
+                    <img src="https://www.genspark.ai/api/files/s/3Y0XFgzT" alt="Red Ginseng Tea Package Variants" class="zoomable-image">
+                </div>
+                <div class="feature-content">
+                    <div class="section-label" style="color: #8B2635;">Product Line 01 Extended</div>
+                    <h2 style="color: #1a1a1a !important;">Premium Gift Set Configuration</h2>
+                    <p style="color: #666;">The extended product line includes various concentration levels and gift configurations. Each variant maintains <span class="term-highlight">Visual Consistency</span> while introducing subtle differentiators through typography scale and accent colors.</p>
+                    
+                    <ul class="feature-list" style="margin-top: 2rem;">
+                        <li style="color: #1a1a1a; border-color: rgba(139,38,53,0.1);"><strong style="color: #8B2635;">SKU Hierarchy:</strong> Standard, Premium, Gift Set tiers</li>
+                        <li style="color: #1a1a1a; border-color: rgba(139,38,53,0.1);"><strong style="color: #8B2635;">Brand Cohesion:</strong> Consistent logo placement and grid</li>
+                        <li style="color: #1a1a1a; border-color: rgba(139,38,53,0.1);"><strong style="color: #8B2635;">Unboxing Experience:</strong> Multi-layer reveal design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 3: Premium Jar Collection -->
+    <section class="feature-dark">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <div class="section-label">Product Line 02</div>
+                    <h2>Artisanal Preserve Collection<br><span style="font-family: 'Noto Serif SC', serif; color: #D4AF37;">蜜餞精品</span></h2>
+                    <p>Premium preserved products including honey-infused red ginseng and traditional candies. The <span class="term-highlight">Ceramic-Inspired Packaging</span> references Korean celadon aesthetics while the outer box employs vibrant red with rainbow iridescent accents for festive gifting occasions.</p>
+                    
+                    <ul class="feature-list">
+                        <li><strong>Form Factor:</strong> Ceramic-look jar with traditional silhouette</li>
+                        <li><strong>Surface Treatment:</strong> Subtle embossed patterns</li>
+                        <li><strong>Color System:</strong> Red base with rainbow foil accents</li>
+                        <li><strong>Gift-Giving UX:</strong> Designed for ceremonial presentation</li>
+                        <li><strong>Tactile Quality:</strong> Premium weight and finish</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <img src="https://www.genspark.ai/api/files/s/BAyGTC2p" alt="Premium Jar Collection Package Design" class="zoomable-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 4: Ganggyeong Jeotgal -->
+    <section class="product-showcase">
+        <div class="container">
+            <div class="feature-grid" style="grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="feature-image" style="box-shadow: 0 30px 80px rgba(139,38,53,0.15);">
+                    <img src="https://www.genspark.ai/api/files/s/PZjrbkiU" alt="Ganggyeong Jeotgal Label Design" class="zoomable-image">
+                </div>
+                <div class="feature-content">
+                    <div class="section-label" style="color: #8B2635;">Product Line 03</div>
+                    <h2 style="color: #1a1a1a !important;">Ganggyeong Jeotgal Collection<br><span style="font-family: 'Noto Serif SC', serif; color: #8B2635;">江景醢</span></h2>
+                    <p style="color: #666;">The legendary fermented seafood from Ganggyeong — one of Korea's top three traditional markets — reinterpreted through <span class="term-highlight">Minimalist Heritage Design</span>. The label system emphasizes authenticity and product clarity while maintaining a contemporary aesthetic suitable for premium retail environments.</p>
+                    
+                    <ul class="feature-list" style="margin-top: 2rem;">
+                        <li style="color: #1a1a1a; border-color: rgba(139,38,53,0.1);"><strong style="color: #8B2635;">Regional Provenance:</strong> West Coast seafood hub designation</li>
+                        <li style="color: #1a1a1a; border-color: rgba(139,38,53,0.1);"><strong style="color: #8B2635;">Preservation Method:</strong> Traditional salt-curing technique</li>
+                        <li style="color: #1a1a1a; border-color: rgba(139,38,53,0.1);"><strong style="color: #8B2635;">Market Heritage:</strong> Top 3 national market legacy</li>
+                        <li style="color: #1a1a1a; border-color: rgba(139,38,53,0.1);"><strong style="color: #8B2635;">Color Palette:</strong> Pastel with burgundy accents</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section class="heritage-section">
+        <div class="container">
+            <div class="showcase-header">
+                <div class="section-label">Brand Heritage Analysis</div>
+                <h2>200 Years of Craftsmanship</h2>
+                <p class="description">The design strategy incorporates four pillars of authentic heritage positioning that differentiate these products in the competitive health food market.</p>
+            </div>
+            
+            <div class="heritage-grid">
+                <div class="heritage-card">
+                    <div class="icon">🌊</div>
+                    <h4>West Coast Provenance</h4>
+                    <p>Strategic location at the West Sea seafood hub ensures access to the freshest raw ingredients and maintains the authentic flavor profile.</p>
+                </div>
+                <div class="heritage-card">
+                    <div class="icon">🧂</div>
+                    <h4>Salt-Curing Mastery</h4>
+                    <p>Traditional <span class="term-highlight">Jang Culture</span> preservation techniques passed down through generations, ensuring optimal fermentation.</p>
+                </div>
+                <div class="heritage-card">
+                    <div class="icon">🏛️</div>
+                    <h4>Market Legacy</h4>
+                    <p>Recognized as one of Korea's top three traditional markets, Ganggyeong carries significant cultural and commercial heritage.</p>
+                </div>
+                <div class="heritage-card">
+                    <div class="icon">⏳</div>
+                    <h4>Aging Expertise</h4>
+                    <p>200 years of refined ingredient selection and fermentation timing create the distinctive depth of flavor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design System -->
+    <section class="design-system">
+        <div class="container">
+            <div class="showcase-header" style="text-align: center;">
+                <div class="section-label" style="color: #D4AF37;">Visual Design System</div>
+                <h2 style="color: #ffffff;">Brand Guidelines</h2>
+                <p class="description" style="color: rgba(255,255,255,0.7);">A comprehensive visual system ensuring consistency across all product lines and touchpoints.</p>
+            </div>
+            
+            <div class="design-grid">
+                <div class="design-item">
+                    <h4>Primary Color Palette</h4>
+                    <div class="color-swatches">
+                        <div class="swatch" style="background: #8B2635;" title="Heritage Red"></div>
+                        <div class="swatch" style="background: #D4AF37;" title="Fortune Gold"></div>
+                        <div class="swatch" style="background: #1a1a1a;" title="Ink Black"></div>
+                        <div class="swatch" style="background: #FDFBF7;" title="Rice Paper"></div>
+                    </div>
+                    <p class="typography-desc" style="margin-top: 1rem;">Heritage Red #8B2635 · Fortune Gold #D4AF37</p>
+                </div>
+                <div class="design-item">
+                    <h4>Typography System</h4>
+                    <div class="typography-sample">養生 Aa</div>
+                    <p class="typography-desc">Noto Serif SC + Cormorant Garamond</p>
+                    <p class="typography-desc" style="margin-top: 0.5rem;">Traditional-Modern Typography Pairing</p>
+                </div>
+                <div class="design-item">
+                    <h4>Design Principles</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.8); padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✦ Respectful Heritage Interpretation</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.8); padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✦ Premium Materiality</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.8); padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✦ Information Clarity</li>
+                        <li style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.8); padding: 0.5rem 0;">✦ Gift-Giving Experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Deliverables -->
+    <section class="product-showcase">
+        <div class="container">
+            <div class="showcase-header">
+                <div class="section-label">Project Deliverables</div>
+                <h2>Comprehensive Brand Package</h2>
+            </div>
+            
+            <div class="product-grid" style="grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+                <div class="heritage-card">
+                    <div class="icon">🎨</div>
+                    <h4>Brand Identity</h4>
+                    <p>Logo system, color palette, typography guidelines</p>
+                </div>
+                <div class="heritage-card">
+                    <div class="icon">📦</div>
+                    <h4>Package Design</h4>
+                    <p>12 SKU variants across 3 product lines</p>
+                </div>
+                <div class="heritage-card">
+                    <div class="icon">📋</div>
+                    <h4>Label System</h4>
+                    <p>Scalable label templates and specifications</p>
+                </div>
+                <div class="heritage-card">
+                    <div class="icon">📖</div>
+                    <h4>Brand Guidelines</h4>
+                    <p>Comprehensive usage documentation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Learnings -->
+    <section class="feature-dark" style="background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);">
+        <div class="container">
+            <div class="showcase-header" style="text-align: center;">
+                <div class="section-label" style="color: #D4AF37;">Key Learnings</div>
+                <h2 style="color: #ffffff;">Strategic Insights</h2>
+            </div>
+            
+            <div class="feature-grid" style="margin-top: 3rem;">
+                <div class="feature-content">
+                    <h3 style="color: #D4AF37; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: 1rem;">On Heritage Brand Design</h3>
+                    <p>Authenticity cannot be fabricated — it must be discovered through deep research into historical production methods, regional significance, and cultural symbolism. The <span class="term-highlight">Provenance Storytelling</span> approach proved essential in differentiating premium traditional products from mass-market alternatives.</p>
+                </div>
+                <div class="feature-content">
+                    <h3 style="color: #D4AF37; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: 1rem;">On Contemporary-Traditional Balance</h3>
+                    <p>Modern consumers seek products that connect them to tradition without feeling outdated. The successful strategy employed <span class="term-highlight">Selective Modernization</span> — updating layouts and typography while preserving symbolic colors and Chinese character elements that carry cultural weight.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Navigation -->
+    <nav class="project-navigation">
+        <a href="project-healthcare.html" class="nav-prev">
+            <span class="nav-label">Previous Project</span>
+            <span class="nav-title">AI Healthcare+</span>
+        </a>
+        <a href="project-finar.html" class="nav-next">
+            <span class="nav-label">Next Project</span>
+            <span class="nav-title">FINA-R</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">INA YU</span>
+                <span class="footer-copyright">© 2025</span>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:eunice-ina@naver.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/inayu" class="footer-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Zoom Modal -->
+    <div class="image-modal" id="imageModal">
+        <span class="modal-close">&times;</span>
+        <img src="" alt="Enlarged view" id="modalImage">
+    </div>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Image zoom functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const zoomableImages = document.querySelectorAll('.zoomable-image');
+
+        zoomableImages.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.classList.add('active');
+                modalImg.src = this.src;
+            });
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal || e.target.classList.contains('modal-close')) {
+                modal.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,2203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleBank | Ina Yu Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project.css">
+    <style>
+        /* StyleBank Design System */
+        :root {
+            --cb-primary: #8B5CF6;
+            --cb-secondary: #E879F9;
+            --cb-accent: #6366F1;
+            --cb-success: #10B981;
+            --cb-warning: #F59E0B;
+            --cb-dark: #0f0f1a;
+            --cb-light: #FAFAFF;
+        }
+
+        /* Hero Section */
+        .hero-stylebank {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #E879F9 0%, #8B5CF6 40%, #6366F1 80%, #4F46E5 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-stylebank::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="80" r="1.5" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: 50px 50px;
+        }
+
+        .hero-stylebank::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1000px;
+        }
+
+        .category-badge {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.95);
+            background: rgba(255,255,255,0.12);
+            padding: 0.6rem 1.5rem;
+            border-radius: 100px;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: inline-block;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 10vw, 6.5rem);
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 40px rgba(0,0,0,0.15);
+        }
+
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        /* KPI Hero Cards */
+        .hero-kpis {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .hero-kpi {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 1.5rem 2.5rem;
+            text-align: center;
+        }
+
+        .hero-kpi-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .hero-kpi-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
+            margin-top: 0.5rem;
+        }
+
+        /* Meta Bar */
+        .meta-bar {
+            background: #ffffff;
+            padding: 3rem 5%;
+            border-bottom: 1px solid rgba(139,92,246,0.1);
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .meta-item .label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--cb-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-item .value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 5%;
+        }
+
+        .section-dark {
+            background: var(--cb-dark);
+            color: #ffffff;
+        }
+
+        .section-light {
+            background: var(--cb-light);
+        }
+
+        .section-white {
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-header.center {
+            text-align: center;
+        }
+
+        .section-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cb-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-label {
+            color: var(--cb-secondary);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 400;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        .section-dark .section-title {
+            color: #ffffff;
+        }
+
+        .section-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            color: #666;
+            margin-top: 1rem;
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .section-dark .section-desc {
+            color: rgba(255,255,255,0.75);
+        }
+
+        .section-header.center .section-desc {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Term Highlight */
+        .term {
+            background: linear-gradient(135deg, rgba(232,121,249,0.15), rgba(139,92,246,0.15));
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            color: var(--cb-primary);
+        }
+
+        .section-dark .term {
+            background: rgba(139,92,246,0.3);
+            color: var(--cb-secondary);
+        }
+
+        /* Executive Summary */
+        .exec-summary {
+            background: linear-gradient(135deg, rgba(139,92,246,0.05) 0%, rgba(232,121,249,0.05) 100%);
+            border: 1px solid rgba(139,92,246,0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .exec-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cb-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .exec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .exec-item h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+        }
+
+        .exec-item p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Market Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(139,92,246,0.1);
+            border-color: rgba(139,92,246,0.3);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            color: var(--cb-secondary);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+        }
+
+        .stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .stat-detail {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.5rem;
+        }
+
+        /* Target Persona */
+        .persona-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .persona-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        .persona-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(139,92,246,0.1);
+        }
+
+        .persona-avatar {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--cb-secondary), var(--cb-primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .persona-info h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .persona-info p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .persona-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .persona-stat {
+            background: var(--cb-light);
+            padding: 1rem;
+            border-radius: 12px;
+        }
+
+        .persona-stat .label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cb-primary);
+        }
+
+        .persona-stat .value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-top: 0.25rem;
+        }
+
+        /* Problem Cards */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: var(--cb-light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border-left: 4px solid var(--cb-primary);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(139,92,246,0.1);
+        }
+
+        .problem-card:nth-child(1) { border-left-color: var(--cb-secondary); }
+        .problem-card:nth-child(2) { border-left-color: var(--cb-primary); }
+        .problem-card:nth-child(3) { border-left-color: var(--cb-accent); }
+        .problem-card:nth-child(4) { border-left-color: var(--cb-success); }
+
+        .problem-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--cb-secondary), var(--cb-primary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--cb-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .problem-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+        }
+
+        .problem-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .problem-stat {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--cb-primary);
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(139,92,246,0.1);
+        }
+
+        /* User Flow */
+        .flow-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .flow-intro {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .flow-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .flow-node {
+            background: linear-gradient(135deg, var(--cb-secondary), var(--cb-primary));
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .flow-arrow {
+            color: var(--cb-primary);
+            font-size: 1.5rem;
+        }
+
+        .flow-step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-bottom: 8rem;
+            padding-bottom: 8rem;
+            border-bottom: 1px solid rgba(139,92,246,0.1);
+        }
+
+        .flow-step:nth-child(even) {
+            direction: rtl;
+        }
+
+        .flow-step:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .flow-step:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .flow-content {
+            padding: 1rem 0;
+        }
+
+        .flow-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--cb-secondary), var(--cb-primary));
+            border-radius: 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+
+        .flow-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .flow-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--cb-primary);
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .flow-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .flow-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .flow-features li {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #444;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(139,92,246,0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .flow-features li::before {
+            content: '✦';
+            color: var(--cb-primary);
+            font-size: 0.7rem;
+            margin-top: 0.2rem;
+        }
+
+        .flow-features li strong {
+            color: var(--cb-primary);
+            font-weight: 600;
+        }
+
+        .flow-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .flow-tech span {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--cb-primary);
+            background: rgba(139,92,246,0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 100px;
+        }
+
+        .flow-image {
+            background: linear-gradient(135deg, var(--cb-secondary) 0%, var(--cb-primary) 50%, var(--cb-accent) 100%);
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 40px 100px rgba(139,92,246,0.3);
+            transition: all 0.4s ease;
+        }
+
+        .flow-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 50px 120px rgba(139,92,246,0.35);
+        }
+
+        .flow-image img {
+            width: 100%;
+            border-radius: 16px;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .flow-image:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Competitive Analysis */
+        .comparison-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .comparison-problem {
+            background: var(--cb-light);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+
+        .comparison-problem h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .comparison-list li {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #666;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(139,92,246,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .comparison-list li::before {
+            content: '×';
+            color: #e74c3c;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .comparison-solution {
+            background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(232,121,249,0.1));
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(139,92,246,0.2);
+        }
+
+        .comparison-solution h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--cb-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-solution .comparison-list li::before {
+            content: '✓';
+            color: var(--cb-success);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--cb-secondary), var(--cb-primary));
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+
+        .comparison-table th:first-child {
+            text-align: left;
+            padding-left: 2rem;
+        }
+
+        .comparison-table td {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #444;
+            padding: 1.25rem 1rem;
+            border-bottom: 1px solid rgba(139,92,246,0.08);
+            text-align: center;
+        }
+
+        .comparison-table td:first-child {
+            text-align: left;
+            padding-left: 2rem;
+            font-weight: 500;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .check-yes {
+            color: var(--cb-success);
+            font-size: 1.3rem;
+        }
+
+        .check-partial {
+            color: var(--cb-warning);
+            font-size: 1.3rem;
+        }
+
+        .check-no {
+            color: #ddd;
+            font-size: 1.3rem;
+        }
+
+        /* Revenue Model */
+        .revenue-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .revenue-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .revenue-card:hover {
+            background: rgba(139,92,246,0.1);
+            border-color: rgba(139,92,246,0.3);
+            transform: translateY(-8px);
+        }
+
+        .revenue-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--cb-secondary), var(--cb-primary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .revenue-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .revenue-rate {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--cb-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .revenue-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+        }
+
+        .revenue-compare {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .revenue-compare strong {
+            color: var(--cb-secondary);
+        }
+
+        /* B2B Revenue */
+        .b2b-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .b2b-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .b2b-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .b2b-card .price {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--cb-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .b2b-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* Reward System */
+        .reward-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .reward-section {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+
+        .reward-section h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--cb-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .reward-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .reward-item:last-child {
+            border-bottom: none;
+        }
+
+        .reward-item .action {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .reward-item .points {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--cb-secondary);
+        }
+
+        /* Financial Projection */
+        .projection-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .projection-chart {
+            background: var(--cb-light);
+            border-radius: 24px;
+            padding: 3rem;
+        }
+
+        .chart-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--cb-primary);
+            margin-bottom: 2rem;
+        }
+
+        .chart-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .chart-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bar-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #666;
+            width: 50px;
+            flex-shrink: 0;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 48px;
+            background: rgba(139,92,246,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--cb-secondary), var(--cb-primary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            transition: width 0.8s ease;
+        }
+
+        .bar-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .bar-detail {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            color: #999;
+        }
+
+        .projection-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .metric-card {
+            background: var(--cb-light);
+            border-radius: 16px;
+            padding: 1.75rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(139,92,246,0.1);
+        }
+
+        .metric-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--cb-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        /* Roadmap */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .roadmap-phase {
+            background: var(--cb-light);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roadmap-phase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--cb-secondary), var(--cb-primary));
+        }
+
+        .phase-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--cb-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+
+        .phase-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem;
+        }
+
+        .phase-list li {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #666;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .phase-list li::before {
+            content: '■';
+            position: absolute;
+            left: 0;
+            color: var(--cb-primary);
+            font-size: 0.5rem;
+        }
+
+        .phase-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .phase-metric {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--cb-primary);
+            background: rgba(139,92,246,0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 100px;
+        }
+
+        /* Network Effect */
+        .network-diagram {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 4rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .network-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--cb-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .network-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .network-node {
+            background: linear-gradient(135deg, var(--cb-secondary), var(--cb-primary));
+            color: #ffffff;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .network-arrow {
+            color: var(--cb-secondary);
+            font-size: 1.5rem;
+        }
+
+        /* Image Modal */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            cursor: zoom-out;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        .image-modal img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2rem;
+            color: #ffffff;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .modal-close:hover {
+            opacity: 1;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, var(--cb-secondary) 0%, var(--cb-primary) 50%, var(--cb-accent) 100%);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Key Learnings */
+        .learnings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .learning-item {
+            padding: 2rem;
+            background: var(--cb-light);
+            border-radius: 16px;
+        }
+
+        .learning-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--cb-primary);
+            margin-bottom: 1rem;
+        }
+
+        .learning-item p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .meta-grid { grid-template-columns: repeat(3, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .problem-grid { grid-template-columns: repeat(2, 1fr); }
+            .flow-step { grid-template-columns: 1fr; gap: 3rem; }
+            .flow-step:nth-child(even) { direction: ltr; }
+            .revenue-grid { grid-template-columns: 1fr; }
+            .b2b-grid { grid-template-columns: 1fr; }
+            .projection-grid { grid-template-columns: 1fr; }
+            .reward-grid { grid-template-columns: 1fr; }
+            .roadmap-grid { grid-template-columns: 1fr; }
+            .hero-kpis { gap: 1rem; }
+            .exec-grid { grid-template-columns: 1fr; }
+            .persona-grid { grid-template-columns: 1fr; }
+            .comparison-intro { grid-template-columns: 1fr; }
+            .learnings-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .meta-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: 1fr; }
+            .problem-grid { grid-template-columns: 1fr; }
+            .projection-metrics { grid-template-columns: 1fr; }
+            .hero-kpi { padding: 1rem 1.5rem; }
+            .hero-kpi-value { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">INA YU</a>
+            <div class="nav-links">
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-stylebank">
+        <div class="hero-content">
+            <span class="category-badge">Product Strategy · UX Design · Business Architecture</span>
+            <h1 class="hero-title">StyleBank</h1>
+            <p class="hero-subtitle">A vertically integrated fashion commerce platform engineered for Gen MZ women, leveraging <span class="term" style="background: rgba(255,255,255,0.15); color: #fff;">Instagram-Native Discovery Patterns</span> — A next-generation <span class="term" style="background: rgba(255,255,255,0.15); color: #fff;">Social Commerce Ecosystem</span> that monetizes users' fashion sensibilities through <span class="term" style="background: rgba(255,255,255,0.15); color: #fff;">Multi-Vendor Affiliate Orchestration</span> and <span class="term" style="background: rgba(255,255,255,0.15); color: #fff;">Wear-to-Earn Tokenomics</span></p>
+            
+            <div class="hero-kpis">
+                <div class="hero-kpi">
+                    <div class="hero-kpi-value">2M+</div>
+                    <div class="hero-kpi-label">Target MAU (3-Year Horizon)</div>
+                </div>
+                <div class="hero-kpi">
+                    <div class="hero-kpi-value">$10M+</div>
+                    <div class="hero-kpi-label">ARR Target (Year 3)</div>
+                </div>
+                <div class="hero-kpi">
+                    <div class="hero-kpi-value">1:3</div>
+                    <div class="hero-kpi-label">CAC : LTV Ratio</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">Scroll</div>
+    </section>
+
+    <!-- Meta Bar -->
+    <div class="meta-bar">
+        <div class="meta-grid">
+            <div class="meta-item">
+                <div class="label">Role</div>
+                <div class="value">Product Designer & Business Strategist</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Timeline</div>
+                <div class="value">2025</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Scope</div>
+                <div class="value">End-to-End Product Discovery & Definition</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Platform</div>
+                <div class="value">iOS · Android · Web (PWA)</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Tech Stack</div>
+                <div class="value">React Native · AI/ML · Instagram Graph API</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="exec-summary">
+                <div class="exec-title">Executive Summary</div>
+                <div class="exec-grid">
+                    <div class="exec-item">
+                        <h4>Problem Statement</h4>
+                        <p><span class="term">Information Asymmetry</span> in Instagram-mediated fashion discovery — inability to retrieve curated outfit metadata, sub-20% wardrobe asset utilization rates, and structural <span class="term">Monetization Barriers</span> for emerging micro-influencers.</p>
+                    </div>
+                    <div class="exec-item">
+                        <h4>Solution Architecture</h4>
+                        <p>A <span class="term">Three-Pillar Platform Architecture</span> comprising <span class="term">StyleBank</span> (affiliate monetization engine), <span class="term">Wear-to-Earn Digital Closet</span> (gamified wardrobe asset management), and <span class="term">AI Resale Intelligence Center</span> (ML-powered secondhand marketplace).</p>
+                    </div>
+                    <div class="exec-item">
+                        <h4>Value Proposition</h4>
+                        <p>Creator revenue share of 10-15% (2-3× industry benchmark of 5-8%), wear-log-driven point accrual mechanism, and <span class="term">One-Click Resale Automation</span> enabling <span class="term">End-to-End Fashion Lifecycle Management</span>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">Market Opportunity Assessment</div>
+                <h2 class="section-title">Total Addressable Market & Growth Vectors</h2>
+                <p class="section-desc">Capturing <span class="term">White Space Market Opportunity</span> emerging from the behavioral evolution of women aged 20-35 toward <span class="term">Instagram-Native Discovery Paradigms</span> in fashion consumption.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$240M</div>
+                    <div class="stat-label">Digital Closet TAM (2024)</div>
+                    <div class="stat-detail">Wardrobe Management Application Market</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8.8%</div>
+                    <div class="stat-label">Market CAGR</div>
+                    <div class="stat-detail">2024-2032 Compound Annual Growth Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$430M</div>
+                    <div class="stat-label">Projected TAM (2032)</div>
+                    <div class="stat-detail">8-Year Market Size Forecast</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$1.9B</div>
+                    <div class="stat-label">Creator Economy (2024)</div>
+                    <div class="stat-detail">Fashion Influencer Marketing Spend</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Persona -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Target User Segmentation</div>
+                <h2 class="section-title">Primary User Persona Profiles</h2>
+                <p class="section-desc">Defining behavioral archetypes, pain point clusters, and unmet needs of core target segments through <span class="term">Psychographic & Behavioral Segmentation</span> methodologies.</p>
+            </div>
+
+            <div class="persona-grid">
+                <div class="persona-card">
+                    <div class="persona-header">
+                        <div class="persona-avatar">👩</div>
+                        <div class="persona-info">
+                            <h4>Fashion-Forward Gen MZ Consumer</h4>
+                            <p>Female · Age 20-35 · Metropolitan Resident</p>
+                        </div>
+                    </div>
+                    <div class="persona-stats">
+                        <div class="persona-stat">
+                            <div class="label">Disposable Income</div>
+                            <div class="value">$2,000+/mo</div>
+                        </div>
+                        <div class="persona-stat">
+                            <div class="label">Daily IG Engagement</div>
+                            <div class="value">1+ hours</div>
+                        </div>
+                        <div class="persona-stat">
+                            <div class="label">E-Commerce Frequency</div>
+                            <div class="value">2-3× weekly</div>
+                        </div>
+                        <div class="persona-stat">
+                            <div class="label">Resale Participation</div>
+                            <div class="value">1-2× monthly</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="persona-card">
+                    <div class="persona-header">
+                        <div class="persona-avatar">✨</div>
+                        <div class="persona-info">
+                            <h4>Emerging Micro-Influencer</h4>
+                            <p>1K-10K Follower Tier · Monetization-Seeking</p>
+                        </div>
+                    </div>
+                    <div class="persona-stats">
+                        <div class="persona-stat">
+                            <div class="label">Content Velocity</div>
+                            <div class="value">3-5× weekly</div>
+                        </div>
+                        <div class="persona-stat">
+                            <div class="label">Current Revenue</div>
+                            <div class="value">$0 (Pre-Monetization)</div>
+                        </div>
+                        <div class="persona-stat">
+                            <div class="label">Engagement Rate</div>
+                            <div class="value">5-8%</div>
+                        </div>
+                        <div class="persona-stat">
+                            <div class="label">Target MRR</div>
+                            <div class="value">$400+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Definition -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Problem Definition Framework</div>
+                <h2 class="section-title">User Pain Point Taxonomy & Friction Analysis</h2>
+                <p class="section-desc">Quantitative analysis of <span class="term">Critical Friction Points</span> across the current fashion consumption journey, with solution-oriented design interventions for each problem cluster.</p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🔍</div>
+                    <div class="problem-number">Pain Point 01</div>
+                    <h4 class="problem-title">Discovery-to-Purchase Gap</h4>
+                    <p class="problem-desc">Inability to extract actionable product metadata (brand, SKU, pricing, purchase URL) from Instagram-saved outfit posts.</p>
+                    <div class="problem-stat">📊 30-50 monthly saves → Zero Conversion Attribution</div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">👗</div>
+                    <div class="problem-number">Pain Point 02</div>
+                    <h4 class="problem-title">Wardrobe Asset Underutilization</h4>
+                    <p class="problem-desc">Fragmented outfit metadata and absence of wear-tracking infrastructure. Personal wardrobe assets remain systematically dormant.</p>
+                    <div class="problem-stat">📊 Sub-20% Utilization → $1,800 Asset Dormancy</div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔄</div>
+                    <div class="problem-number">Pain Point 03</div>
+                    <h4 class="problem-title">Resale Transaction Friction</h4>
+                    <p class="problem-desc">Structural barriers in price discovery, condition documentation, and wear-history verification for secondhand transactions.</p>
+                    <div class="problem-stat">📊 4+ Platform Fragmentation → High Abandonment Rate</div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💰</div>
+                    <div class="problem-number">Pain Point 04</div>
+                    <h4 class="problem-title">Creator Monetization Void</h4>
+                    <p class="problem-desc">Zero compensation despite content driving purchase intent. Prohibitive entry barriers for sub-10K follower creators.</p>
+                    <div class="problem-stat">📊 10K+ Follower Threshold → 95% Creator Exclusion</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Flow Section -->
+    <section class="section section-white">
+        <div class="flow-container">
+            <div class="section-header center" style="max-width: 900px; margin: 0 auto 3rem;">
+                <div class="section-label">User Journey Architecture</div>
+                <h2 class="section-title">Application Flow & Feature Specification</h2>
+                <p class="section-desc">Systematic user guidance following <span class="term">Progressive Disclosure Principles</span>, with clearly articulated <span class="term">Value Proposition</span> at each critical touchpoint within the journey.</p>
+            </div>
+
+            <!-- Flow Diagram -->
+            <div class="flow-intro">
+                <div class="flow-diagram">
+                    <span class="flow-node">Home</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-node">StyleBank</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-node">Closet</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-node">Resale</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-node">Profile</span>
+                </div>
+            </div>
+
+            <!-- Step 1: Home Dashboard -->
+            <div class="flow-step">
+                <div class="flow-content">
+                    <div class="flow-number">01</div>
+                    <h3 class="flow-title">Home Dashboard</h3>
+                    <div class="flow-subtitle">Glanceable Metrics Interface · At-a-Glance KPI Visualization</div>
+                    <p class="flow-desc">Real-time visualization of wardrobe status through a <span class="term">Unified Dashboard Architecture</span>. Establishing a <span class="term">Single Source of Truth</span> for instant access to core metrics including total inventory, aggregate expenditure, average utilization rate, and accumulated reward points.</p>
+                    <ul class="flow-features">
+                        <li><strong>127 Total Items:</strong> AI-powered auto-classification of wardrobe inventory with category distribution visualization</li>
+                        <li><strong>$2,400 Total Expenditure:</strong> Category-wise spending breakdown with month-over-month trend analysis</li>
+                        <li><strong>68% Average Utilization:</strong> <span class="term">Cost-Per-Wear (CPW)</span> optimization recommendations engine</li>
+                        <li><strong>12,450P Accumulated Points:</strong> Wear-to-Earn reward accrual dashboard with redemption options</li>
+                    </ul>
+                    <div class="flow-tech">
+                        <span>React Native</span>
+                        <span>D3.js Visualization</span>
+                        <span>Real-time State Sync</span>
+                    </div>
+                </div>
+                <div class="flow-image">
+                    <img src="https://www.genspark.ai/api/files/s/q8QG8bmc" alt="StyleBank Home Dashboard" class="zoomable">
+                </div>
+            </div>
+
+            <!-- Step 2: StyleBank -->
+            <div class="flow-step">
+                <div class="flow-content">
+                    <div class="flow-number">02</div>
+                    <h3 class="flow-title">StyleBank</h3>
+                    <div class="flow-subtitle">Multi-Vendor Revenue Engine · Affiliate Monetization Infrastructure</div>
+                    <p class="flow-desc">Upon Instagram outfit photo upload, computer vision recognizes individual items and auto-generates <span class="term">Multi-Vendor Affiliate Deep Links</span>. A <span class="term">One-to-Many Monetization Architecture</span> enabling simultaneous revenue generation across 5-7 e-commerce platforms per outfit.</p>
+                    <ul class="flow-features">
+                        <li><strong>Outfit Card Generation:</strong> Image Recognition API + E-commerce API orchestration with automated product matching</li>
+                        <li><strong>Multi-Vendor Integration:</strong> Musinsa, Zigzag, Kream, Ably, and 10+ partner platforms with unified tracking</li>
+                        <li><strong>Revenue Attribution:</strong> Views, engagements, purchase conversion with <span class="term">Real-Time Attribution Modeling</span></li>
+                        <li><strong>Insights Synchronization:</strong> Instagram Graph API automatic bidirectional sync for engagement metrics</li>
+                    </ul>
+                    <div class="flow-tech">
+                        <span>Instagram Graph API</span>
+                        <span>Computer Vision Pipeline</span>
+                        <span>Affiliate SDK Integration</span>
+                    </div>
+                </div>
+                <div class="flow-image">
+                    <img src="https://www.genspark.ai/api/files/s/8iGX6ckN" alt="StyleBank Feed" class="zoomable">
+                </div>
+            </div>
+
+            <!-- Step 3: Digital Closet -->
+            <div class="flow-step">
+                <div class="flow-content">
+                    <div class="flow-number">03</div>
+                    <h3 class="flow-title">Wear-to-Earn Digital Closet</h3>
+                    <div class="flow-subtitle">Gamified Asset Management · Digital Twin Wardrobe Infrastructure</div>
+                    <p class="flow-desc">Transforming physical wardrobes into <span class="term">Digital Twin Representations</span>. AI-powered auto-registration from photos, with maximum user retention achieved through the <span class="term">Wear-to-Earn (W2E) Mechanism</span> that accumulates tokenized rewards with each documented wear.</p>
+                    <ul class="flow-features">
+                        <li><strong>AI Auto-Tagging:</strong> Brand, color, material, category classification with 95%+ precision accuracy</li>
+                        <li><strong>Wear Logging:</strong> Daily photo-based registration with automatic point accrual system and streak bonuses</li>
+                        <li><strong>Utilization Analytics:</strong> Category-wise wear distribution, <span class="term">Cost-Per-Wear (CPW)</span> calculation engine</li>
+                        <li><strong>Resale Preparation:</strong> Auto-documentation pipeline with one-click listing integration to resale marketplaces</li>
+                    </ul>
+                    <div class="flow-tech">
+                        <span>TensorFlow Lite</span>
+                        <span>On-Device ML Inference</span>
+                        <span>Photo Recognition Pipeline</span>
+                    </div>
+                </div>
+                <div class="flow-image">
+                    <img src="https://www.genspark.ai/api/files/s/rQ490iHk" alt="Digital Closet Interface" class="zoomable">
+                </div>
+            </div>
+
+            <!-- Step 4: Resale Center -->
+            <div class="flow-step">
+                <div class="flow-content">
+                    <div class="flow-number">04</div>
+                    <h3 class="flow-title">AI Resale Intelligence Center</h3>
+                    <div class="flow-subtitle">Circular Economy Engine · ML-Powered Price Intelligence</div>
+                    <p class="flow-desc"><span class="term">Machine Learning Price Intelligence</span> analyzing purchase price, wear frequency, brand equity, seasonal factors, condition assessment, and real-time market prices to suggest optimal sell price and timing. A sustainable fashion solution aligned with <span class="term">Circular Fashion</span> macro-trends.</p>
+                    <ul class="flow-features">
+                        <li><strong>AI Price Optimization:</strong> Market trend analysis + condition evaluation algorithm with ±8% error margin</li>
+                        <li><strong>Auto-Documentation:</strong> Wear history, photo timestamps, blockchain-verified provenance chain</li>
+                        <li><strong>One-Click Listing:</strong> Auto-generation of wear count + photos + condition grade + recommended price</li>
+                        <li><strong>Sale Timing Optimization:</strong> Optimal timing alerts with <span class="term">Dynamic Pricing</span> recommendations</li>
+                    </ul>
+                    <div class="flow-tech">
+                        <span>Price Prediction ML Model</span>
+                        <span>Market Data API</span>
+                        <span>Cross-Platform Sync</span>
+                    </div>
+                </div>
+                <div class="flow-image">
+                    <img src="https://www.genspark.ai/api/files/s/uCRiBPIq" alt="Resale Center" class="zoomable">
+                </div>
+            </div>
+
+            <!-- Step 5: Creator Profile -->
+            <div class="flow-step">
+                <div class="flow-content">
+                    <div class="flow-number">05</div>
+                    <h3 class="flow-title">Creator Dashboard</h3>
+                    <div class="flow-subtitle">Micro-Influencer Monetization · Democratic Creator Economy Infrastructure</div>
+                    <p class="flow-desc">A <span class="term">Democratic Creator Economy</span> where revenue is determined by content quality and conversion, independent of follower count. 100 views → $0.75, 1 purchase conversion → $7.50 (average). Establishing trust through <span class="term">Transparent Revenue Attribution</span> and real-time earnings visibility.</p>
+                    <ul class="flow-features">
+                        <li><strong>Affiliate Tracking:</strong> Real-time commission monitoring with pending settlement balance visualization</li>
+                        <li><strong>Audience Analytics:</strong> Reach, likes, comments, saves, shares with comprehensive <span class="term">Engagement Metrics</span> dashboard</li>
+                        <li><strong>Revenue Dashboard:</strong> Projected revenue forecasts + settlement history + growth trend analysis</li>
+                        <li><strong>Content Optimization:</strong> AI-powered optimal posting time recommendations with A/B testing insights</li>
+                    </ul>
+                    <div class="flow-tech">
+                        <span>Analytics Engine</span>
+                        <span>Payment Gateway Integration</span>
+                        <span>Push Notification Service</span>
+                    </div>
+                </div>
+                <div class="flow-image">
+                    <img src="https://www.genspark.ai/api/files/s/reMjQqtF" alt="Creator Profile Dashboard" class="zoomable">
+                </div>
+            </div>
+
+            <!-- Step 6: Outfit Detail -->
+            <div class="flow-step">
+                <div class="flow-content">
+                    <div class="flow-number">06</div>
+                    <h3 class="flow-title">Shop the Look</h3>
+                    <div class="flow-subtitle">Frictionless Conversion · Deep Link Commerce Architecture</div>
+                    <p class="flow-desc">Each item on the outfit detail page connects to respective e-commerce platforms via <span class="term">Universal Deep Links</span>. Delivering a <span class="term">Shoppable Content Experience</span> enabling one-click full-look purchase through multi-item cart aggregation.</p>
+                    <ul class="flow-features">
+                        <li><strong>Item Decomposition:</strong> Individual affiliate links + pricing for tops, bottoms, footwear, accessories</li>
+                        <li><strong>Price Comparison Engine:</strong> Real-time lowest-price display across multiple vendor platforms</li>
+                        <li><strong>Size Intelligence:</strong> <span class="term">Personalized Size Recommendation</span> based on purchase history and return data</li>
+                        <li><strong>Auto-Add to Closet:</strong> Purchased items auto-registered to digital wardrobe (Zero Friction Integration)</li>
+                    </ul>
+                    <div class="flow-tech">
+                        <span>Universal Deep Links</span>
+                        <span>Price Comparison API</span>
+                        <span>Size Prediction ML Model</span>
+                    </div>
+                </div>
+                <div class="flow-image">
+                    <img src="https://www.genspark.ai/api/files/s/J8eCwv53" alt="Outfit Detail Page" class="zoomable">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Analysis -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Competitive Landscape Analysis</div>
+                <h2 class="section-title">StyleBank vs. Market Incumbents</h2>
+                <p class="section-desc">Defining <span class="term">Differentiated Value Proposition</span> and establishing <span class="term">Sustainable Competitive Moat</span> relative to Instagram and existing fashion technology applications.</p>
+            </div>
+
+            <div class="comparison-intro">
+                <div class="comparison-problem">
+                    <h4>Instagram Platform Limitations</h4>
+                    <ul class="comparison-list">
+                        <li>Post saving only; product search functionality absent</li>
+                        <li>Single-brand focus; multi-vendor integration unavailable</li>
+                        <li>Transaction fee 5% + payment processing 2.9% + $0.30 per transaction</li>
+                        <li>Follower-gated entry barrier (10,000+ threshold required)</li>
+                        <li>Zero wardrobe management or resale feature integration</li>
+                        <li>Personal consumption analytics not provided</li>
+                    </ul>
+                </div>
+                <div class="comparison-solution">
+                    <h4>StyleBank Solution Architecture</h4>
+                    <ul class="comparison-list">
+                        <li>Automated product metadata linking with systematic management</li>
+                        <li>Multi-vendor connections from single outfit asset</li>
+                        <li>Creator 10-15% revenue share; platform 3-5% take rate</li>
+                        <li>Follower-agnostic <span class="term">Democratized Monetization</span></li>
+                        <li>AI-powered wardrobe management with automated resale pricing</li>
+                        <li>Comprehensive spending, utilization, and ROI analytics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature Capability</th>
+                        <th>StyleBank</th>
+                        <th>Instagram</th>
+                        <th>Acloset</th>
+                        <th>Cladwell</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Automated Outfit Metadata Linking</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-partial">◐</span></td>
+                        <td><span class="check-no">○</span></td>
+                    </tr>
+                    <tr>
+                        <td>Multi-Vendor Monetization</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-partial">◐</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-no">○</span></td>
+                    </tr>
+                    <tr>
+                        <td>Micro-Influencer Accessibility</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-no">○</span></td>
+                    </tr>
+                    <tr>
+                        <td>Wear-to-Earn Reward Mechanism</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-no">○</span></td>
+                    </tr>
+                    <tr>
+                        <td>AI Resale Price Automation</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-partial">◐</span></td>
+                        <td><span class="check-no">○</span></td>
+                    </tr>
+                    <tr>
+                        <td>Personal Utilization Analytics</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-no">○</span></td>
+                        <td><span class="check-partial">◐</span></td>
+                        <td><span class="check-yes">●</span></td>
+                    </tr>
+                    <tr>
+                        <td>Freemium Core Features</td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-yes">●</span></td>
+                        <td><span class="check-no">○</span></td>
+                    </tr>
+                    <tr>
+                        <td>Creator Revenue Share Rate</td>
+                        <td><strong style="color: var(--cb-primary);">10-15%</strong></td>
+                        <td>~5%</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Revenue Architecture -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">Revenue Architecture</div>
+                <h2 class="section-title">Multi-Stream Monetization Model</h2>
+                <p class="section-desc">Constructing a <span class="term">Win-Win Ecosystem</span> enabling synchronized growth for users and platform through diversified revenue streams grounded in <span class="term">Platform Economics</span> principles.</p>
+            </div>
+
+            <div class="revenue-grid">
+                <div class="revenue-card">
+                    <div class="revenue-icon">💰</div>
+                    <h4 class="revenue-title">CPA Affiliate Commission</h4>
+                    <div class="revenue-rate">Creator 10-15% / Platform 3-5% Take Rate</div>
+                    <p class="revenue-desc">10-15% direct revenue attribution to creators upon purchases through outfit deep links. Acquiring top-tier creator talent with 2-3× superior revenue rates versus Instagram Shopping.</p>
+                    <div class="revenue-compare">vs Instagram: 5% + processing fees (<strong>2-3× Revenue Differential</strong>)</div>
+                </div>
+                <div class="revenue-card">
+                    <div class="revenue-icon">👑</div>
+                    <h4 class="revenue-title">Premium Subscription Tier</h4>
+                    <div class="revenue-rate">$7.50/month · $75/year (Annual)</div>
+                    <p class="revenue-desc">Unlimited outfit card generation, AI-powered style recommendations, priority support SLA, advanced analytics reporting suite. Premium subscriber engagement 3.2× higher than free tier.</p>
+                    <div class="revenue-compare">Annual subscription: <strong>17% discount</strong> applied for commitment</div>
+                </div>
+                <div class="revenue-card">
+                    <div class="revenue-icon">🔄</div>
+                    <h4 class="revenue-title">Resale Transaction Fee</h4>
+                    <div class="revenue-rate">5% of Gross Merchandise Value</div>
+                    <p class="revenue-desc">High-trust secondhand transactions enabled through AI-powered auto-documentation system. Maintaining 30% lower fee structure versus competitors through integrated ecosystem efficiencies.</p>
+                    <div class="revenue-compare">vs Depop: 10%, Poshmark: 20% (<strong>50-75% Cost Reduction</strong>)</div>
+                </div>
+            </div>
+
+            <!-- B2B Revenue -->
+            <div style="margin-top: 5rem;">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cb-secondary); margin-bottom: 2rem; text-align: center;">B2B Revenue Streams</h3>
+                <div class="b2b-grid">
+                    <div class="b2b-card">
+                        <h4>E-Commerce Partnership</h4>
+                        <div class="price">$400-1,500/month SaaS Fee</div>
+                        <p>Product catalog API integration, consumption analytics provision, marketing channel access. 10+ platform partnerships including Musinsa, Zigzag, Kream.</p>
+                    </div>
+                    <div class="b2b-card">
+                        <h4>Influencer Marketing Platform</h4>
+                        <div class="price">$750-3,750/campaign</div>
+                        <p>Brand campaign orchestration platform, performance analytics reporting, AI-powered targeting and creator matching. For fashion brands and agency clients.</p>
+                    </div>
+                    <div class="b2b-card">
+                        <h4>Data Analytics & Insights</h4>
+                        <div class="price">Custom Enterprise Pricing</div>
+                        <p>Trend intelligence, consumer behavior insights, market research reports. Customized delivery for brand clients and research institutions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Network Effect Diagram -->
+            <div class="network-diagram">
+                <div class="network-title">Network Effect Flywheel Dynamics</div>
+                <div class="network-flow">
+                    <span class="network-node">Creators (Supply)</span>
+                    <span class="network-arrow">→</span>
+                    <span class="network-node">Quality Content</span>
+                    <span class="network-arrow">→</span>
+                    <span class="network-node">Users (Demand)</span>
+                    <span class="network-arrow">→</span>
+                    <span class="network-node">Vendor Partners</span>
+                    <span class="network-arrow">→</span>
+                    <span class="network-node">Revenue Growth</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reward System -->
+    <section class="section section-dark" style="background: linear-gradient(180deg, var(--cb-dark) 0%, #1a1a2e 100%);">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">Gamification Strategy</div>
+                <h2 class="section-title">Wear-to-Earn Tokenized Reward System</h2>
+                <p class="section-desc">Simultaneously securing user retention and data quality through a <span class="term">Behavioral Incentive Architecture</span> that accumulates tokenized rewards with each documented wear. Inducing sustained engagement through <span class="term">Variable Ratio Reinforcement Schedule</span>.</p>
+            </div>
+
+            <div class="reward-grid">
+                <div class="reward-section">
+                    <h4>⭐ Base Wear Rewards (Price-Tiered Accrual)</h4>
+                    <div class="reward-item">
+                        <span class="action">~$40 Item Wear Documentation</span>
+                        <span class="points">10P</span>
+                    </div>
+                    <div class="reward-item">
+                        <span class="action">$40-$115 Item Tier</span>
+                        <span class="points">25P</span>
+                    </div>
+                    <div class="reward-item">
+                        <span class="action">$115-$230 Item Tier</span>
+                        <span class="points">40P</span>
+                    </div>
+                    <div class="reward-item">
+                        <span class="action">$230+ Premium Item Tier</span>
+                        <span class="points">50P</span>
+                    </div>
+                </div>
+                <div class="reward-section">
+                    <h4>🎁 Milestone Bonus Rewards (Achievement-Based)</h4>
+                    <div class="reward-item">
+                        <span class="action">7-Day Consecutive Wear Log (Streak Bonus)</span>
+                        <span class="points">+100P</span>
+                    </div>
+                    <div class="reward-item">
+                        <span class="action">Season Appropriateness 80%+ (Seasonal Match)</span>
+                        <span class="points">+200P</span>
+                    </div>
+                    <div class="reward-item">
+                        <span class="action">Successful Resale Transaction</span>
+                        <span class="points">1% of GMV</span>
+                    </div>
+                    <div class="reward-item">
+                        <span class="action">30+ Monthly Logs (Power User Status)</span>
+                        <span class="points">+500P</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Projection -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Financial Projections</div>
+                <h2 class="section-title">3-Year Revenue Forecast & Unit Economics</h2>
+                <p class="section-desc">Conservative growth trajectory based on <span class="term">Bottom-Up TAM Analysis</span>. Applying operational benchmarks from comparable platform companies (Depop, Poshmark, LTK) through <span class="term">Comparable Company Analysis</span> methodology.</p>
+            </div>
+
+            <div class="projection-grid">
+                <div class="projection-chart">
+                    <div class="chart-title">Annual Recurring Revenue Projection (USD)</div>
+                    <div class="chart-bars">
+                        <div class="chart-bar">
+                            <span class="bar-label">Y1</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 14%;">
+                                    <span class="bar-value">$1.5M</span>
+                                </div>
+                                <span class="bar-detail">Net Margin -15%</span>
+                            </div>
+                        </div>
+                        <div class="chart-bar">
+                            <span class="bar-label">Y2</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 43%;">
+                                    <span class="bar-value">$4.5M</span>
+                                </div>
+                                <span class="bar-detail">Net Margin 12%</span>
+                            </div>
+                        </div>
+                        <div class="chart-bar">
+                            <span class="bar-label">Y3</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 100%;">
+                                    <span class="bar-value">$10.5M</span>
+                                </div>
+                                <span class="bar-detail">Net Margin 25%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(139,92,246,0.1);">
+                        <div class="chart-title">Revenue Mix Breakdown (Year 3)</div>
+                        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                            <div style="flex: 1; text-align: center;">
+                                <div style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--cb-primary);">$6.3M</div>
+                                <div style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #666; margin-top: 0.25rem;">B2C Revenue (60%)</div>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                                <div style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--cb-secondary);">$4.2M</div>
+                                <div style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #666; margin-top: 0.25rem;">B2B Revenue (40%)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projection-metrics">
+                    <div class="metric-card">
+                        <div class="metric-value">2M+</div>
+                        <div class="metric-label">Target MAU (Year 3)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">1:3</div>
+                        <div class="metric-label">CAC : LTV Ratio</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">25%</div>
+                        <div class="metric-label">Net Margin (Year 3)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">-15%→25%</div>
+                        <div class="metric-label">Margin Trajectory</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">8.8%</div>
+                        <div class="metric-label">Market CAGR</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">18 mo</div>
+                        <div class="metric-label">Break-Even Horizon</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Roadmap -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">Development Roadmap</div>
+                <h2 class="section-title">18-Month Go-to-Market Execution Plan</h2>
+                <p class="section-desc">Risk mitigation through <span class="term">Phased Rollout Strategy</span>, with clearly defined <span class="term">Key Performance Indicators</span> and success criteria for each development phase.</p>
+            </div>
+
+            <div class="roadmap-grid">
+                <div class="roadmap-phase">
+                    <div class="phase-label">Phase 1: MVP</div>
+                    <div class="phase-title">0-6 Months</div>
+                    <ul class="phase-list">
+                        <li>User Authentication & Onboarding</li>
+                        <li>Core Wardrobe Management Module</li>
+                        <li>StyleBank MVP Feature Set</li>
+                        <li>Basic Revenue Attribution</li>
+                        <li>Foundational UI/UX Implementation</li>
+                    </ul>
+                    <div class="phase-metrics">
+                        <span class="phase-metric">1K Sign-ups</span>
+                        <span class="phase-metric">300 DAU</span>
+                        <span class="phase-metric">5min Avg Session</span>
+                    </div>
+                </div>
+                <div class="roadmap-phase">
+                    <div class="phase-label">Phase 2: Beta</div>
+                    <div class="phase-title">6-12 Months</div>
+                    <ul class="phase-list">
+                        <li>Instagram Graph API Integration</li>
+                        <li>AI-Powered Style Recommendations</li>
+                        <li>Automated Resale Pricing Engine</li>
+                        <li>Point System Implementation</li>
+                        <li>Advanced Analytics Dashboard</li>
+                    </ul>
+                    <div class="phase-metrics">
+                        <span class="phase-metric">10K Sign-ups</span>
+                        <span class="phase-metric">2K DAU</span>
+                        <span class="phase-metric">$40K Monthly GMV</span>
+                    </div>
+                </div>
+                <div class="roadmap-phase">
+                    <div class="phase-label">Phase 3: General Availability</div>
+                    <div class="phase-title">12-18 Months</div>
+                    <ul class="phase-list">
+                        <li>Premium Subscription Launch</li>
+                        <li>Advanced AI Feature Suite</li>
+                        <li>B2B Dashboard & API</li>
+                        <li>Marketing Automation Platform</li>
+                        <li>Multi-Platform Support (iOS/Android/Web)</li>
+                    </ul>
+                    <div class="phase-metrics">
+                        <span class="phase-metric">100K Sign-ups</span>
+                        <span class="phase-metric">15K DAU</span>
+                        <span class="phase-metric">Break-Even</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote-section">
+        <p class="quote-text">"StyleBank transcends conventional wardrobe management to become a next-generation platform that monetizes Gen MZ women's fashion sensibilities at scale. It automates <span style="font-weight: 500;">Instagram-Native Discovery Patterns</span> while building a vertically integrated ecosystem encompassing the complete fashion lifecycle through <span style="font-weight: 500;">Wear-to-Earn Tokenomics</span> and <span style="font-weight: 500;">AI-Powered Price Intelligence</span>."</p>
+    </section>
+
+    <!-- Key Learnings -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Strategic Insights & Recommendations</div>
+                <h2 class="section-title">Key Learnings from Product Discovery Process</h2>
+            </div>
+
+            <div class="learnings-grid">
+                <div class="learning-item">
+                    <h4>On Network Effects & Cold Start Problem</h4>
+                    <p>Securing creator supply before expanding user demand through deliberate <span class="term">Chicken-and-Egg Sequencing</span> strategy. Architecting a <span class="term">Virtuous Cycle</span>: Creator monetization opportunity → Quality content supply → General user acquisition → User-to-creator conversion flywheel.</p>
+                </div>
+                <div class="learning-item">
+                    <h4>On Transparent Revenue Attribution</h4>
+                    <p>Creator revenue share of 10-15% vs industry benchmark of 5-8% (2-3× differential). Maximizing <span class="term">Platform Lock-in Effect</span> through follower-agnostic monetization via <span class="term">Democratic Creator Economy</span> to attract and retain top-tier creator talent.</p>
+                </div>
+                <div class="learning-item">
+                    <h4>On Gamification & Behavioral Design</h4>
+                    <p>Achieving simultaneous wear data acquisition and user retention through <span class="term">Wear-to-Earn Mechanism</span>. Constructing differentiated <span class="term">Engagement Loop</span> through reward-based system with <span class="term">Variable Ratio Reinforcement Schedule</span> vs simple logging in incumbent applications.</p>
+                </div>
+                <div class="learning-item">
+                    <h4>On Circular Fashion & Sustainability</h4>
+                    <p>Aligning with Gen MZ's emphasis on <span class="term">Sustainability Credentials</span> and ESG values. Enhancing resale transaction trust through AI-powered auto-documentation and verified wear history → Reducing purchase guilt and achieving brand differentiation through <span class="term">Circular Economy</span> value proposition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Navigation -->
+    <nav class="project-navigation">
+        <a href="project-healthcare.html" class="nav-prev">
+            <span class="nav-label">Previous Project</span>
+            <span class="nav-title">AI Healthcare+</span>
+        </a>
+        <a href="project-finar.html" class="nav-next">
+            <span class="nav-label">Next Project</span>
+            <span class="nav-title">FINA-R</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">INA YU</span>
+                <span class="footer-copyright">© 2025</span>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:eunice-ina@naver.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/inayu" class="footer-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal">
+        <span class="modal-close">&times;</span>
+        <img src="" alt="Enlarged view" id="modalImage">
+    </div>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Image zoom functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const zoomableImages = document.querySelectorAll('.zoomable');
+
+        zoomableImages.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.classList.add('active');
+                modalImg.src = this.src;
+            });
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal || e.target.classList.contains('modal-close')) {
+                modal.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

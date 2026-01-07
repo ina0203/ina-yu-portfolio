@@ -3,1032 +3,672 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dior Marketing Strategy | Leather Goods Marketing Plan & $237M Budget | Ina Yu Portfolio</title>
-    <meta name="description" content="Comprehensive marketing strategy for Dior's leather goods division featuring $237M budget allocation, omni-channel activation, and luxury market positioning analysis. Graduate project from BUSI 745: Marketing Art & Design Ventures.">
+    <title>Dior Marketing Strategy | Ina Yu Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project.css">
     <style>
-        :root {
-            --primary: #1a1a1a;
-            --primary-light: #333333;
-            --primary-dark: #000000;
-            --accent: #C9A962;
-            --accent-light: #D4B978;
-            --accent-dark: #A68942;
-            --gradient-main: linear-gradient(135deg, #1a1a1a 0%, #333333 50%, #4a4a4a 100%);
-            --gradient-gold: linear-gradient(135deg, #C9A962 0%, #D4B978 50%, #E5C98A 100%);
-            --dark: #0a0a0a;
-            --text: #1a1a1a;
-            --text-secondary: #5a5a6e;
-            --bg-light: #f8f9fc;
-            --bg-cream: #FDFCFA;
-            --success: #2ECC71;
-            --danger: #E74C3C;
-            --info: #3498DB;
-            --warning: #F39C12;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            background: var(--bg-cream);
-        }
-
-        /* Navigation */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 20px 5%;
-            background: rgba(10,10,10,0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(201,169,98,0.1);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: white;
-            text-decoration: none;
-            letter-spacing: 0.1em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-        }
-
-        .nav-link {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--accent-light);
-        }
-
-        /* Hero Section - Premium */
-        .hero-premium {
+        .project-hero-dior {
             min-height: 100vh;
-            background: var(--gradient-main);
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(30,30,30,0.8) 50%, rgba(50,50,50,0.7) 100%), 
+                        url('https://www.genspark.ai/api/files/s/v45SKp39') center center / cover no-repeat;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding: 140px 5% 100px;
-        }
-
-        .hero-premium::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 100%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(201,169,98,0.12) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .hero-premium::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 200px;
-            background: linear-gradient(to top, rgba(10,10,10,0.3), transparent);
-            pointer-events: none;
-        }
-
-        .hero-content-wrapper {
-            max-width: 1400px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
             align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
             position: relative;
-            z-index: 2;
         }
-
-        .hero-text-content {
-            color: white;
-        }
-
-        .hero-category {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(201,169,98,0.2);
-            backdrop-filter: blur(10px);
-            padding: 10px 18px;
-            border-radius: 30px;
+        .hero-badge {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
             font-size: 0.7rem;
             font-weight: 600;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
-            margin-bottom: 28px;
-            color: var(--accent-light);
-            border: 1px solid rgba(201,169,98,0.3);
+            color: rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 0.5rem 1.5rem;
+            margin-bottom: 2rem;
         }
-
-        .hero-title {
+        .hero-title-main {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-            font-weight: 500;
-            line-height: 1.08;
-            margin-bottom: 24px;
-            letter-spacing: 0.03em;
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            line-height: 1.75;
-            opacity: 0.9;
-            max-width: 540px;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 48px;
-            margin-top: 52px;
-            padding-top: 36px;
-            border-top: 1px solid rgba(201,169,98,0.3);
-            flex-wrap: wrap;
-        }
-
-        .hero-stat {
-            text-align: left;
-        }
-
-        .hero-stat-value {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.4rem;
-            font-weight: 600;
-            color: var(--accent-light);
-            line-height: 1.1;
-        }
-
-        .hero-stat-label {
-            font-size: 0.72rem;
-            opacity: 0.8;
-            margin-top: 6px;
+            font-size: clamp(4rem, 15vw, 10rem);
+            font-weight: 300;
+            color: #fff;
+            margin: 0 0 1rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
         }
-
-        .hero-visual {
-            position: relative;
-        }
-
-        .hero-image-frame {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 20px;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.4);
-            border: 1px solid rgba(201,169,98,0.2);
-            transform: perspective(1000px) rotateY(-5deg);
-            transition: transform 0.5s ease;
-        }
-
-        .hero-image-frame:hover {
-            transform: perspective(1000px) rotateY(0deg);
-        }
-
-        .hero-image-frame img {
-            width: 100%;
-            border-radius: 16px;
-            display: block;
-        }
-
-        /* Project Meta Bar */
-        .project-meta-bar {
-            background: var(--dark);
-            padding: 48px 5%;
-            border-bottom: 1px solid rgba(201,169,98,0.15);
-        }
-
-        .meta-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 36px;
-        }
-
-        .meta-item {
-            text-align: left;
-        }
-
-        .meta-label {
-            font-size: 0.65rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 10px;
-        }
-
-        .meta-value {
-            font-size: 0.88rem;
-            color: white;
-            line-height: 1.5;
-        }
-
-        /* Section Styles */
-        .section-premium {
-            padding: 120px 5%;
-        }
-
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 64px;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 18px;
-        }
-
-        .section-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--accent-dark);
-            opacity: 0.7;
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 500;
-            color: var(--text);
-            line-height: 1.2;
-        }
-
-        .section-description {
-            font-size: 1.05rem;
-            line-height: 1.85;
-            color: var(--text-secondary);
-            max-width: 720px;
-            margin-top: 22px;
-        }
-
-        /* Table of Contents Section */
-        .toc-section {
-            background: var(--bg-light);
-            padding: 100px 5%;
-        }
-
-        .toc-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-top: 48px;
-        }
-
-        .toc-item {
-            background: white;
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .toc-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(201,169,98,0.12);
-            border-color: rgba(201,169,98,0.3);
-        }
-
-        .toc-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: rgba(201,169,98,0.25);
-            margin-bottom: 12px;
-        }
-
-        .toc-item h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 8px;
-        }
-
-        .toc-item p {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        /* Overview Grid */
-        .overview-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
-            align-items: start;
-        }
-
-        .overview-content p {
-            font-size: 1.05rem;
-            line-height: 1.9;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-        }
-
-        .challenge-box {
-            background: linear-gradient(135deg, rgba(201,169,98,0.1), rgba(201,169,98,0.04));
-            border-left: 4px solid var(--accent);
-            padding: 32px 36px;
-            border-radius: 0 20px 20px 0;
-            margin-top: 36px;
-        }
-
-        .challenge-box h4 {
+        .hero-subtitle-main {
             font-family: 'Inter', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: var(--accent-dark);
-            margin-bottom: 14px;
-            text-transform: uppercase;
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            max-width: 800px;
+            line-height: 1.8;
+        }
+        .hero-credit {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 2rem;
             letter-spacing: 0.1em;
         }
-
-        .challenge-box p {
-            font-size: 1rem;
-            color: var(--text);
-            line-height: 1.75;
-            margin: 0;
-        }
-
-        .deliverables-list {
+        .meta-bar-enhanced {
             display: grid;
-            gap: 18px;
+            grid-template-columns: repeat(5, 1fr);
+            background: #fff;
+            border-bottom: 1px solid #eee;
         }
-
-        .deliverable-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 18px;
-            padding: 24px 28px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.04);
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
+        .meta-bar-enhanced .meta-item {
+            padding: 2.5rem 2rem;
+            border-right: 1px solid #eee;
+            text-align: center;
         }
-
-        .deliverable-item:hover {
-            box-shadow: 0 10px 35px rgba(201,169,98,0.12);
-            transform: translateY(-2px);
-            border-color: rgba(201,169,98,0.2);
+        .meta-bar-enhanced .meta-item:last-child {
+            border-right: none;
         }
-
-        .deliverable-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--gradient-gold);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+        .meta-bar-enhanced .meta-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.5rem;
         }
-
-        .deliverable-icon svg {
-            width: 24px;
-            height: 24px;
-            color: white;
+        .meta-bar-enhanced .meta-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1a1a1a;
         }
-
-        .deliverable-text h5 {
+        @media (max-width: 968px) {
+            .meta-bar-enhanced { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .meta-bar-enhanced { grid-template-columns: repeat(2, 1fr); }
+        }
+        .executive-section {
+            padding: 6rem 5%;
+            background: #fafafa;
+        }
+        .executive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .executive-left h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+        .executive-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #666;
+            border-left: 3px solid #1a1a1a;
+            padding-left: 2rem;
+            margin: 2rem 0;
+            line-height: 1.6;
+        }
+        .executive-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .stat-card {
+            background: #fff;
+            padding: 1.5rem;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+        .stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        .stat-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: 0.5rem;
+        }
+        .insight-cards {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .insight-card {
+            background: #fff;
+            padding: 2rem;
+            border: 1px solid #eee;
+        }
+        .insight-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.75rem;
+        }
+        .insight-card p {
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 5px;
+            color: #333;
+            line-height: 1.7;
         }
-
-        .deliverable-text p {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin: 0;
-            line-height: 1.5;
+        @media (max-width: 900px) {
+            .executive-grid { grid-template-columns: 1fr; }
         }
-
-        /* SWOT Grid */
+        .swot-section {
+            padding: 6rem 5%;
+            background: #1a1a1a;
+        }
+        .swot-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .swot-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+        .swot-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #fff;
+        }
         .swot-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 28px;
-            margin-top: 56px;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
         .swot-card {
-            background: white;
-            border-radius: 20px;
-            padding: 36px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            padding: 2.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-
-        .swot-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-        }
-
-        .swot-card.strengths { border-top: 5px solid var(--success); }
-        .swot-card.weaknesses { border-top: 5px solid var(--danger); }
-        .swot-card.opportunities { border-top: 5px solid var(--info); }
-        .swot-card.threats { border-top: 5px solid var(--warning); }
-
+        .swot-card.strengths { border-top: 3px solid #27ae60; }
+        .swot-card.weaknesses { border-top: 3px solid #e74c3c; }
+        .swot-card.opportunities { border-top: 3px solid #3498db; }
+        .swot-card.threats { border-top: 3px solid #9b59b6; }
         .swot-card h4 {
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 1.5rem;
         }
-
-        .swot-card.strengths h4 { color: var(--success); }
-        .swot-card.weaknesses h4 { color: var(--danger); }
-        .swot-card.opportunities h4 { color: var(--info); }
-        .swot-card.threats h4 { color: var(--warning); }
-
+        .swot-card.strengths h4 { color: #27ae60; }
+        .swot-card.weaknesses h4 { color: #e74c3c; }
+        .swot-card.opportunities h4 { color: #3498db; }
+        .swot-card.threats h4 { color: #9b59b6; }
         .swot-card ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-
         .swot-card li {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            padding: 12px 0;
-            border-bottom: 1px solid #f0f0f5;
-            line-height: 1.55;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.75);
+            padding: 0.6rem 0;
+            padding-left: 1.25rem;
             position: relative;
-            padding-left: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-
+        .swot-card li:last-child { border-bottom: none; }
         .swot-card li::before {
-            content: '';
+            content: "•";
             position: absolute;
             left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
+            color: rgba(255,255,255,0.3);
         }
-
-        .swot-card.strengths li::before { background: var(--success); }
-        .swot-card.weaknesses li::before { background: var(--danger); }
-        .swot-card.opportunities li::before { background: var(--info); }
-        .swot-card.threats li::before { background: var(--warning); }
-
-        .swot-card li:last-child {
-            border-bottom: none;
+        @media (max-width: 768px) {
+            .swot-grid { grid-template-columns: 1fr; }
         }
-
-        /* Gallery Styles */
-        .gallery-grid {
+        .positioning-section {
+            padding: 6rem 5%;
+            background: #fff;
+        }
+        .positioning-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .positioning-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .positioning-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .positioning-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-top: 56px;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
-        .gallery-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+        .target-profile {
+            background: #fafafa;
+            padding: 3rem;
         }
-
-        .gallery-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 48px rgba(201,169,98,0.15);
+        .target-profile h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1.5rem;
         }
-
-        .gallery-card.large {
-            grid-column: span 2;
+        .profile-item {
+            margin-bottom: 1.5rem;
         }
-
-        .gallery-card.full {
-            grid-column: span 3;
-        }
-
-        .gallery-card img {
-            width: 100%;
-            display: block;
-            background: #f0f0f5;
-        }
-
-        .gallery-caption {
-            padding: 24px 28px;
-        }
-
-        .gallery-caption h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 8px;
-        }
-
-        .gallery-caption p {
+        .profile-item h5 {
+            font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin: 0;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        .profile-item p {
+            font-size: 0.9rem;
+            color: #666;
             line-height: 1.6;
         }
-
-        /* Dark Section */
-        .dark-section {
-            background: var(--dark);
-            color: white;
+        .positioning-statement {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            padding: 3rem;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-
-        .dark-section .section-label {
-            color: var(--accent-light);
+        .positioning-statement h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1.5rem;
         }
-
-        .dark-section .section-title {
-            color: white;
+        .positioning-statement blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin: 0;
         }
-
-        .dark-section .section-description {
-            color: rgba(255,255,255,0.7);
+        .positioning-values {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
         }
-
-        .dark-section .gallery-card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.08);
+        .value-tag {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.8);
         }
-
-        .dark-section .gallery-caption {
-            background: rgba(255,255,255,0.03);
+        @media (max-width: 768px) {
+            .positioning-grid { grid-template-columns: 1fr; }
         }
-
-        .dark-section .gallery-caption h4 {
-            color: white;
+        .objectives-section {
+            padding: 6rem 5%;
+            background: #f5f5f5;
         }
-
-        .dark-section .gallery-caption p {
-            color: rgba(255,255,255,0.7);
+        .objectives-header {
+            text-align: center;
+            margin-bottom: 4rem;
         }
-
-        /* Budget Section */
+        .objectives-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .objectives-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .objective-card {
+            background: #fff;
+            padding: 2.5rem;
+            border: 1px solid #eee;
+            position: relative;
+        }
+        .objective-card::before {
+            content: attr(data-goal);
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: rgba(0,0,0,0.05);
+        }
+        .objective-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 0.75rem;
+        }
+        .objective-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        .objective-kpi {
+            background: #fafafa;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .kpi-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        .kpi-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #999;
+        }
+        .objective-tactics {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .objective-tactics li {
+            font-size: 0.85rem;
+            color: #666;
+            padding: 0.5rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+        .objective-tactics li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #999;
+        }
+        @media (max-width: 968px) {
+            .objectives-grid { grid-template-columns: 1fr; }
+        }
+        .activation-section {
+            padding: 6rem 5%;
+            background: #fff;
+        }
+        .activation-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .activation-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .activation-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .activation-timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .activation-phase {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            padding: 3rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .activation-phase:last-child { border-bottom: none; }
+        .phase-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+        }
+        .phase-season {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-top: 0.5rem;
+        }
+        .phase-content h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        .phase-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .phase-item {
+            background: #fafafa;
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .phase-item strong {
+            display: block;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
+        }
+        @media (max-width: 768px) {
+            .activation-phase { grid-template-columns: 1fr; gap: 1rem; }
+            .phase-items { grid-template-columns: 1fr; }
+        }
+        .budget-section {
+            padding: 6rem 5%;
+            background: #1a1a1a;
+        }
+        .budget-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .budget-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+        .budget-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #fff;
+        }
+        .budget-total {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .budget-total .amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 300;
+            color: #fff;
+        }
+        .budget-total .period {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.5rem;
+        }
         .budget-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-top: 56px;
-        }
-
-        .budget-card {
-            background: rgba(255,255,255,0.06);
-            border-radius: 20px;
-            padding: 32px;
-            text-align: center;
-            border: 1px solid rgba(201,169,98,0.2);
-            transition: all 0.3s ease;
-        }
-
-        .budget-card:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-3px);
-        }
-
-        .budget-card .amount {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.4rem;
-            font-weight: 600;
-            color: var(--accent-light);
-            margin-bottom: 8px;
-        }
-
-        .budget-card .percentage {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 14px;
-        }
-
-        .budget-card .category {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-        }
-
-        .budget-card .details {
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.5);
-            margin-top: 14px;
-            line-height: 1.5;
-        }
-
-        /* Target Persona */
-        .persona-card {
-            background: white;
-            border-radius: 24px;
-            padding: 48px;
-            box-shadow: 0 8px 48px rgba(0,0,0,0.08);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            margin-top: 56px;
-        }
-
-        .persona-traits {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .trait-item {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .trait-icon {
-            width: 44px;
-            height: 44px;
-            background: var(--bg-light);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-        }
-
-        .trait-text {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            line-height: 1.4;
-        }
-
-        /* Timeline */
-        .timeline-section {
-            margin-top: 56px;
-        }
-
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 36px;
-            padding: 28px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .timeline-period {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--accent-light);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
-        .timeline-content h4 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .timeline-content p {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.65;
-        }
-
-        /* Key Learnings */
-        .learnings-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-top: 56px;
-        }
-
-        .learning-card {
-            background: white;
-            border-radius: 20px;
-            padding: 36px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-
-        .learning-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(201,169,98,0.1);
-        }
-
-        .learning-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            font-weight: 600;
-            color: rgba(201,169,98,0.2);
-            margin-bottom: 18px;
-            line-height: 1;
-        }
-
-        .learning-card h4 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 14px;
-        }
-
-        .learning-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
-        }
-
-        /* Stats Row */
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 28px;
-            margin-top: 48px;
-        }
-
-        .stat-card {
-            background: white;
-            border-radius: 16px;
-            padding: 28px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border: 1px solid rgba(201,169,98,0.1);
-        }
-
-        .stat-value {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: var(--accent-dark);
-            margin-bottom: 6px;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: var(--gradient-gold);
-            padding: 100px 5%;
-            text-align: center;
-        }
-
-        .cta-content {
-            max-width: 640px;
+            gap: 2rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
-
-        .cta-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            color: var(--dark);
-            margin-bottom: 18px;
-        }
-
-        .cta-text {
-            font-size: 1.15rem;
-            color: rgba(0,0,0,0.7);
-            margin-bottom: 36px;
-            line-height: 1.7;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 18px;
-            justify-content: center;
-        }
-
-        .btn-primary {
-            background: var(--dark);
-            color: white;
-            padding: 18px 36px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--dark);
-            padding: 18px 36px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            border: 2px solid var(--dark);
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .btn-secondary:hover {
-            background: var(--dark);
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            padding: 48px 5%;
+        .budget-card {
             text-align: center;
-            border-top: 1px solid rgba(201,169,98,0.1);
+            padding: 2.5rem 1.5rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
         }
-
-        footer p {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
+        .budget-percentage {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            color: #fff;
         }
-
-        /* Position Section */
-        .position-section {
-            background: var(--bg-light);
-        }
-
-        /* PDF Reference */
-        .pdf-reference {
-            margin-top: 60px;
-            padding: 28px 32px;
-            background: rgba(201,169,98,0.08);
-            border-radius: 16px;
-            border-left: 4px solid var(--accent);
-        }
-
-        .pdf-reference h5 {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--accent-dark);
+        .budget-category {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 10px;
+            color: rgba(255,255,255,0.5);
+            margin: 0.5rem 0;
         }
-
-        .pdf-reference p {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
+        .budget-amount {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+        }
+        .budget-details {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 1rem;
             line-height: 1.6;
         }
-
-        .pdf-reference a {
-            color: var(--accent-dark);
-            text-decoration: underline;
+        @media (max-width: 900px) {
+            .budget-grid { grid-template-columns: repeat(2, 1fr); }
         }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-content-wrapper {
-                grid-template-columns: 1fr;
-                gap: 56px;
-            }
-            
-            .hero-image-frame {
-                transform: none;
-            }
-            
-            .meta-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .overview-grid {
-                grid-template-columns: 1fr;
-                gap: 56px;
-            }
-            
-            .swot-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .gallery-card.large,
-            .gallery-card.full {
-                grid-column: span 1;
-            }
-            
-            .budget-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .learnings-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .persona-card {
-                grid-template-columns: 1fr;
-            }
-
-            .toc-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats-row {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .quote-block {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+            text-align: center;
         }
-
+        .quote-block blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 400;
+            font-style: italic;
+            color: #1a1a1a;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .quote-block cite {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-style: normal;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: 2rem;
+        }
+        .learnings-section {
+            padding: 6rem 5%;
+            background: #fafafa;
+        }
+        .learnings-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .learnings-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .learnings-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .learnings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .learning-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .learning-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+        .learning-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.8;
+        }
         @media (max-width: 768px) {
-            .meta-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .hero-stats {
-                gap: 28px;
-            }
-            
-            .budget-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .toc-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-row {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
+            .learnings-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">INA YU</a>
             <div class="nav-links">
-                <a href="work.html" class="nav-link active">Work</a>
+                <a href="work.html" class="nav-link">Work</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>
@@ -1036,762 +676,416 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-premium">
-        <div class="hero-content-wrapper">
-            <div class="hero-text-content">
-                <div class="hero-category">
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    Brand Strategy · Graduate Project
-                </div>
-                <h1 class="hero-title">Dior Marketing Strategy</h1>
-                <p class="hero-subtitle">Comprehensive marketing plan for Dior's leather goods division, featuring $237M budget allocation, omni-channel activation strategy, and market positioning analysis for the high-end luxury handbag market.</p>
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <div class="hero-stat-value">$237M</div>
-                        <div class="hero-stat-label">Annual Budget</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-value">5%</div>
-                        <div class="hero-stat-label">Target Awareness Growth</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-value">45+</div>
-                        <div class="hero-stat-label">Retail Locations</div>
-                    </div>
-                    <div class="hero-stat">
-                        <div class="hero-stat-value">12+</div>
-                        <div class="hero-stat-label">Activation Channels</div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-image-frame">
-                    <img src="https://www.genspark.ai/api/files/s/vl61kzYP" alt="Dior Consumer Insights - Fashion runway featuring luxury handbag styling">
-                </div>
-            </div>
-        </div>
+    <section class="project-hero-dior">
+        <span class="hero-badge">Marketing Art & Design Ventures</span>
+        <h1 class="hero-title-main">Dior</h1>
+        <p class="hero-subtitle-main">Leather Goods (Handbags) Marketing Strategy<br>Consumer Insights · Brand Positioning · Annual Activation Plan</p>
+        <p class="hero-credit">Prepared by: Cheryl Edenfield & Poyoung "Ina" Yu · BUSI 745 Course Project · 2016-2017</p>
     </section>
 
-    <!-- Project Meta Bar -->
-    <div class="project-meta-bar">
-        <div class="meta-grid">
-            <div class="meta-item">
-                <div class="meta-label">Client / Course</div>
-                <div class="meta-value">BUSI 745: Marketing Art & Design Ventures</div>
-            </div>
-            <div class="meta-item">
-                <div class="meta-label">Role</div>
-                <div class="meta-value">Marketing Strategist & Co-Author</div>
-            </div>
-            <div class="meta-item">
-                <div class="meta-label">Duration</div>
-                <div class="meta-value">Fall 2016 – Spring 2017</div>
-            </div>
-            <div class="meta-item">
-                <div class="meta-label">Team</div>
-                <div class="meta-value">Cheryl Edenfield & Poyoung "Ina" Yu</div>
-            </div>
-            <div class="meta-item">
-                <div class="meta-label">Focus Area</div>
-                <div class="meta-value">Leather Goods / Handbags</div>
-            </div>
+    <!-- Meta Bar -->
+    <div class="meta-bar-enhanced">
+        <div class="meta-item">
+            <div class="meta-label">Role</div>
+            <div class="meta-value">Marketing Strategist</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Context</div>
+            <div class="meta-value">SCAD MFA Research</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Scope</div>
+            <div class="meta-value">Full Marketing Plan</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Budget</div>
+            <div class="meta-value">$237M Annual</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Fiscal Year</div>
+            <div class="meta-value">July 2016 - June 2017</div>
         </div>
     </div>
 
-    <!-- Table of Contents Section -->
-    <section class="toc-section">
-        <div class="section-container">
-            <div class="section-header">
-                <div class="section-label">
-                    <span class="section-number">00</span>
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-                    Contents
-                </div>
-                <h2 class="section-title">Project Structure</h2>
-                <p class="section-description">A comprehensive marketing strategy document covering market analysis, positioning, and a detailed annual activation plan with $237M budget allocation.</p>
-            </div>
-
-            <div class="gallery-grid" style="margin-top: 32px;">
-                <div class="gallery-card full">
-                    <img src="https://www.genspark.ai/api/files/s/KQacRbbt" alt="Document Contents - Table of Contents showing project structure">
-                    <div class="gallery-caption">
-                        <h4>Document Contents Overview</h4>
-                        <p>Complete project structure including Consumer Insights, SWOT Analysis, Brand Positioning, Segmentation & Targeting, Marketing Objectives & Strategies, Annual Activation Plan, and Budget breakdown.</p>
+    <!-- Executive Summary -->
+    <section class="executive-section">
+        <div class="executive-grid">
+            <div class="executive-left">
+                <h3>Strategic Challenge:<br>Closing the Aspiration-Acquisition Gap</h3>
+                <p class="executive-quote">"Consumers aspire to Dior but purchase competitors—the gap lies in perceived value accessibility, not brand desirability."</p>
+                <p style="font-size: 1rem; color: #666; line-height: 1.8; margin-top: 2rem;">Primary research revealed a critical disconnect: while luxury consumers ranked Dior, Hermès, and Chanel as most desirable brands, actual ownership skewed toward Coach, Louis Vuitton, and Chanel. The strategic imperative was clear—expand e-commerce into US and Asia markets, target millennials earning $60K+, and diversify price points through material innovation.</p>
+                <div class="executive-stats">
+                    <div class="stat-card">
+                        <div class="stat-value">$237M</div>
+                        <div class="stat-label">Total Budget</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">25-40</div>
+                        <div class="stat-label">Target Age Range</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$60K+</div>
+                        <div class="stat-label">HH Income Target</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Handbag Models</div>
                     </div>
                 </div>
             </div>
-
-            <div class="toc-grid">
-                <div class="toc-item">
-                    <div class="toc-number">01</div>
-                    <h4>Consumer Insights</h4>
-                    <p>Primary research with 31 target consumers, purchase behavior patterns, and brand preferences.</p>
-                </div>
-                <div class="toc-item">
-                    <div class="toc-number">02</div>
-                    <h4>SWOT Analysis</h4>
-                    <p>Comprehensive analysis of Dior's competitive position in the luxury handbag market.</p>
-                </div>
-                <div class="toc-item">
-                    <div class="toc-number">03</div>
-                    <h4>Brand Positioning</h4>
-                    <p>Position maps and competitive analysis against Hermès, Chanel, Louis Vuitton.</p>
-                </div>
-                <div class="toc-item">
-                    <div class="toc-number">04</div>
-                    <h4>Marketing Strategy</h4>
-                    <p>Three-pronged approach with specific objectives, KPIs, and activation timeline.</p>
-                </div>
-                <div class="toc-item">
-                    <div class="toc-number">05</div>
-                    <h4>Activation Plan</h4>
-                    <p>Product, Place, Promotion strategies for A/W 2016 and S/S 2017 seasons.</p>
-                </div>
-                <div class="toc-item">
-                    <div class="toc-number">06</div>
-                    <h4>Budget Allocation</h4>
-                    <p>$237M annual marketing budget with detailed breakdown across channels.</p>
-                </div>
-                <div class="toc-item">
-                    <div class="toc-number">07</div>
-                    <h4>Strategic Implications</h4>
-                    <p>Key findings and recommendations for e-commerce, pricing, and partnerships.</p>
-                </div>
-                <div class="toc-item">
-                    <div class="toc-number">08</div>
-                    <h4>Appendix</h4>
-                    <p>Supporting data, survey results, and additional research materials.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Overview -->
-    <section class="section-premium">
-        <div class="section-container">
-            <div class="overview-grid">
-                <div class="overview-content">
-                    <div class="section-header">
-                        <div class="section-label">
-                            <span class="section-number">01</span>
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
-                            Project Overview
-                        </div>
-                        <h2 class="section-title">Strategic Marketing Plan for Dior's Leather Goods Division</h2>
+            <div class="executive-right">
+                <div class="insight-cards">
+                    <div class="insight-card">
+                        <h4>Consumer Purchase Behavior</h4>
+                        <p>Most consumers own 3+ luxury handbags, search for new options at least once annually, and spend primarily under $1,000—though a significant segment invests $1,000-$5,000 per purchase. Primary purchase drivers: Style/Design (1st), Quality (2nd), Investment Value (3rd).</p>
                     </div>
-                    <p>This comprehensive marketing strategy was developed as part of BUSI 745: Marketing Art and Design Ventures—a graduate-level course project. The focus was on Dior's leather goods (handbags) category, analyzing consumer behavior, competitive positioning, and developing a full-year activation plan with detailed budget allocation.</p>
-                    <p>The strategy aimed to strengthen Dior's position in the high-end luxury handbag market while expanding digital presence and omni-channel retail experiences across North America and Asia markets.</p>
-                    
-                    <div class="challenge-box">
-                        <h4>Strategic Challenge</h4>
-                        <p>Dior handbags ranked #6 in social media mentions (behind Chanel, Gucci, Hermès) and #54 in digital IQ scores among 100 fashion brands. The challenge was to increase product awareness while maintaining the brand's prestigious positioning without resorting to discounting strategies.</p>
+                    <div class="insight-card">
+                        <h4>Brand Perception Gap</h4>
+                        <p>Desired brands: Dior, Hermès, Kate Spade, Chloé, Louis Vuitton, Chanel. Actual ownership: Coach, Chanel, Louis Vuitton. Dior's perceived "expensive" positioning without visible pricing creates friction in the consideration phase.</p>
                     </div>
-
-                    <div class="stats-row" style="margin-top: 40px;">
-                        <div class="stat-card">
-                            <div class="stat-value">#6</div>
-                            <div class="stat-label">Social Media Rank</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">#54</div>
-                            <div class="stat-label">Digital IQ Score</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">31</div>
-                            <div class="stat-label">Survey Respondents</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">8</div>
-                            <div class="stat-label">Bag Models</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="deliverables-list">
-                    <div class="deliverable-item">
-                        <div class="deliverable-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                        <div class="deliverable-text">
-                            <h5>Consumer Insights Analysis</h5>
-                            <p>Primary research with target demographic, purchase behavior patterns, brand preferences</p>
-                        </div>
-                    </div>
-                    <div class="deliverable-item">
-                        <div class="deliverable-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                        </div>
-                        <div class="deliverable-text">
-                            <h5>SWOT & Competitive Analysis</h5>
-                            <p>Market positioning against Hermès, Chanel, Louis Vuitton, Gucci</p>
-                        </div>
-                    </div>
-                    <div class="deliverable-item">
-                        <div class="deliverable-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
-                        </div>
-                        <div class="deliverable-text">
-                            <h5>$237M Budget Allocation</h5>
-                            <p>Print 30%, Digital 36%, Events 15%, Other 19%</p>
-                        </div>
-                    </div>
-                    <div class="deliverable-item">
-                        <div class="deliverable-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
-                        </div>
-                        <div class="deliverable-text">
-                            <h5>Annual Activation Plan</h5>
-                            <p>Seasonal product launches, VIP salons, e-commerce expansion</p>
-                        </div>
-                    </div>
-                    <div class="deliverable-item">
-                        <div class="deliverable-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        </div>
-                        <div class="deliverable-text">
-                            <h5>Omni-Channel Strategy</h5>
-                            <p>E-commerce launch in US & Asia, click-to-collect program</p>
-                        </div>
+                    <div class="insight-card">
+                        <h4>Channel Accessibility Issue</h4>
+                        <p>No e-commerce functionality outside EU for leather goods. Consumers unable to find Dior in secondary retailers they prefer. Lower handbag category awareness compared to RTW and beauty divisions.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Consumer Insights Section -->
-    <section class="section-premium dark-section">
-        <div class="section-container">
-            <div class="section-header">
-                <div class="section-label">
-                    <span class="section-number">02</span>
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-                    Consumer Insights
-                </div>
-                <h2 class="section-title">Understanding the Luxury Handbag Consumer</h2>
-                <p class="section-description">Primary research conducted with 31 target consumers revealed key behavioral patterns and purchase motivations in the luxury handbag market.</p>
+    <!-- SWOT Analysis -->
+    <section class="swot-section">
+        <div class="swot-header">
+            <div class="label">Strategic Analysis Framework</div>
+            <h2>SWOT Analysis</h2>
+        </div>
+        <div class="swot-grid">
+            <div class="swot-card strengths">
+                <h4>Strengths</h4>
+                <ul>
+                    <li>Brand heritage since 1946 with strong equity</li>
+                    <li>Superior in-store customer experience</li>
+                    <li>Design diversity across 8 handbag models</li>
+                    <li>Italian leather craftsmanship heritage</li>
+                    <li>Strong demand in Chinese market</li>
+                    <li>Jennifer Lawrence celebrity endorsement</li>
+                </ul>
             </div>
+            <div class="swot-card weaknesses">
+                <h4>Weaknesses</h4>
+                <ul>
+                    <li>No visible pricing on website creates "expensive" perception</li>
+                    <li>Second Creative Director change in 5 years</li>
+                    <li>No e-commerce outside EU for leather goods</li>
+                    <li>Lower handbag recognition vs. RTW and beauty</li>
+                    <li>Limited secondary retailer presence</li>
+                    <li>Weaker social media presence vs. competitors</li>
+                </ul>
+            </div>
+            <div class="swot-card opportunities">
+                <h4>Opportunities</h4>
+                <ul>
+                    <li>Promote Small Leather Goods (SLG) as entry point</li>
+                    <li>Launch North America/Asia e-commerce</li>
+                    <li>Partner with Net-a-Porter and secondary retailers</li>
+                    <li>Pre-owned trade-in program (Green initiative)</li>
+                    <li>Mobile app development</li>
+                    <li>Alternative materials (canvas, nylon) for accessible pricing</li>
+                </ul>
+            </div>
+            <div class="swot-card threats">
+                <h4>Threats</h4>
+                <ul>
+                    <li>Chanel e-commerce launch with competitive positioning</li>
+                    <li>Growing rental market (Bag Borrow or Steal)</li>
+                    <li>Competitors' active social media (Gucci, Hermès)</li>
+                    <li>Fast fashion accessibility eroding luxury appeal</li>
+                    <li>Economic uncertainty in key luxury markets</li>
+                    <li>Lower social media mention ranking vs. peers</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-            <div class="gallery-grid">
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/6tiqwyvW" alt="Consumer Insights Introduction - Who, What, Where, How, Why">
-                    <div class="gallery-caption">
-                        <h4>Research Framework</h4>
-                        <p>Exploring consumer behavior through comprehensive primary research: Who, What, Where, How, and Why consumers purchase luxury handbags.</p>
-                    </div>
+    <!-- Brand Positioning -->
+    <section class="positioning-section">
+        <div class="positioning-header">
+            <div class="label">Segmentation & Targeting</div>
+            <h2>Brand Positioning & Target Consumer</h2>
+        </div>
+        <div class="positioning-grid">
+            <div class="target-profile">
+                <h4>Target Consumer Profile</h4>
+                <div class="profile-item">
+                    <h5>Demographics</h5>
+                    <p>Fashion-forward women, 25-40 years old, single or married, college-educated, household income $60,000+/year, residing in major US and Asian metropolitan areas.</p>
                 </div>
-                <div class="gallery-card large">
-                    <img src="https://www.genspark.ai/api/files/s/vl61kzYP" alt="Consumer Insights - Fashion runway models with luxury handbags">
-                    <div class="gallery-caption">
-                        <h4>Target Consumer Behavior</h4>
-                        <p>Most interested in Dior, Hermès, Kate Spade, Chloé, Louis Vuitton and Chanel, but primarily own Coach, Chanel, and Louis Vuitton products. Most own more than 3 luxury handbags and look for a new one at least once a year.</p>
-                    </div>
+                <div class="profile-item">
+                    <h5>Psychographics</h5>
+                    <p>Digital natives with high social engagement. Status-motivated consumers who view handbags as investment pieces. Subscribe to W, Vogue, and WSJ via mobile/tablet.</p>
                 </div>
-                <div class="gallery-card large">
-                    <img src="https://www.genspark.ai/api/files/s/YNfBrMZZ" alt="Consumer Insights - Street style handbag preferences">
-                    <div class="gallery-caption">
-                        <h4>Purchase Patterns & Spending</h4>
-                        <p>Most spend under $1,000, but many spend $1,000-$5,000 for luxury handbags. Purchase decisions influenced by style/design, quality craftsmanship, and investment value.</p>
-                    </div>
+                <div class="profile-item">
+                    <h5>Behavioral Patterns</h5>
+                    <p>Cross-shops between luxury brands, influenced by celebrity and blogger endorsements, conducts thorough research before purchase, willing to wait for the right piece.</p>
                 </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/oGjpTsXk" alt="Consumer Insights Summary and Business Implications">
-                    <div class="gallery-caption">
-                        <h4>Business Implications</h4>
-                        <p>Dior competes at both ends of the luxury spectrum. Through marketing, educate consumers on style/design, quality, and cost (investment value) of Dior handbags. Expand e-commerce and secondary retailer presence.</p>
-                    </div>
+                <div class="profile-item">
+                    <h5>Media Consumption</h5>
+                    <p>Instagram, Facebook, Snapchat active users. Fashion blog followers. Mobile-first content consumption. Responds to digital advertising and influencer recommendations.</p>
                 </div>
             </div>
+            <div class="positioning-statement">
+                <h4>Brand Positioning Statement</h4>
+                <blockquote>"For fashion-forward women between 25-40 years old with an average household income of $60K/year, Dior offers investment-worthy, premium Italian leather handbags that combine classic design with modern edge—delivering timeless value that justifies the premium."</blockquote>
+                <div class="positioning-values">
+                    <span class="value-tag">Heritage Since 1946</span>
+                    <span class="value-tag">Italian Craftsmanship</span>
+                    <span class="value-tag">Timeless Design</span>
+                    <span class="value-tag">Investment Value</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Target Persona -->
-            <div class="persona-card" style="background: rgba(255,255,255,0.05); margin-top: 56px; border: 1px solid rgba(201,169,98,0.2);">
+    <!-- Marketing Objectives -->
+    <section class="objectives-section">
+        <div class="objectives-header">
+            <div class="label">Marketing Objectives & Strategies</div>
+            <h2>Three-Pillar Growth Framework</h2>
+        </div>
+        <div class="objectives-grid">
+            <div class="objective-card" data-goal="A">
+                <div class="objective-label">Goal A</div>
+                <div class="objective-title">Maintain High-End Market Position</div>
+                <div class="objective-kpi">
+                    <div class="kpi-value">+5%</div>
+                    <div class="kpi-label">Omni-channel Visits by FY2017</div>
+                </div>
+                <ul class="objective-tactics">
+                    <li>Restructure Dior.com: "Leather Goods" → "Handbags"</li>
+                    <li>Launch VIP Salon at Neiman Marcus</li>
+                    <li>Elevate social media content quality</li>
+                    <li>Maintain premium pricing integrity</li>
+                </ul>
+            </div>
+            <div class="objective-card" data-goal="B">
+                <div class="objective-label">Goal B</div>
+                <div class="objective-title">Enter Moderately Affordable Space</div>
+                <div class="objective-kpi">
+                    <div class="kpi-value">+5%</div>
+                    <div class="kpi-label">Sales Growth via New Products</div>
+                </div>
+                <ul class="objective-tactics">
+                    <li>Introduce non-leather materials (wax canvas, nylon)</li>
+                    <li>Develop mini-bags and clutch subcategories</li>
+                    <li>Strategic celebrity endorsement expansion</li>
+                    <li>Create entry-point products without brand dilution</li>
+                </ul>
+            </div>
+            <div class="objective-card" data-goal="C">
+                <div class="objective-label">Goal C</div>
+                <div class="objective-title">Expand Market Reach</div>
+                <div class="objective-kpi">
+                    <div class="kpi-value">+10%</div>
+                    <div class="kpi-label">Omni-channel Sales Increase</div>
+                </div>
+                <ul class="objective-tactics">
+                    <li>Activate US/Asia e-commerce shopping cart</li>
+                    <li>Implement "Click-and-Collect" program</li>
+                    <li>Publish transparent website pricing</li>
+                    <li>Open strategic retail locations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activation Timeline -->
+    <section class="activation-section">
+        <div class="activation-header">
+            <div class="label">Annual Activation Plan</div>
+            <h2>FY 2016-2017 Execution Roadmap</h2>
+        </div>
+        <div class="activation-timeline">
+            <div class="activation-phase">
                 <div>
-                    <h3 style="color: white; font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin-bottom: 24px;">Target Persona</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.75;">Fashion-forward women between 25-40 years old with an average household income of $60k/year. Single, employed, college-educated professionals living in metropolitan areas of the U.S. and Asia.</p>
-                    <div style="margin-top: 24px;">
-                        <img src="https://www.genspark.ai/api/files/s/RKHPFZy9" alt="Target Demographics Infographic" style="width: 100%; border-radius: 12px;">
+                    <div class="phase-label">Phase I</div>
+                    <div class="phase-season">Autumn/Winter 2016</div>
+                </div>
+                <div class="phase-content">
+                    <h4>Product & Digital Infrastructure Launch</h4>
+                    <div class="phase-items">
+                        <div class="phase-item">
+                            <strong>Product Launch</strong>
+                            Nylon version "Open Bar" bag at accessible price point
+                        </div>
+                        <div class="phase-item">
+                            <strong>Portfolio Optimization</strong>
+                            Retire underperforming "Be Dior" and "Ultradior" models
+                        </div>
+                        <div class="phase-item">
+                            <strong>Digital Update (July)</strong>
+                            Website restructure with visible pricing
+                        </div>
+                        <div class="phase-item">
+                            <strong>E-commerce Launch (August)</strong>
+                            Shopping cart activation for US/Asia
+                        </div>
+                        <div class="phase-item">
+                            <strong>Retail Expansion</strong>
+                            Atlanta flagship store opening
+                        </div>
+                        <div class="phase-item">
+                            <strong>Social Campaign</strong>
+                            Instagram/Facebook paid advertising launch
+                        </div>
                     </div>
                 </div>
-                <div class="persona-traits">
-                    <div class="trait-item">
-                        <div class="trait-icon">📱</div>
-                        <div class="trait-text" style="color: rgba(255,255,255,0.85);">Digital native, socially engaged</div>
-                    </div>
-                    <div class="trait-item">
-                        <div class="trait-icon">📖</div>
-                        <div class="trait-text" style="color: rgba(255,255,255,0.85);">Reads W, Vogue, WSJ magazines</div>
-                    </div>
-                    <div class="trait-item">
-                        <div class="trait-icon">💼</div>
-                        <div class="trait-text" style="color: rgba(255,255,255,0.85);">Employed, $60k+ income</div>
-                    </div>
-                    <div class="trait-item">
-                        <div class="trait-icon">🏙️</div>
-                        <div class="trait-text" style="color: rgba(255,255,255,0.85);">Metropolitan, community-focused</div>
-                    </div>
-                    <div class="trait-item">
-                        <div class="trait-icon">👜</div>
-                        <div class="trait-text" style="color: rgba(255,255,255,0.85);">Materialistic, status motivated</div>
-                    </div>
-                    <div class="trait-item">
-                        <div class="trait-icon">📲</div>
-                        <div class="trait-text" style="color: rgba(255,255,255,0.85);">Mobile reader, on-the-go lifestyle</div>
+            </div>
+            <div class="activation-phase">
+                <div>
+                    <div class="phase-label">Phase II</div>
+                    <div class="phase-season">Spring/Summer 2017</div>
+                </div>
+                <div class="phase-content">
+                    <h4>Category Expansion & Market Penetration</h4>
+                    <div class="phase-items">
+                        <div class="phase-item">
+                            <strong>Seasonal Product</strong>
+                            Canvas and straw "Open Bar" variations
+                        </div>
+                        <div class="phase-item">
+                            <strong>Retail Network</strong>
+                            Chicago and Japan store openings
+                        </div>
+                        <div class="phase-item">
+                            <strong>Fashion Week</strong>
+                            Snapchat Live Story during runway shows
+                        </div>
+                        <div class="phase-item">
+                            <strong>Heritage Campaign</strong>
+                            Italian craftsmanship storytelling
+                        </div>
+                        <div class="phase-item">
+                            <strong>VIP Events</strong>
+                            Bi-annual preview parties
+                        </div>
+                        <div class="phase-item">
+                            <strong>Influencer Program</strong>
+                            Fashion blogger partnership expansion
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SWOT Analysis Section -->
-    <section class="section-premium position-section">
-        <div class="section-container">
-            <div class="section-header">
-                <div class="section-label">
-                    <span class="section-number">03</span>
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-                    SWOT Analysis
-                </div>
-                <h2 class="section-title">Strategic Assessment</h2>
-                <p class="section-description">Comprehensive analysis of Dior's strengths, weaknesses, opportunities, and threats in the competitive luxury handbag market.</p>
+    <!-- Budget Allocation -->
+    <section class="budget-section">
+        <div class="budget-header">
+            <div class="label">Budget Allocation</div>
+            <h2>FY 2016-2017 Investment Plan</h2>
+        </div>
+        <div class="budget-total">
+            <div class="amount">$237M</div>
+            <div class="period">Total Annual Marketing Budget (USD)</div>
+        </div>
+        <div class="budget-grid">
+            <div class="budget-card">
+                <div class="budget-percentage">36%</div>
+                <div class="budget-category">Digital</div>
+                <div class="budget-amount">$85.5M</div>
+                <div class="budget-details">Facebook, Instagram, YouTube ads ($20K daily), e-commerce platform, cloud inventory integration</div>
             </div>
-
-            <div class="gallery-grid" style="margin-top: 32px;">
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/PA3Xx9Q3" alt="SWOT Analysis Title Slide">
-                    <div class="gallery-caption">
-                        <h4>SWOT Framework</h4>
-                        <p>Strategic analysis methodology for evaluating Dior's competitive position in the luxury handbag market.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/rK36ljQY" alt="Strengths & Weaknesses Analysis">
-                    <div class="gallery-caption">
-                        <h4>Strengths & Weaknesses</h4>
-                        <p>Internal factors including brand heritage (est. 1946), strong consumer demand in China (20 stores), but lacking e-commerce outside EU.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/Yy6R2kdY" alt="Opportunities & Threats Analysis">
-                    <div class="gallery-caption">
-                        <h4>Opportunities & Threats</h4>
-                        <p>External factors including e-commerce expansion potential, mobile app development, but facing Chanel's e-commerce launch and secondary market challenges.</p>
-                    </div>
-                </div>
+            <div class="budget-card">
+                <div class="budget-percentage">30%</div>
+                <div class="budget-category">Print</div>
+                <div class="budget-amount">$71.5M</div>
+                <div class="budget-details">Vogue, Elle, WWD magazine placements, outdoor advertising, editorial partnerships</div>
             </div>
-            
-            <div class="swot-grid">
-                <div class="swot-card strengths">
-                    <h4>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        Strengths
-                    </h4>
-                    <ul>
-                        <li>Brand history (est. 1946) with worldwide designer name recognition</li>
-                        <li>Strong core service values: heritage, value, experience</li>
-                        <li>Communicates with in-store customers very well</li>
-                        <li>Variety of products and strong designs (8 bag models)</li>
-                        <li>#6 of top 15 luxury brand social media mentions</li>
-                        <li>Favorable celebrity endorsements (Jennifer Lawrence, etc.)</li>
-                        <li>Strong consumer demand in China (20 stores)</li>
-                    </ul>
-                </div>
-                <div class="swot-card weaknesses">
-                    <h4>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.49 22 2 17.51 2 12S6.49 2 12 2s10 4.49 10 10-4.49 10-10 10zm0-18c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8z"/><path d="M11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
-                        Weaknesses
-                    </h4>
-                    <ul>
-                        <li>Viewed as pricey (cost is not listed on website)</li>
-                        <li>Second time in five years searching for new creative director</li>
-                        <li>No e-commerce for leather goods outside EU</li>
-                        <li>Ranked #54 out of 100 fashion brands by digital IQ score</li>
-                        <li>Dior handbags not on target consumers' radar compared to other product lines</li>
-                    </ul>
-                </div>
-                <div class="swot-card opportunities">
-                    <h4>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                        Opportunities
-                    </h4>
-                    <ul>
-                        <li>Promote small leather goods to introduce consumers to accessories line</li>
-                        <li>Translate experiential relationship from in-store to online via e-commerce</li>
-                        <li>Add leather goods to Yoox/Net-a-porter</li>
-                        <li>Green initiative: trade-in of competitor bags for discount</li>
-                        <li>Develop mobile app for handbag videos and POP opportunities</li>
-                    </ul>
-                </div>
-                <div class="swot-card threats">
-                    <h4>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
-                        Threats
-                    </h4>
-                    <ul>
-                        <li>Chanel launching e-commerce in late 2016</li>
-                        <li>Secondary retail market: Dior handbags on Bag Borrow or Steal</li>
-                        <li>Competitors use both primary and secondary e-commerce channels</li>
-                        <li>Luxury brands with mobile apps and POP sales (Chanel, Prada, LV, Gucci)</li>
-                        <li>Chanel, Gucci, Hermès ranked #1-3 in social mentions vs Dior #6</li>
-                    </ul>
-                </div>
+            <div class="budget-card">
+                <div class="budget-percentage">19%</div>
+                <div class="budget-category">Other</div>
+                <div class="budget-amount">$45M</div>
+                <div class="budget-details">Agency fees, celebrity contracts (Jennifer Lawrence), production costs</div>
+            </div>
+            <div class="budget-card">
+                <div class="budget-percentage">15%</div>
+                <div class="budget-category">Events</div>
+                <div class="budget-amount">$35M</div>
+                <div class="budget-details">Bi-annual preview parties, VIP salons, Fashion Week pop-ups, retail activations</div>
             </div>
         </div>
     </section>
 
-    <!-- Brand Positioning Section -->
-    <section class="section-premium">
-        <div class="section-container">
-            <div class="section-header">
-                <div class="section-label">
-                    <span class="section-number">04</span>
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    Brand Positioning
-                </div>
-                <h2 class="section-title">Market Position Analysis</h2>
-                <p class="section-description">Competitive positioning maps analyzing Dior's placement among luxury handbag brands based on style, price, prestige, and product range.</p>
-            </div>
+    <!-- Quote Block -->
+    <section class="quote-block">
+        <blockquote>"The luxury handbag market isn't about price—it's about perceived value. Dior must communicate why Italian craftsmanship and timeless design justify the investment. Hidden pricing doesn't create exclusivity; it creates friction."</blockquote>
+        <cite>Strategic Analysis Conclusion</cite>
+    </section>
 
-            <div class="gallery-grid" style="margin-top: 32px;">
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/DRsUEehu" alt="Segmentation & Targeting Introduction">
-                    <div class="gallery-caption">
-                        <h4>Segmentation & Targeting</h4>
-                        <p>Strategic approach to market segmentation and target audience identification for Dior leather goods.</p>
-                    </div>
-                </div>
+    <!-- Key Learnings -->
+    <section class="learnings-section">
+        <div class="learnings-header">
+            <div class="label">Strategic Insights</div>
+            <h2>Key Learnings</h2>
+        </div>
+        <div class="learnings-grid">
+            <div class="learning-card">
+                <h4>On Luxury E-commerce</h4>
+                <h3>Digital Reluctance as Strategic Liability</h3>
+                <p>Digital hesitation in luxury is no longer brand protection—it's competitive liability. Competitors who embraced e-commerce early captured younger consumers who will define the market for decades. The question isn't whether to digitize, but how to maintain brand equity while doing so.</p>
             </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-card large">
-                    <img src="https://www.genspark.ai/api/files/s/9COFnkBR" alt="Position Map - Style (Design) + Price">
-                    <div class="gallery-caption">
-                        <h4>Position Map: Style (Design) + Price</h4>
-                        <p>Dior positioned in the high-end luxury, modern design quadrant alongside Hermès and Chanel, differentiated from affordable luxury brands like Coach and Michael Kors. Classic to Modern on horizontal axis, Low Luxury to High-End Luxury on vertical axis.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/8QHWbFTx" alt="Position Map - Range of Offerings + Price">
-                    <div class="gallery-caption">
-                        <h4>Range of Offerings + Price</h4>
-                        <p>Dior occupies the prestige/exclusivity quadrant with limited product range, competing with Hermès and Louis Vuitton. Mass Market to Exclusivity on horizontal axis, Lower Prestige to Prestige + Status on vertical axis.</p>
-                    </div>
-                </div>
-                <div class="gallery-card full">
-                    <img src="https://www.genspark.ai/api/files/s/zbnqOdKF" alt="Brand Position Statement">
-                    <div class="gallery-caption">
-                        <h4>Brand Position Statement</h4>
-                        <p>"For fashion-forward women between 25-40 years old with an average household income of $60k/year, Dior offers classically designed handbags with a modern edge that are worth investing in because they are exceptionally well-made." <strong>Reasons to believe:</strong> Heritage (50+ years), Modern yet timeless design, Hand-crafted Italian leather.</p>
-                    </div>
-                </div>
+            <div class="learning-card">
+                <h4>On Price Transparency</h4>
+                <h3>Information Access as Brand Expectation</h3>
+                <p>Hidden pricing doesn't create exclusivity—it creates friction. Modern luxury consumers expect information access; mystique should come from product quality and experience, not opacity. Transparency builds trust without diminishing desirability.</p>
+            </div>
+            <div class="learning-card">
+                <h4>On Material Innovation</h4>
+                <h3>Accessibility Without Dilution</h3>
+                <p>Alternative materials (canvas, nylon) can create entry points without brand dilution when executed with design integrity. The key is maintaining craftsmanship standards while expanding price accessibility—democratizing access, not quality.</p>
+            </div>
+            <div class="learning-card">
+                <h4>On Consumer Journey</h4>
+                <h3>Aspiration-Acquisition Bridge</h3>
+                <p>The gap between brand aspiration and actual purchase reveals strategic opportunity. When consumers desire a brand but buy competitors, the barrier is rarely desirability—it's accessibility, whether through price, channel, or information availability.</p>
             </div>
         </div>
     </section>
 
-    <!-- Marketing Strategy Section -->
-    <section class="section-premium dark-section">
-        <div class="section-container">
-            <div class="section-header">
-                <div class="section-label">
-                    <span class="section-number">05</span>
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
-                    Marketing Strategy
-                </div>
-                <h2 class="section-title">Objectives & Activation Plan</h2>
-                <p class="section-description">Three-pronged marketing approach to maintain luxury positioning while expanding market reach through omni-channel experiences.</p>
-            </div>
-
-            <div class="gallery-grid" style="margin-top: 32px;">
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/Q7VTmgcY" alt="Marketing Objectives & Strategies Title">
-                    <div class="gallery-caption">
-                        <h4>Marketing Framework</h4>
-                        <p>Strategic objectives and comprehensive marketing strategies for Dior leather goods division.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery-grid">
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/3IxUvYXz" alt="Marketing Goal A - High-End Luxury Position">
-                    <div class="gallery-caption">
-                        <h4>Goal A: Maintain High-End Position</h4>
-                        <p>Generate 5% increase in omni-channel retail visits by end of FY 2017 through product awareness, VIP Salons, and premium experiences. Key strategies include educating consumers on quality and heritage.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/Mbu9DrJ9" alt="Product Activation - Autumn/Winter 2016">
-                    <div class="gallery-caption">
-                        <h4>Product: Autumn/Winter 2016</h4>
-                        <p>Mid-priced new collections, nylon "Open Bar" bag launch, A-list celebrity sampling, VIP Salon preview events. Timeline from March 2016 to February 2017.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/ibumaAU1" alt="Product Activation - Spring/Summer 2017">
-                    <div class="gallery-caption">
-                        <h4>Product: Spring/Summer 2017</h4>
-                        <p>Straw and canvas "Open Bar" versions, expanded collections with less pricey materials, continuous celebrity engagement. Launch new collection in boutiques.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/ExJ1ahzO" alt="Place Strategy - Autumn/Winter 2016">
-                    <div class="gallery-caption">
-                        <h4>Place: Distribution A/W 2016</h4>
-                        <p>New Atlanta location, cloud inventory system, tablet POS with RFID, VIP Salons at Dior and NMG boutiques. Send mini bag samples to celebrities.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/65KO5bnc" alt="Place Strategy - Spring/Summer 2017">
-                    <div class="gallery-caption">
-                        <h4>Place: E-Commerce Expansion</h4>
-                        <p>Shopping cart on Dior.com for U.S. and Asia, click-to-collect program, Chicago and Japan store openings in 2017. Expand retail presence.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Timeline Section -->
-            <div class="timeline-section">
-                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: white; margin-bottom: 32px;">Annual Activation Timeline</h3>
-                <div class="timeline-item">
-                    <div class="timeline-period">Q1 2016<br>(Mar-May)</div>
-                    <div class="timeline-content">
-                        <h4>Research & Planning Phase</h4>
-                        <p>Design mid-priced collections, develop nylon "Open Bar" bag concept, integrate inventory systems across boutiques, begin celebrity outreach for product sampling.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-period">Q2-Q3 2016<br>(Jun-Nov)</div>
-                    <div class="timeline-content">
-                        <h4>Soft Launch & Production</h4>
-                        <p>E-commerce soft launch in July, enter-to-win promotions, VIP Salon events, blogger/influencer launch parties, hand craftsmanship shows, Atlanta store opening.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-period">Q4 2016<br>(Dec-Feb 2017)</div>
-                    <div class="timeline-content">
-                        <h4>Holiday Campaign & Review</h4>
-                        <p>Special "Promenade" clutch in The Christmas Book, window displays, outdoor advertising push in NYC, holiday sales tracking and analysis.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-period">Q1-Q2 2017<br>(Mar-Aug)</div>
-                    <div class="timeline-content">
-                        <h4>Spring/Summer Expansion</h4>
-                        <p>Launch straw/canvas collections, Chicago store opening, Japan market entry, full e-commerce rollout in Asia, continuous social media engagement.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Promotion Section -->
-    <section class="section-premium">
-        <div class="section-container">
-            <div class="section-header">
-                <div class="section-label">
-                    <span class="section-number">06</span>
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    Promotion Strategy
-                </div>
-                <h2 class="section-title">Integrated Marketing Communications</h2>
-                <p class="section-description">Multi-channel promotional approach leveraging fashion media, social influencers, and experiential activations.</p>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-card large">
-                    <img src="https://www.genspark.ai/api/files/s/zn46gsfV" alt="Promotion Strategy - Autumn/Winter 2016">
-                    <div class="gallery-caption">
-                        <h4>Promotion: Autumn/Winter 2016</h4>
-                        <p>E-commerce soft launch July, enter-to-win promotions, blogger/VIP launch party invitations, hand craftsmanship shows, window displays, outdoor advertising in Atlanta and NYC.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/AziWG8sA" alt="Promotion Strategy - Spring/Summer 2017">
-                    <div class="gallery-caption">
-                        <h4>Promotion: Spring/Summer 2017</h4>
-                        <p>Continued social media campaigns, influencer partnerships, Fashion Week pop-up events, and expanded digital content strategy.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/oilELrbA" alt="Press & Social Content Details">
-                    <div class="gallery-caption">
-                        <h4>Press & Social Content</h4>
-                        <p>WWD, WGSN, NYTimes Fashion, Vogue releases, special "Promenade" clutch in The Christmas Book, social media content marketing with #ILoveDior campaign.</p>
-                    </div>
-                </div>
-                <div class="gallery-card full">
-                    <img src="https://www.genspark.ai/api/files/s/06Q0VxWf" alt="Media & Influencer Network">
-                    <div class="gallery-caption">
-                        <h4>Media & Influencer Network</h4>
-                        <p><strong>Fashion Bloggers:</strong> WWD, WGSN, NYTimes, Vogue, Elle, Harper's Bazaar, PurseBlog. <strong>Instagram Influencers:</strong> Gizele Oliveira, India Rose, Aleali May, The Fashion Guitar, Margaret Zhang, Sincerely Jules, and more (14+ key influencers). <strong>Dior Boutiques:</strong> 7 US cities (NY, LA, SF, Dallas, Houston, Miami, Honolulu) and 10 Asian cities. <strong>Neiman Marcus Group:</strong> 45 locations including Bergdorf Goodman.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Budget Section -->
-    <section class="section-premium dark-section">
-        <div class="section-container">
-            <div class="section-header">
-                <div class="section-label">
-                    <span class="section-number">07</span>
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                    Budget Allocation
-                </div>
-                <h2 class="section-title">$237 Million Annual Marketing Budget</h2>
-                <p class="section-description">Advertising and promotion represents 12% of sales. Budget allocation optimized for digital transformation while maintaining premium brand experiences.</p>
-            </div>
-            
-            <div class="budget-grid">
-                <div class="budget-card">
-                    <div class="amount">$85.5M</div>
-                    <div class="percentage">36%</div>
-                    <div class="category">Digital</div>
-                    <div class="details">Social media ads, Snapchat, Dior TV/Mag, e-commerce systems, in-store tech</div>
-                </div>
-                <div class="budget-card">
-                    <div class="amount">$71.5M</div>
-                    <div class="percentage">30%</div>
-                    <div class="category">Print</div>
-                    <div class="details">Publications, outdoor advertising, in-store displays and materials</div>
-                </div>
-                <div class="budget-card">
-                    <div class="amount">$45M</div>
-                    <div class="percentage">19%</div>
-                    <div class="category">Other</div>
-                    <div class="details">Agency/PR fees ($15M), celebrity endorsements ($30M)</div>
-                </div>
-                <div class="budget-card">
-                    <div class="amount">$35M</div>
-                    <div class="percentage">15%</div>
-                    <div class="category">Events</div>
-                    <div class="details">Preview launches ($20M), Fashion Week pop-ups ($15M)</div>
-                </div>
-            </div>
-
-            <div class="gallery-grid" style="margin-top: 56px;">
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/UBOwqmMI" alt="Budget Overview FY 2016-2017">
-                    <div class="gallery-caption">
-                        <h4>Budget Overview FY 2016-2017</h4>
-                        <p>Total budget of $237M represents 4.9% increase from previous year's $226M (2015-16) and $210.5M (2014-15) due to digital expansion initiatives.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/wzBgA5iH" alt="Print Publications Budget">
-                    <div class="gallery-caption">
-                        <h4>Print: Publications</h4>
-                        <p>WWD $2M, Vogue $2M, Vogue International $3M, W Magazine $1.5M - full page 4/c second cover ads in premium fashion media.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/bcvAHSjH" alt="Print Publications Continued">
-                    <div class="gallery-caption">
-                        <h4>Publications Continued</h4>
-                        <p>Elle $2M, Elle International $3M, NYT T Magazine $2M, WSJ Magazine $2M - strategic premium placement across key fashion publications.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/o8ELlsCy" alt="Outdoor Advertising Budget">
-                    <div class="gallery-caption">
-                        <h4>Outdoor Advertising</h4>
-                        <p>NYC Broadway wallscape $7M, Atlanta store opening $4.5M, Chicago opening $4.5M, Tokyo opening $8M. NMG Catalog $5M.</p>
-                    </div>
-                </div>
-                <div class="gallery-card large">
-                    <img src="https://www.genspark.ai/api/files/s/7uT5Hd41" alt="In-Store Displays & Materials Budget">
-                    <div class="gallery-caption">
-                        <h4>In-Store Displays & Materials</h4>
-                        <p><strong>Dior Boutiques ($15M):</strong> Display construction, seasonal signage, brochures, branded packaging, VIP Salon materials. <strong>Neiman Marcus Group Stores ($10M):</strong> Secondary retail boutique support across 45 locations. Total in-store investment: $25M.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Strategic Implications Section -->
-    <section class="section-premium">
-        <div class="section-container">
-            <div class="section-header">
-                <div class="section-label">
-                    <span class="section-number">08</span>
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                    Strategic Implications
-                </div>
-                <h2 class="section-title">Key Strategic Insights</h2>
-                <p class="section-description">Critical findings and recommendations derived from the comprehensive market analysis.</p>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-card large">
-                    <img src="https://www.genspark.ai/api/files/s/6p97FhO1" alt="Strategic Implications - E-Commerce & Pricing">
-                    <div class="gallery-caption">
-                        <h4>E-Commerce & Pricing Strategy</h4>
-                        <p>Price was a factor in our survey—including price will be essential for e-commerce success. Convert current website to leverage e-commerce in Asia and US. Partner with secondary retailers (Yoox/Net-a-porter) to expand handbag availability without diluting brand prestige.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://www.genspark.ai/api/files/s/oQ6lJoxt" alt="Strategic Implications - Experience & Sustainability">
-                    <div class="gallery-caption">
-                        <h4>Experience & Sustainability</h4>
-                        <p>Experiential relationship between brand and consumers differs in-person vs online—requires research for e-commerce success. Green initiative ("return on fashion investment" trade-in program) appeals to millennials and supports sustainability positioning.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Learnings Section -->
-    <section class="section-premium" style="background: var(--bg-light);">
-        <div class="section-container">
-            <div class="section-header">
-                <div class="section-label">
-                    <span class="section-number">09</span>
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-                    Key Learnings
-                </div>
-                <h2 class="section-title">Project Takeaways</h2>
-            </div>
-            
-            <div class="learnings-grid">
-                <div class="learning-card">
-                    <div class="learning-number">01</div>
-                    <h4>Consumer Research Drives Strategy</h4>
-                    <p>Primary research with 31 target consumers revealed the gap between consumer interest (Dior) and actual ownership (competitors), informing our awareness-building approach rather than price-driven tactics. Understanding that most spend under $1,000 but aspire to $1,000-$5,000 purchases shaped our entry-point strategy.</p>
-                </div>
-                <div class="learning-card">
-                    <div class="learning-number">02</div>
-                    <h4>Omni-Channel Integration</h4>
-                    <p>The experiential relationship Dior excels at in-store must be translated to digital channels without compromising brand prestige. This requires careful UX design, exclusive online experiences, and click-to-collect programs that bridge physical and digital touchpoints.</p>
-                </div>
-                <div class="learning-card">
-                    <div class="learning-number">03</div>
-                    <h4>Budget Allocation & ROI</h4>
-                    <p>Shifting 36% of budget to digital reflects the target demographic's media consumption (digital natives, 25-40) while maintaining premium touchpoints through events (15%) and quality print placements (30%). The 4.9% budget increase signals investment in future growth channels.</p>
-                </div>
-            </div>
-
-            <div class="pdf-reference">
-                <h5>Source Document</h5>
-                <p>This case study is based on the graduate project document: <strong>4648bb_ccdfb4731c784efda7dc2e7148f1dbad.pdf</strong> - Dior Leather Goods (Handbags) Marketing Strategy, BUSI 745: Marketing Art and Design Ventures, Part 6: Three-Quarters Check-In. By Cheryl Edenfield and Poyoung "Ina" Yu. <a href="https://www.genspark.ai/api/files/s/abXYXlBd" target="_blank">View Original PDF</a></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2 class="cta-title">Interested in Brand Strategy?</h2>
-            <p class="cta-text">This project demonstrates strategic thinking, consumer research methodology, and comprehensive marketing planning for luxury brands at the graduate level.</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn-primary">Get in Touch</a>
-                <a href="work.html" class="btn-secondary">View More Work</a>
-            </div>
-        </div>
-    </section>
+    <!-- Project Navigation -->
+    <nav class="project-navigation">
+        <a href="project-gucci.html" class="nav-prev">
+            <span class="nav-label">Previous Project</span>
+            <span class="nav-title">Gucci Scenario Planning</span>
+        </a>
+        <a href="project-chiara.html" class="nav-next">
+            <span class="nav-label">Next Project</span>
+            <span class="nav-title">Chiara Ferragni IMC</span>
+        </a>
+    </nav>
 
     <!-- Footer -->
-    <footer>
-        <p>© 2024 Ina Yu. All rights reserved. | Dior Marketing Strategy Case Study | BUSI 745 Graduate Project</p>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">INA YU</span>
+                <span class="footer-copyright">© 2025</span>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:eunice-ina@naver.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/inayu" class="footer-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
