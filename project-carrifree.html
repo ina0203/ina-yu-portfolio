@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrifree | Ina Yu Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project.css">
+    <style>
+        /* ========================================
+           CARRIFREE PREMIUM DESIGN SYSTEM
+           Senior Product Designer Level
+           ======================================== */
+        
+        :root {
+            --primary: #FF7A00;
+            --primary-dark: #E56A00;
+            --primary-light: #FEBD33;
+            --primary-pale: #FFF8F0;
+            --accent: #1a1a2e;
+            --dark: #0f0f1a;
+            --text: #1a1a1a;
+            --text-secondary: #5a5a6e;
+            --text-muted: #8a8a9a;
+            --bg-light: #fafafa;
+            --bg-cream: #FFFCF7;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #FF7A00 0%, #FEBD33 100%);
+            --gradient-dark: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+            --gradient-hero: linear-gradient(135deg, #FF7A00 0%, #FF9A40 50%, #FEBD33 100%);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
+            --shadow-xl: 0 30px 80px rgba(0,0,0,0.16);
+            --shadow-glow: 0 0 60px rgba(255,122,0,0.2);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+        }
+
+        /* Typography System */
+        .display-xl {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 500;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+        
+        .display-lg {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        
+        .heading-lg {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .body-lg {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        
+        .label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* === HERO SECTION === */
+        .hero-premium {
+            min-height: 100vh;
+            padding-top: 60px;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-premium::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(255,122,0,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text .label {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .hero-text h1 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-text h1 span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 480px;
+        }
+        
+        .hero-metrics {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .metric-item {
+            text-align: left;
+        }
+        
+        .metric-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1;
+        }
+        
+        .metric-value span {
+            color: var(--primary);
+        }
+        
+        .metric-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .hero-visual {
+            position: relative;
+        }
+        
+        .hero-image-container {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl), var(--shadow-glow);
+        }
+        
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .hero-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* === SECTION LAYOUTS === */
+        .section-premium {
+            padding: 8rem 2rem;
+            position: relative;
+        }
+        
+        .section-premium.bg-light {
+            background: var(--bg-light);
+        }
+        
+        .section-premium.bg-cream {
+            background: var(--bg-cream);
+        }
+        
+        .section-premium.bg-dark {
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
+        }
+        
+        .section-header .label {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .section-header h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        /* === VALUE PROPOSITION CARDS === */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .value-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .value-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--primary-pale);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .value-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 2;
+        }
+        
+        .value-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+        
+        .value-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        
+        .value-tag {
+            display: inline-block;
+            background: var(--primary-pale);
+            color: var(--primary-dark);
+            padding: 0.35rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 1rem;
+        }
+
+        /* === BUSINESS MODEL SECTION === */
+        .business-model {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .model-visual {
+            position: relative;
+        }
+        
+        .model-visual img {
+            width: 100%;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .model-content h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .model-content .lead {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .model-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .stat-box {
+            background: var(--bg-light);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .stat-box .number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1;
+        }
+        
+        .stat-box .label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        /* === REVENUE MODEL === */
+        .revenue-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            position: relative;
+        }
+        
+        .revenue-flow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+            z-index: 0;
+        }
+        
+        .revenue-step {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .revenue-step h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .revenue-step p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* === SERVICE FLOW CARDS === */
+        .service-flow-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .flow-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .flow-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .flow-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--primary-pale);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        
+        .flow-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 2;
+        }
+        
+        .flow-card h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .flow-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* === STRATEGIC FRAMEWORK === */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .strategy-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .strategy-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--primary);
+        }
+        
+        .strategy-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .strategy-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .strategy-card h4 {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        
+        .strategy-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* === DESIGN SHOWCASE === */
+        .design-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .showcase-item {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s ease;
+        }
+        
+        .showcase-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .showcase-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .showcase-item.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .showcase-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+        }
+        
+        .showcase-overlay h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .showcase-overlay p {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* === PARTNERSHIP SECTION === */
+        .partnership-hero {
+            background: var(--gradient-dark);
+            border-radius: var(--radius-xl);
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        
+        .partnership-content h2 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        
+        .partnership-content h2 span {
+            color: var(--primary);
+        }
+        
+        .partnership-content p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .partnership-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .benefit-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .benefit-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: white;
+            fill: none;
+        }
+
+        /* === GALLERY GRID === */
+        .gallery-premium {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            background: var(--white);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .gallery-item.span-2 {
+            grid-column: span 2;
+        }
+        
+        .gallery-caption {
+            padding: 1.25rem 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .gallery-caption h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .gallery-caption p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* === CTA SECTION === */
+        .cta-premium {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-xl);
+            margin: 4rem 0;
+        }
+        
+        .cta-premium h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-premium p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-white {
+            background: var(--white);
+            color: var(--primary-dark);
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--white);
+        }
+        
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* === FOOTER === */
+        .footer-info {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding: 4rem 0;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            margin-top: 4rem;
+        }
+        
+        .footer-item h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-item p {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 6rem 2rem;
+            }
+            
+            .hero-subtitle {
+                margin: 0 auto 2rem;
+            }
+            
+            .hero-metrics {
+                justify-content: center;
+            }
+            
+            .hero-visual {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .value-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .business-model {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .strategy-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .partnership-hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .gallery-premium {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .revenue-flow {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .revenue-flow::before {
+                display: none;
+            }
+            
+            .service-flow-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .design-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-premium {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item.span-2 {
+                grid-column: span 1;
+            }
+            
+            .footer-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero-metrics {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.25rem 2rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <a href="index.html" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #1a1a1a; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;" onmouseover="this.style.color='#FF7A00'" onmouseout="this.style.color='#1a1a1a'">
+            <span style="font-size: 1rem;">←</span>
+            <span>Back to Portfolio</span>
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-premium">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="label">Travel Logistics Platform</span>
+                <h1 class="display-xl">
+                    <span>Carrifree</span><br>
+                    Designing Freedom<br>in Travel
+                </h1>
+                <p class="hero-subtitle">
+                    A <strong>Convenience + Premium (ConveniMium)</strong> O2O platform that connects travelers with luggage transport and storage providers, enabling hassle-free journeys through seamless logistics orchestration.
+                </p>
+                <div class="hero-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">3,000<span>+</span></div>
+                        <div class="metric-label">Partner Network</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">70K</div>
+                        <div class="metric-label">Kiosk Deployment</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">₩2M</div>
+                        <div class="metric-label">Insurance Coverage</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <img src="https://www.genspark.ai/api/files/s/kmP85Qje" alt="Carrifree - Travel Freedom">
+                    <div class="hero-badge">App Renewal Design</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section class="section-premium bg-cream">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Executive Summary</span>
+                <h2 class="display-lg">Why Carrifree?</h2>
+                <p>A sharing economy-based O2O platform revolutionizing travel logistics. Leveraging GIS technology and real-time matching algorithms to create value for both travelers and service providers.</p>
+            </div>
+            
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Platform Economy</h3>
+                    <p>Applying sharing economy principles, enabling anyone to become a transport/storage provider without location or time constraints. Efficient utilization of idle spaces and mobility resources.</p>
+                    <span class="value-tag">Sharing Economy</span>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>GIS-Based Pricing</h3>
+                    <p>Location-based dynamic pricing algorithm. Transparent distance-based fare calculation builds customer trust and ensures fair transactions across all service tiers.</p>
+                    <span class="value-tag">Dynamic Pricing</span>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Trust & Safety</h3>
+                    <p>Multi-layered trust architecture: ₩2,000,000 insurance coverage, QR verification, photo documentation—eliminating psychological barriers to adoption.</p>
+                    <span class="value-tag">Insured Service</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model -->
+    <section class="section-premium">
+        <div class="container">
+            <div class="business-model">
+                <div class="model-visual">
+                    <img src="https://www.genspark.ai/api/files/s/9Tn2Z1e6" alt="Service Differentiation">
+                </div>
+                <div class="model-content">
+                    <span class="label">Service Differentiation</span>
+                    <h2 class="display-lg">ConveniMium Brokerage Platform</h2>
+                    <p class="lead">
+                        Unified travel logistics system integrating transport and storage. Merging convenience with premium service to deliver first-class experiences to economy-tier customers.
+                    </p>
+                    <div class="model-stats">
+                        <div class="stat-box">
+                            <div class="number">31,995</div>
+                            <span class="label">Kiosk Contracts</span>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">15,075</div>
+                            <span class="label">Hotels & Resorts</span>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">12,920</div>
+                            <span class="label">Franchise Partners</span>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">4,000</div>
+                            <span class="label">SMB Installations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Model -->
+    <section class="section-premium bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Revenue Stream</span>
+                <h2 class="display-lg">Diversified Monetization Model</h2>
+                <p>Stable commission-based revenue structure with B2B/B2C expansion driving sustainable growth trajectories.</p>
+            </div>
+            
+            <div class="revenue-flow">
+                <div class="revenue-step">
+                    <div class="step-number">1</div>
+                    <h4>Transaction Fee</h4>
+                    <p>Brokerage commission per service (₩5,000-8,000/day)</p>
+                </div>
+                <div class="revenue-step">
+                    <div class="step-number">2</div>
+                    <h4>Kiosk Revenue</h4>
+                    <p>Contactless payment systems + advertising/promotional revenue</p>
+                </div>
+                <div class="revenue-step">
+                    <div class="step-number">3</div>
+                    <h4>B2B Partnership</h4>
+                    <p>API licensing to airlines, hotels, and travel agencies</p>
+                </div>
+                <div class="revenue-step">
+                    <div class="step-number">4</div>
+                    <h4>Cross-selling</h4>
+                    <p>Bundled "Air-Tel" packages (Flight + Hotel + Carrifree)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section-premium">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">User Journey Flow</span>
+                <h2 class="display-lg">How It Works</h2>
+                <p>One-stop travel logistics service accessible via app, web, and kiosk touchpoints with optimized task flows.</p>
+            </div>
+            
+            <div class="service-flow-grid">
+                <div class="flow-card">
+                    <div class="flow-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 18v4M8 22h8M12 2v2m0 16a8 8 0 100-16 8 8 0 000 16z"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h4>Step 1: Service Request</h4>
+                    <p>Submit luggage transport or storage request via app/web/kiosk interface</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h4>Step 2: Smart Matching</h4>
+                    <p>GIS-based algorithm auto-matches optimal transport/storage providers</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h4>Step 3: Secure Handoff</h4>
+                    <p>QR verification + photo documentation for secure transaction completion</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h4>Target Segments</h4>
+                    <p>Travelers / Transporters / Storage Providers — 3-Way Marketplace</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Framework -->
+    <section class="section-premium bg-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Strategic Framework</span>
+                <h2 class="display-lg" style="color: var(--white);">Competitive Moat Analysis</h2>
+                <p style="color: rgba(255,255,255,0.7);">Differentiated value proposition with scalable business architecture</p>
+            </div>
+            
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <div class="strategy-number">01</div>
+                    <h3>Network Effect</h3>
+                    <h4>Two-Sided Marketplace Dynamics</h4>
+                    <p>User growth → Provider participation → Service quality improvement → More user acquisition. Virtuous cycle achieving economies of scale with 3,000+ partner network.</p>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-number">02</div>
+                    <h3>First Mover Advantage</h3>
+                    <h4>Travel Logistics Vertical Specialist</h4>
+                    <p>Korea's first luggage transport/storage brokerage platform. 3 patent filings, 1 trademark registration establishing technical barriers to entry. Certified venture company status.</p>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-number">03</div>
+                    <h3>Ecosystem Integration</h3>
+                    <h4>Travel Ecosystem Consolidation</h4>
+                    <p>MOU with Lvmama (China OTA) — targeting 350M FIT travelers. Strategic alliances with airlines, hotels, resorts enabling one-stop travel solution delivery.</p>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-number">04</div>
+                    <h3>Scalable Infrastructure</h3>
+                    <h4>Kiosk Network Deployment</h4>
+                    <p>70,000 kiosk rollout roadmap. Multi-touchpoint expansion across hotel rooms, tourist destinations, franchise stores. Optimized for contactless era requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Design -->
+    <section class="section-premium">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Brand Identity</span>
+                <h2 class="display-lg">Design System Architecture</h2>
+                <p>Cohesive brand experience embodying Carrifree's core value proposition through systematic visual language</p>
+            </div>
+            
+            <div class="gallery-premium">
+                <div class="gallery-item span-2">
+                    <img src="https://www.genspark.ai/api/files/s/6AQg4U3a" alt="Brand Guide Cover">
+                    <div class="gallery-caption">
+                        <h4>Brand Identity System</h4>
+                        <p>Brand guideline cover — Carrifree's core visual identity</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.genspark.ai/api/files/s/JEwtNTJ2" alt="Logo System">
+                    <div class="gallery-caption">
+                        <h4>Logo System</h4>
+                        <p>Logo usage guidelines & clear space rules</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.genspark.ai/api/files/s/i9HDqgXb" alt="Brand Introduction">
+                    <div class="gallery-caption">
+                        <h4>Brand Narrative</h4>
+                        <p>Brand story & philosophy documentation</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.genspark.ai/api/files/s/w8Nek6Nx" alt="Color System">
+                    <div class="gallery-caption">
+                        <h4>Color Token System</h4>
+                        <p>Primary: #FF7A00, Secondary: #FEBD33</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.genspark.ai/api/files/s/3UGV7Kri" alt="Color Variation">
+                    <div class="gallery-caption">
+                        <h4>Color Application Matrix</h4>
+                        <p>Color usage guidelines across touchpoints</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.genspark.ai/api/files/s/UooDGIYo" alt="Usage Guidelines">
+                    <div class="gallery-caption">
+                        <h4>Correct Usage Examples</h4>
+                        <p>Logo application best practices</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.genspark.ai/api/files/s/foDVJvc0" alt="Incorrect Usage">
+                    <div class="gallery-caption">
+                        <h4>Misuse Prevention</h4>
+                        <p>Anti-patterns and incorrect usage examples</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.genspark.ai/api/files/s/dNq5kuQF" alt="Brand Application">
+                    <div class="gallery-caption">
+                        <h4>Brand Collateral</h4>
+                        <p>Real-world application examples</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App/Web Design -->
+    <section class="section-premium bg-cream">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Product Design</span>
+                <h2 class="display-lg">App & Web UI/UX</h2>
+                <p>User-centered intuitive interface design. Paybooc typography paired with orange accent system ensures brand consistency across all digital touchpoints.</p>
+            </div>
+            
+            <div class="design-showcase">
+                <div class="showcase-item full-width">
+                    <img src="https://www.genspark.ai/api/files/s/ltOUmhc6" alt="Web Design Overview">
+                    <div class="showcase-overlay">
+                        <h4>Web Platform Overview</h4>
+                        <p>Information architecture & visual design system — Adobe XD, Illustrator, Photoshop</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://www.genspark.ai/api/files/s/sShxUs1A" alt="Design Specification">
+                    <div class="showcase-overlay">
+                        <h4>Design Specification</h4>
+                        <p>Typography: Paybooc / Color tokens: #FF7A00, #FEBD33, #FFF4D6</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://www.genspark.ai/api/files/s/4Fg8npEN" alt="Login Screen">
+                    <div class="showcase-overlay">
+                        <h4>Authentication Flow</h4>
+                        <p>Social login integration (KakaoTalk, Naver, Facebook, Apple)</p>
+                    </div>
+                </div>
+                <div class="showcase-item full-width">
+                    <img src="https://www.genspark.ai/api/files/s/h8fyTMo5" alt="App Prototype Flow">
+                    <div class="showcase-overlay">
+                        <h4>App Interaction Flow</h4>
+                        <p>Login → Storibox/Carriporter selection → Locker finder → Collection screen UX flow</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Store -->
+    <section class="section-premium">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Live Product</span>
+                <h2 class="display-lg">App Store Deployment</h2>
+                <p>Production-ready application successfully launched on iOS App Store</p>
+            </div>
+            
+            <div class="design-showcase">
+                <div class="showcase-item">
+                    <img src="https://www.genspark.ai/api/files/s/JoUBf8LT" alt="App Store Hero">
+                    <div class="showcase-overlay">
+                        <h4>AppAdvice Feature</h4>
+                        <p>Featured app listing & free download availability</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://www.genspark.ai/api/files/s/KQjCy5MO" alt="App Store Details">
+                    <div class="showcase-overlay">
+                        <h4>App Store Metadata</h4>
+                        <p>Version 1.0.55 / Rating ★★★★★ / Size 26MB</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership -->
+    <section class="section-premium bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Strategic Partnership</span>
+                <h2 class="display-lg">Korean Air × Carrifree</h2>
+                <p>Strategic alliance delivering premium service experiences to economy-class travelers</p>
+            </div>
+            
+            <div class="partnership-hero">
+                <div class="partnership-content">
+                    <h2>Air-Tel Bundle = <span>Flight + Hotel + Carrifree</span></h2>
+                    <p>By partnering with Korean Air, Carrifree enables economy passengers to experience the convenience typically reserved for premium customers—creating differentiated customer value that drives brand loyalty.</p>
+                    <div class="partnership-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Premium transport service accessibility for economy travelers</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>New customer acquisition via Lvmama Air-Tel package integration</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Corporate brand elevation through ConveniMium service offering</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span>Competitive differentiation through unique customer service portfolio</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="partnership-visual">
+                    <img src="https://www.genspark.ai/api/files/s/plCCZTIG" alt="Partnership Benefits">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-premium">
+        <div class="container">
+            <div class="cta-premium">
+                <h2 class="display-lg">Project Deliverables</h2>
+                <p>Download the complete Carrifree project documentation and design assets</p>
+                <div class="btn-group">
+                    <a href="https://www.genspark.ai/api/files/s/WdTRNLOQ" target="_blank" class="btn btn-white">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                        Brand Guidebook (13P)
+                    </a>
+                    <a href="https://www.genspark.ai/api/files/s/6Vm2dkb6" target="_blank" class="btn btn-white">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                        App/Web Design (7P)
+                    </a>
+                    <a href="https://www.genspark.ai/api/files/s/1piMhEDx" target="_blank" class="btn btn-outline">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                        Partnership Proposal (22P)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Info -->
+    <section class="section-premium" style="padding-top: 0;">
+        <div class="container">
+            <div class="footer-info">
+                <div class="footer-item">
+                    <h4>Client</h4>
+                    <p>Plattics Inc. / Carrifree</p>
+                </div>
+                <div class="footer-item">
+                    <h4>Role</h4>
+                    <p>Brand Identity, App/Web UI/UX, Kiosk Interface, Partnership Proposal</p>
+                </div>
+                <div class="footer-item">
+                    <h4>Tools</h4>
+                    <p>Adobe XD, Illustrator, Photoshop, Figma</p>
+                </div>
+                <div class="footer-item">
+                    <h4>Year</h4>
+                    <p>2021</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
